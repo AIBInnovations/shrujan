@@ -1,14 +1,19 @@
 import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { Link } from 'react-router-dom'
 import { ArrowRight } from './Icons.jsx'
 
+/* Each cell shows what its own page opens with, so the bento reads as six
+   doors rather than six pretty pictures. Previously the craft cell was a
+   generic zari crop and the LLDC cell was a pair of earrings — neither said
+   anything about where it led. */
 const IMG = {
-  model: '/hero-left.png',
-  season: '/hero-right.png',
-  thread: '/hero-beside-right.png',
-  accessories: '/hero-bottom.png',
-  story: '/hero-bottom-2.png',
+  model: '/hero-left.webp',              // Shop — a piece being worn
+  season: '/look-b2.webp',               // Studio — that page's own cover
+  thread: '/craft-hero.webp',            // Craft Traditions — its masthead
+  accessories: '/craft-embroidery-poster.webp', // LLDC — inside the centre
+  story: '/story-origin-2.webp',         // The Shrujan Story — the archive
 }
 
 /* Line-art mandala for the ivory message panel */
@@ -38,8 +43,8 @@ export default function Hero() {
 
         tl.fromTo(
           '[data-hero="cell"]',
-          { autoAlpha: 0, y: 26 },
-          { autoAlpha: 1, y: 0, duration: 1, stagger: 0.1 },
+          { opacity: 0, y: 26 },
+          { opacity: 1, y: 0, duration: 1, stagger: 0.1 },
           0,
         )
           .fromTo(
@@ -54,12 +59,12 @@ export default function Hero() {
             { scaleX: 1, duration: 0.6 },
             0.8,
           )
-          .fromTo('[data-hero="copy"]', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0 }, 0.9)
-          .fromTo('[data-hero="cta"]', { autoAlpha: 0, y: 14 }, { autoAlpha: 1, y: 0 }, 1.02)
+          .fromTo('[data-hero="copy"]', { opacity: 0, y: 16 }, { opacity: 1, y: 0 }, 0.9)
+          .fromTo('[data-hero="cta"]', { opacity: 0, y: 14 }, { opacity: 1, y: 0 }, 1.02)
       })
 
       mm.add('(prefers-reduced-motion: reduce)', () => {
-        gsap.set('[data-hero], .hero-message__title .line > span', { clearProps: 'all', autoAlpha: 1 })
+        gsap.set('[data-hero], .hero-message__title .line > span', { clearProps: 'all', opacity: 1 })
       })
     },
     { scope: root },
@@ -67,24 +72,23 @@ export default function Hero() {
 
   return (
     <section className="hero" ref={root} aria-label="Tradition, styled forward">
-      {/* ---- 1 · model ---- */}
-      <a className="hero-cell hero-cell--model" href="#" data-hero="cell">
+      {/* ---- 1 · Shop Shrujan ---- */}
+      <Link className="hero-cell hero-cell--model" to="/pages/shop-shrujan" data-hero="cell">
         <img
           src={IMG.model}
           alt="Model in a rust-red ajrakh kurta with gold jewellery before an arched wall"
-          fetchpriority="high"
+          fetchPriority="high"
         />
         <span className="hero-cell__label">
           <i className="hero-cell__dash" aria-hidden="true" />
-          Handcrafted
-          <br />
-          Heritage.
-          <br />
-          Modern
-          <br />
-          Soul.
+          <em>Shop</em>
+          Shrujan
+          <span className="hero-cell__sub">
+            Saris, kurtas and dupattas, hand-embroidered by the women of Kutch.
+          </span>
+          <ArrowRight width="16" height="16" />
         </span>
-      </a>
+      </Link>
 
       {/* ---- 2 · ivory message panel ---- */}
       <div className="hero-cell hero-cell--message" data-hero="cell">
@@ -112,30 +116,33 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* ---- 3 · new season ---- */}
-      <a className="hero-cell hero-cell--season" href="#" data-hero="cell">
-        <img src={IMG.season} alt="Model in a plum embroidered jacket set standing in an arched sand niche" />
+      {/* ---- 3 · Studio Collection ---- */}
+      <Link className="hero-cell hero-cell--season" to="/pages/studio-collection" data-hero="cell">
+        <img src={IMG.season} alt="Model in a red hand-embroidered bridal lehenga in a studio setting" />
         <span className="hero-cell__scrim" aria-hidden="true" />
         <span className="hero-cell__label hero-cell__label--bottom">
-          <em>New Season</em>
-          Statement Looks
+          <em>Studio</em>
+          Collection
           <ArrowRight width="16" height="16" />
         </span>
-      </a>
+      </Link>
 
-      {/* ---- 4 · craft in every thread ---- */}
-      <a className="hero-cell hero-cell--thread" href="#" data-hero="cell">
-        <img src={IMG.thread} alt="Close crop of crimson silk with gold zari embroidery and sequin borders" />
+      {/* ---- 4 · Craft Traditions of Kutch ---- */}
+      <Link className="hero-cell hero-cell--thread" to="/pages/video" data-hero="cell">
+        <img src={IMG.thread} alt="Embroiderers of Kutch working together outside their village" />
         <span className="hero-cell__scrim" aria-hidden="true" />
         <span className="hero-cell__label hero-cell__label--bottom">
-          <em>Craft</em>
-          In Every Thread
+          <em>Craft Traditions</em>
+          of Kutch
           <ArrowRight width="16" height="16" />
         </span>
-      </a>
+      </Link>
 
-      {/* ---- 5 · plum story panel ---- */}
-      <div className="hero-cell hero-cell--story" data-hero="cell">
+      {/* ---- 5 · The Shrujan Story ----
+           An <a>, not a <div>, so all six bento cards are clickable as a set.
+           The inner "read more" is a <span> for that reason: an anchor inside
+           an anchor is invalid and browsers unnest it. */}
+      <Link className="hero-cell hero-cell--story" to="/pages/the-shrujan-story" data-hero="cell">
         <img src={IMG.story} alt="" aria-hidden="true" />
         <span className="hero-cell__scrim hero-cell__scrim--story" aria-hidden="true" />
         <p className="hero-story__title">
@@ -143,39 +150,34 @@ export default function Hero() {
           <br />
           Made for tomorrow.
         </p>
-        <p className="hero-story__copy">
-          Supporting artisans.
-          <br />
-          Preserving traditions.
-          <br />
-          Creating lasting impact.
-        </p>
-        <a className="hero-story__link" href="#craft">
-          Our Story <ArrowRight width="15" height="15" />
-        </a>
-      </div>
+        <p className="hero-story__copy">Supporting artisans since 1969.</p>
+        <span className="hero-story__link">
+          The Shrujan Story <ArrowRight width="15" height="15" />
+        </span>
+      </Link>
 
-      {/* ---- 6 · accessories ---- */}
-      <a className="hero-cell hero-cell--accessories" href="#" data-hero="cell">
-        <img src={IMG.accessories} alt="Gold chandbali earrings with pearls resting on a brass plate" />
+      {/* ---- 6 · LLDC ---- */}
+      <Link className="hero-cell hero-cell--accessories" to="/pages/lldc" data-hero="cell">
+        <img src={IMG.accessories} alt="An artisan at work in the Living &amp; Learning Design Centre studio" />
         <span className="hero-cell__scrim" aria-hidden="true" />
         <span className="hero-cell__label hero-cell__label--bottom">
-          Accessories that
+          <em>LLDC</em>
+          Living &amp; Learning
           <br />
-          complete the story
+          Design Centre
           <ArrowRight width="16" height="16" />
         </span>
-      </a>
+      </Link>
 
-      {/* ---- 7 · crafted in India ---- */}
-      <a className="hero-cell hero-cell--india" href="#craft" data-hero="cell">
+      {/* ---- 7 · Visit & Experience ---- */}
+      <Link className="hero-cell hero-cell--india" to="/pages/visit-experience" data-hero="cell">
         <span className="hero-india__map" aria-hidden="true" />
         <span className="hero-cell__label hero-cell__label--bottom hero-cell__label--ink">
-          <em>Crafted</em>
-          In India
+          <em>Visit &amp;</em>
+          Experience
           <ArrowRight width="16" height="16" />
         </span>
-      </a>
+      </Link>
     </section>
   )
 }

@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight } from './Icons.jsx'
+import { Link } from 'react-router-dom'
 
 /* Full-bleed lookbook slides with shoppable hotspots pinned to each look. */
 const LOOKS = [
   {
-    img: '/look-b1.png',
+    img: '/look-b1.webp',
     alt: 'Model in a maroon silk sari with gold zari embroidery beside brass urns',
     focus: '50% 12%',
     hotspots: [
@@ -13,19 +14,19 @@ const LOOKS = [
         y: 52,
         name: 'Maroon Silk Zari Sari',
         price: '₹ 22,400',
-        thumb: '/cat-c1.png',
+        thumb: '/cat-c1.webp',
       },
       {
         x: 46,
         y: 27,
         name: 'Embroidered Silk Blouse',
         price: '₹ 6,800',
-        thumb: '/look-b1.png',
+        thumb: '/look-b1.webp',
       },
     ],
   },
   {
-    img: '/look-b2.png',
+    img: '/look-b2.webp',
     alt: 'Model in a red bridal lehenga with a net dupatta',
     focus: '50% 12%',
     hotspots: [
@@ -34,19 +35,19 @@ const LOOKS = [
         y: 62,
         name: 'Bridal Red Lehenga',
         price: '₹ 64,000',
-        thumb: '/cat-c3.png',
+        thumb: '/cat-c3.webp',
       },
       {
         x: 49,
         y: 40,
         name: 'Sequinned Net Dupatta',
         price: '₹ 11,200',
-        thumb: '/look-b2.png',
+        thumb: '/look-b2.webp',
       },
     ],
   },
   {
-    img: '/look-b3.png',
+    img: '/look-b3.webp',
     alt: 'Model in an ivory chikankari kurta set with a red-bordered dupatta',
     focus: '50% 12%',
     hotspots: [
@@ -55,14 +56,14 @@ const LOOKS = [
         y: 48,
         name: 'Ivory Chikankari Kurta Set',
         price: '₹ 14,800',
-        thumb: '/cat-c5.png',
+        thumb: '/cat-c5.webp',
       },
       {
         x: 56,
         y: 62,
         name: 'Gota Border Dupatta',
         price: '₹ 7,600',
-        thumb: '/look-b3.png',
+        thumb: '/look-b3.webp',
       },
     ],
   },
@@ -123,9 +124,9 @@ export default function ShopTheLooks() {
               <div>
                 <p className="looks-spot__name">{h.name}</p>
                 <p className="looks-spot__price">{h.price}</p>
-                <a className="looks-spot__link" href="#">
+                <Link className="looks-spot__link" to="/pages/shop-shrujan#catalogue">
                   Quick view
-                </a>
+                </Link>
               </div>
             </div>
           </div>

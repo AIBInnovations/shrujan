@@ -50,13 +50,13 @@ export default function Spotlight() {
           <span className="spotlight__line">
             Heritage elegance
             <span className="spotlight__chip">
-              <img src="/hero-beside-right.png" alt="" loading="lazy" />
+              <img src="/hero-beside-right.webp" alt="" loading="lazy" />
             </span>
             redefined
           </span>
           <span className="spotlight__line">
             <span className="spotlight__chip">
-              <img src="/top right.png" alt="" loading="lazy" />
+              <img src="/top right.webp" alt="" loading="lazy" />
             </span>
             through living craft
           </span>
@@ -86,7 +86,7 @@ export default function Spotlight() {
 
         <img
           className="spotlight__model"
-          src="/model.png"
+          src="/model.webp"
           alt="Model in a crimson mirror-work jacket draped with a hand-embroidered patola sari"
           loading="lazy"
         />
@@ -105,10 +105,10 @@ export default function Spotlight() {
 
         {/* two small plates balancing the circle */}
         <figure className="spotlight__plate spotlight__plate--tr" aria-hidden="true">
-          <img src="/cat-c1.png" alt="" loading="lazy" />
+          <img src="/cat-c1.webp" alt="" loading="lazy" />
         </figure>
         <figure className="spotlight__plate spotlight__plate--bl" aria-hidden="true">
-          <img src="/top right.png" alt="" loading="lazy" />
+          <img src="/top right.webp" alt="" loading="lazy" />
         </figure>
 
         <div className="spotlight__stat spotlight__stat--villages">

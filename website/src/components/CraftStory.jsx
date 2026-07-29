@@ -1,13 +1,14 @@
 import { ArrowRight } from './Icons.jsx'
+import { Link } from 'react-router-dom'
 
 const SHOTS = [
   {
-    img: '/bottom left.png',
+    img: '/bottom left.webp',
     alt: 'Master weaver working threads at his handloom',
     caption: 'At the loom, Bhujodi',
   },
   {
-    img: '/top right.png',
+    img: '/top right.webp',
     alt: 'Artisan hand embroidering mirror-work flowers with a fine needle',
     caption: 'Suf, stitched from the reverse',
   },
@@ -17,7 +18,7 @@ const STATS = [
   { value: '1969', label: 'Founded by Chanda Shroff' },
   { value: '5', label: 'Decades of craft revival' },
   { value: '12', label: 'Living craft traditions' },
-  { value: 'LLDC', label: 'Living & Learning Design Centre' },
+  { value: '4,000+', label: 'Artisan women at work' },
 ]
 
 export default function CraftStory() {
@@ -46,9 +47,9 @@ export default function CraftStory() {
             </p>
           </div>
 
-          <a className="arrow-link craft__link" href="#" data-reveal>
+          <Link className="arrow-link craft__link" to="/pages/video" data-reveal>
             Explore the Craft <ArrowRight width="16" height="16" />
-          </a>
+          </Link>
         </div>
 
         <div className="craft__gallery" data-reveal>

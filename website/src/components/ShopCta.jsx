@@ -1,14 +1,14 @@
 import { ArrowRight } from './Icons.jsx'
 
 /* Closing invitation — a flush two-cell block in the hero's language:
-   one photograph, one solid plum panel. No ornament. */
+   one photograph, one solid maroon panel. No ornament. */
 export default function ShopCta() {
   return (
     <section className="shopcta" aria-label="Shop the collection">
       <div className="shopcta__grid" data-reveal>
         <div className="shopcta__media">
           <img
-            src="/cta-band.png"
+            src="/cta-band.webp"
             alt="Model in a maroon silk sari with a gold zari border"
             loading="lazy"
           />

@@ -1,19 +1,20 @@
 import { useRef } from 'react'
 import { ChevronLeft, ChevronRight } from './Icons.jsx'
+import { Link } from 'react-router-dom'
 
 const A = {
-  meera: '/cat-c1.png',
-  ananya: '/cat-c5.png',
-  radhika: '/frame-r5t25.jpg',
-  sana: '/frame-r2t5.jpg',
-  kavya: '/cat-c2.png',
-  nisha: '/frame-r3t16.jpg',
-  divya: '/cat-c4.png',
-  farah: '/cta-band.png',
-  tara: '/frame-r1t20.jpg',
-  ishita: '/cat-c3.png',
-  aditi: '/frame-r3t26.jpg',
-  rhea: '/frame-r5t5.jpg',
+  meera: '/cat-c1.webp',
+  ananya: '/cat-c5.webp',
+  radhika: '/frame-r5t25.webp',
+  sana: '/frame-r2t5.webp',
+  kavya: '/cat-c2.webp',
+  nisha: '/frame-r3t16.webp',
+  divya: '/cat-c4.webp',
+  farah: '/cta-band.webp',
+  tara: '/frame-r1t20.webp',
+  ishita: '/cat-c3.webp',
+  aditi: '/frame-r3t26.webp',
+  rhea: '/frame-r5t5.webp',
 }
 
 const TESTIMONIALS = [
@@ -25,8 +26,8 @@ const TESTIMONIALS = [
     quote:
       '“What stood out most was the attention to detail: the fall, the finish, the way the border sits. Five years on it has not lost a single stitch.”',
     bought: [
-      { img: '/cat-c1.png', name: 'Kora Silk Sari' },
-      { img: '/frame-r1t4.jpg', name: 'Ivory Zari Blouse' },
+      { img: '/cat-c1.webp', name: 'Kora Silk Sari' },
+      { img: '/frame-r1t4.webp', name: 'Ivory Zari Blouse' },
     ],
   },
   {
@@ -37,8 +38,8 @@ const TESTIMONIALS = [
     quote:
       '“I wore mine to my sister’s mehendi and three people asked where it was from before dinner. It photographs even better than it looks.”',
     bought: [
-      { img: '/look-b1.png', name: 'Chikankari Kurta Set' },
-      { img: '/frame-r1t12.jpg', name: 'Chanderi Dupatta' },
+      { img: '/look-b1.webp', name: 'Chikankari Kurta Set' },
+      { img: '/frame-r1t12.webp', name: 'Chanderi Dupatta' },
     ],
   },
   {
@@ -49,8 +50,8 @@ const TESTIMONIALS = [
     quote:
       '“Knowing the name of the woman who embroidered it changes how you wear it. You carry it with respect, not just with pride.”',
     bought: [
-      { img: '/cta-sarree.png', name: 'Zardozi Lehenga' },
-      { img: '/frame-r5t25.jpg', name: 'Crimson Silk Odhani' },
+      { img: '/cta-sarree.webp', name: 'Zardozi Lehenga' },
+      { img: '/frame-r5t25.webp', name: 'Crimson Silk Odhani' },
     ],
   },
   {
@@ -61,8 +62,8 @@ const TESTIMONIALS = [
     quote:
       '“It arrived wrapped in mulmul with a handwritten note about the artisan. It felt like receiving heritage, not a parcel.”',
     bought: [
-      { img: '/cat-c2.png', name: 'Phulkari Kurta' },
-      { img: '/frame-r2t5.jpg', name: 'Bagh Phulkari Stole' },
+      { img: '/cat-c2.webp', name: 'Phulkari Kurta' },
+      { img: '/frame-r2t5.webp', name: 'Bagh Phulkari Stole' },
     ],
   },
   {
@@ -73,8 +74,8 @@ const TESTIMONIALS = [
     quote:
       '“The indigo has softened beautifully with every wash instead of fading. It drapes better in year three than it did on day one.”',
     bought: [
-      { img: '/look-b2.png', name: 'Indigo Mulmul Sari' },
-      { img: '/frame-r2t14.jpg', name: 'Ajrakh Print Blouse' },
+      { img: '/look-b2.webp', name: 'Indigo Mulmul Sari' },
+      { img: '/frame-r2t14.webp', name: 'Ajrakh Print Blouse' },
     ],
   },
   {
@@ -85,8 +86,8 @@ const TESTIMONIALS = [
     quote:
       '“I ordered for my engagement with three weeks to spare. It came early, altered exactly to measure, and fit like it was drafted on me.”',
     bought: [
-      { img: '/frame-r3t16.jpg', name: 'Zari Jacket Set' },
-      { img: '/cat-c4.png', name: 'Tissue Silk Sharara' },
+      { img: '/frame-r3t16.webp', name: 'Zari Jacket Set' },
+      { img: '/cat-c4.webp', name: 'Tissue Silk Sharara' },
     ],
   },
   {
@@ -97,8 +98,8 @@ const TESTIMONIALS = [
     quote:
       '“Weightless, but the embroidery still has body. I have worn it over three different outfits and it lifts every one of them.”',
     bought: [
-      { img: '/frame-r3t26.jpg', name: 'Organza Suf Dupatta' },
-      { img: '/look-b3.png', name: 'Chanderi Anarkali' },
+      { img: '/frame-r3t26.webp', name: 'Organza Suf Dupatta' },
+      { img: '/look-b3.webp', name: 'Chanderi Anarkali' },
     ],
   },
   {
@@ -109,8 +110,8 @@ const TESTIMONIALS = [
     quote:
       '“Two years in the making and worth every month. My mother cried when she saw the mirror work on the dupatta.”',
     bought: [
-      { img: '/hero-right.png', name: 'Mirror-Work Bridal Set' },
-      { img: '/frame-r5t15.jpg', name: 'Gota Patti Dupatta' },
+      { img: '/hero-right.webp', name: 'Mirror-Work Bridal Set' },
+      { img: '/frame-r5t15.webp', name: 'Gota Patti Dupatta' },
     ],
   },
   {
@@ -121,8 +122,8 @@ const TESTIMONIALS = [
     quote:
       '“I have bought silk at four times this price that did not come close. The zari is real and it shows in the light.”',
     bought: [
-      { img: '/frame-r1t20.jpg', name: 'Banarasi Silk Sari' },
-      { img: '/hero-bottom-2.png', name: 'Katan Silk Blouse' },
+      { img: '/frame-r1t20.webp', name: 'Banarasi Silk Sari' },
+      { img: '/hero-bottom-2.webp', name: 'Katan Silk Blouse' },
     ],
   },
   {
@@ -133,8 +134,8 @@ const TESTIMONIALS = [
     quote:
       '“Every running stitch is slightly different, which is exactly the point. Nothing about it looks machine-made.”',
     bought: [
-      { img: '/cat-c3.png', name: 'Kantha Silk Stole' },
-      { img: '/frame-r3t6.jpg', name: 'Tussar Kantha Sari' },
+      { img: '/cat-c3.webp', name: 'Kantha Silk Stole' },
+      { img: '/frame-r3t6.webp', name: 'Tussar Kantha Sari' },
     ],
   },
   {
@@ -145,8 +146,8 @@ const TESTIMONIALS = [
     quote:
       '“The customer care team sent me photographs from the workshop while it was being stitched. That is not something you forget.”',
     bought: [
-      { img: '/frame-r2t24.jpg', name: 'Suf Embroidered Kurta' },
-      { img: '/top right.png', name: 'Kutchi Cotton Palazzo' },
+      { img: '/frame-r2t24.webp', name: 'Suf Embroidered Kurta' },
+      { img: '/top right.webp', name: 'Kutchi Cotton Palazzo' },
     ],
   },
   {
@@ -157,8 +158,8 @@ const TESTIMONIALS = [
     quote:
       '“It has become my default for every festive lunch. Comfortable enough to sit through a long meal, sharp enough for photographs.”',
     bought: [
-      { img: '/frame-r5t5.jpg', name: 'Ajrakh Kurta Set' },
-      { img: '/cat-c5.png', name: 'Indigo Cotton Stole' },
+      { img: '/frame-r5t5.webp', name: 'Ajrakh Kurta Set' },
+      { img: '/cat-c5.webp', name: 'Indigo Cotton Stole' },
     ],
   },
 ]
@@ -267,9 +268,9 @@ export default function Testimonials() {
                     ))}
                   </ul>
 
-                  <a className="tw-buys__link" href="#">
+                  <Link className="tw-buys__link" to="/pages/shop-shrujan#catalogue">
                     Shop her picks
-                  </a>
+                  </Link>
                 </div>
               </div>
             </article>

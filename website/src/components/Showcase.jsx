@@ -5,29 +5,31 @@ const PRINCIPLES = [
     no: '01',
     title: 'Hand Embroidery',
     copy: 'Every motif counted and stitched by hand. No machine ever touches the cloth.',
-    img: '/top right.png',
+    img: '/top right.webp',
     alt: 'Close crop of mirror-work embroidery in crimson and gold threads',
   },
   {
     no: '02',
     title: 'Natural Dyes',
     copy: 'Madder, indigo and pomegranate on handloom cotton and mulberry silk.',
-    img: '/frame-r5t15.jpg',
+    img: '/frame-r5t15.webp',
     alt: 'Close crop of turquoise Kutchi mirror-work embroidery',
   },
   {
     no: '03',
     title: 'Fair Wages',
     copy: 'Paid per piece, on time, directly to the woman whose hands made it.',
-    img: '/bottom left.png',
+    img: '/bottom left.webp',
     alt: 'Master weaver working threads at his handloom',
   },
   {
     no: '04',
     title: 'Made to Last',
     copy: 'Finished to be worn today, repaired for free, and handed down tomorrow.',
-    img: '/cta-sarree.png',
-    alt: 'Model in a crimson hand-embroidered bridal sari',
+    /* not the crimson bridal sari: that frame already carries Bestsellers and
+       two of the testimonial cells on this same page */
+    img: '/bottom right.webp',
+    alt: 'Model in a mehendi-green hand-embroidered kurta set',
   },
 ]
 
