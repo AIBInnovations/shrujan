@@ -617,7 +617,11 @@ ul {
     minmax(0, 0.66fr);
   gap: clamp(22px, 2.4vw, 46px);
   align-items: stretch;
-  max-width: var(--header-max);
+  /* The page rail, not the header's. The bar itself keeps the wider rail
+     because the nav, the centred brand and the utilities need about 1640px
+     between them — but the panel is a content surface, and on the header rail
+     its columns started 148px left of every section on the page. */
+  max-width: var(--page-max);
   margin-inline: auto;
   --nav-panel-pad: clamp(20px, 2vw, 32px);
   padding: var(--nav-panel-pad) var(--gutter) calc(var(--nav-panel-pad) - 1px);
