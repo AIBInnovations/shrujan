@@ -33,6 +33,11 @@ export const NAV = [
         to: '/pages/the-shrujan-story',
         img: '/story-chanda.webp',
         alt: 'Chanda Shroff, who founded Shrujan in 1969',
+        /* the only portrait source among the lead images: in a 4:3 card
+           `cover` shows half its height, and centred that cut off the top of
+           her head. Optional — the others are all wider than the card, so
+           their vertical position makes no difference. */
+        pos: 'center 15%',
       },
       main: {
         group: 'The five chapters',
@@ -265,7 +270,7 @@ export const NAV = [
         img: '/visit-banni.webp',
         alt: 'The Banni grasslands of northern Kutch',
         title: '*The Banni villages*',
-        sub: 'Suf, Mutava and Jat, where they come from',
+        sub: 'Where Suf, Mutava and Jat come from',
         cta: 'Watch the films',
         to: '/pages/video#embroidery',
       },

@@ -2,3 +2,6 @@
 node_modules/
 dist/
 *.log
+
+# design references stay out of the published repo
+design/

@@ -107,7 +107,7 @@ export default function VisitExperience() {
              treatment the shop banner uses, so the two read as one family ---- */}
       <header className="visit-hero">
         <div className="visit-hero__bg" aria-hidden="true">
-          <img src="/kutch-rann.webp" alt="" fetchpriority="high" />
+          <img src="/kutch-rann.webp" alt="" fetchPriority="high" />
           <span className="visit-hero__scrim" />
         </div>
 
@@ -205,7 +205,7 @@ export default function VisitExperience() {
       </section>
 
       {/* ---- planning: durations as cards, practicals beside them ---- */}
-      <section className="section container plan">
+      <section className="section container plan" id="plan">
         <div className="plan__head" data-reveal>
           <p className="eyebrow">How long to stay</p>
           <h2 className="section-title">

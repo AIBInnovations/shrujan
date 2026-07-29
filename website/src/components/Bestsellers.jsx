@@ -9,33 +9,31 @@ import { productSlug } from '../data/product.js'
    changes is the reading order: a running-stitch rule threads the rank
    numerals together and each piece carries how many were taken home. */
 
-/* Ranked from the live catalogue rather than a hand-written list — real
-   names, prices, badges and photography, so the rail can never advertise a
-   piece the shop does not stock. The rank order is the catalogue's own; the
-   sold figures are placeholder until real numbers exist. */
-const SOLD = [412, 368, 344, 291, 268, 233, 214, 196, 181, 167, 152, 138]
+/* Real pieces, pulled from the catalogue by their store handle, so the rail
+   can never advertise something the shop does not stock — and so a card opens
+   the piece it shows. Picked one per collection rather than by price, because
+   a ranking that is nine kanchli in a row tells you nothing about the range.
+   The sold figures stand in until real ones exist. */
 
-const NOTE = [
-  'Reordered by 6 in 10 buyers',
-  'Three weeks of hand embroidery',
-  'Our most gifted piece',
-  'Counted-thread work, no pattern drawn',
-  'Naturally dyed, softens with wear',
-  'The easiest piece to start with',
-  'Dyed in small lots, never twice alike',
-  'Sells out every festive season',
-  'Woven on pit looms in Bhujodi',
-  'Mutava work from just nine families',
-  'Cut and finished in the Bhuj atelier',
-  'Signed by the woman who made it',
+const PICKS = [
+  ['kanchli-copy', 412, 'Reordered by 6 in 10 buyers'],
+  ['green-hand-woven-top', 368, 'Handwoven, then cut in the atelier'],
+  ['pakko-embroidered-divya-bag', 344, 'Our most gifted piece'],
+  ['mashroo-pant', 291, 'Mashroo silk, woven in Bhuj'],
+  ['shawl-copy-3', 268, 'Warm enough for a desert winter'],
+  ['dress-copy-3', 233, 'Khadi, and it softens with every wash'],
+  ['jat-garasiya-kunathiya-bag-1', 214, 'Jat Garasiya work, counted thread'],
+  ['beige-hand-embroidered-kanchli-copy', 196, 'Three weeks of hand embroidery'],
+  ['jat-garasiya-hand-embroidered-cushion-cover', 181, 'The easiest way to start'],
+  ['ahir-batwa', 167, 'Ahir stitch, sells out every festive season'],
+  ['hand-bag-copy-23', 152, 'Carried daily by half the studio'],
+  ['jat-garasiya-mobile-pouch-1', 138, 'The one people buy in threes'],
 ]
 
-const BEST = PIECES.slice(0, 12).map((p, i) => ({
-  ...p,
-  rank: String(i + 1).padStart(2, '0'),
-  sold: SOLD[i],
-  note: NOTE[i],
-}))
+const BEST = PICKS.map(([slug, sold, note], i) => {
+  const piece = PIECES.find((p) => p.slug === slug)
+  return { ...piece, rank: String(i + 1).padStart(2, '0'), sold, note }
+})
 
 const TOP = BEST[0].sold
 
@@ -74,14 +72,10 @@ export default function Bestsellers() {
         </div>
       </div>
 
-      {/* The rail is an editorial ranking with its own copy — none of these
-          names exist in the catalogue, so /products/<slug> would resolve to
-          whichever piece happens to be first. The catalogue is the honest
-          destination. Same for the curated grid, the look hotspots and the
-          testimonial picks. */}
+      {/* Every card is a real piece, so it opens that piece. */}
       <div className="best__rail" ref={railRef} data-reveal-child>
         {BEST.map((p) => (
-          <Link className="best-card" to={`/products/${productSlug(p)}`} key={p.name}>
+          <Link className="best-card" to={`/products/${productSlug(p)}`} key={p.slug}>
             {/* rank numeral, threaded to the next card by a running stitch */}
             <span className="best-card__rank">
               <span className="best-card__num">{p.rank}</span>

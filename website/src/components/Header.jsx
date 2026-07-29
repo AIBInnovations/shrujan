@@ -232,7 +232,12 @@ export default function Header() {
                     <div className="nav-panel__inner">
                       {/* 1 · the lead card */}
                       <Link className="navlead" to={item.panel.lead.to}>
-                        <img src={item.panel.lead.img} alt="" loading="lazy" />
+                        <img
+                          src={item.panel.lead.img}
+                          alt=""
+                          loading="lazy"
+                          style={{ objectPosition: item.panel.lead.pos }}
+                        />
                         <span className="navlead__scrim" aria-hidden="true" />
                         <span className="navlead__body">
                           <span className="navlead__eyebrow">{item.panel.lead.eyebrow}</span>

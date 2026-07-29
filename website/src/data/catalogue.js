@@ -126,14 +126,17 @@ export const CLOTHING_ORDER = [
 ]
 
 /* The clothing band runs as tall vertical panels, so it wants full-length
-   model shots rather than the square product crops the catalogue supplies.
-   These are the reel stills. */
+   studio shots rather than the square product crops the catalogue supplies.
+   These are the original five from the shoot — one lighting setup, one
+   backdrop, so the band reads as a single frieze instead of five stray
+   photographs. Product photography breaks that; the reel stills broke it too.
+   Matched to what each frame actually shows, not to the file order. */
 const CLOTHING_THUMB = {
-  'Kanchli': ['/frame-r3t6.webp', 'Model in a grey hand-embroidered kanchli jacket'],
-  'Kurtas & Tops': ['/frame-r1t20.webp', 'Model in an indigo block-printed jacket over an olive dress'],
-  'Dresses': ['/frame-r5t5.webp', 'Model in a violet hand-embroidered drape'],
-  'Pants & Palazzos': ['/frame-r2t24.webp', 'Model in a coral Kutchi hand-embroidered set'],
-  'Accessories': ['/frame-r5t25.webp', 'Model wearing a violet hand-embroidered drape'],
+  'Kanchli': ['/cat-c3.webp', 'Model in a maroon embroidered lehenga with a fitted bodice'],
+  'Kurtas & Tops': ['/cat-c4.webp', 'Model in a maroon embroidered kurta with palazzo and dupatta'],
+  'Dresses': ['/cat-c1.webp', 'Model in a maroon silk drape with gold zari borders'],
+  'Pants & Palazzos': ['/cat-c2.webp', 'Model in a handwoven maroon drape with a gold border'],
+  'Accessories': ['/cat-c5.webp', 'Model in an ivory kurta holding out a maroon embroidered dupatta'],
 }
 
 export const CLOTHING = CLOTHING_ORDER

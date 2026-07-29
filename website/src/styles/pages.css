@@ -176,7 +176,10 @@
   margin-inline: 6px;
   border-radius: var(--radius);
   overflow: hidden;
-  min-height: clamp(420px, calc(100vh - 130px), 1200px);
+  /* fills the fold on the header's measured height, less its own 6px inset top
+     and bottom — the flat 130px it used to subtract was a guess, and left the
+     next block peeking in above the fold */
+  min-height: clamp(420px, calc(100vh - var(--header-h, 130px) - 12px), 1200px);
   /* Centred across the frame, but held in its upper third rather than dead
      centre: the middle of the photograph is faces and hands, and type laid
      over them reads as a mistake however good the scrim is. */
@@ -561,8 +564,10 @@
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--ivory-2);
-  /* fills the fold — the same formula as the home hero */
-  height: clamp(420px, calc(100vh - 130px), 1200px);
+  /* Fills the fold. Twelve, not six: .shop-banner carries a 6px margin above
+     it as well as the 6px gap wanted below, where the home hero starts flush
+     against the header and only owes the gap underneath. */
+  height: clamp(420px, calc(100vh - var(--header-h, 130px) - 12px), 1200px);
 }
 
 .shop-banner__frame img {
@@ -652,14 +657,25 @@
 
 /* ---- assurance strip ---- */
 
+/* Five separate cards on the band rather than one band cut by hairlines —
+   a divided strip has no edge to round, so the radius needs each cell to
+   carry its own surface. The drop pushes them clear of the hero above. */
+/* The band carries the corner, not the cards inside it. Inset by the same 6px
+   the hero cells and the banner above use, so the curve has an edge to show
+   against instead of running off the viewport. */
 .shop-assure {
+  --assure-drop: 22px;
+
+  margin: 6px;
+  border-radius: var(--radius);
   background: var(--ivory-2);
-  border-bottom: 1px solid var(--hairline);
+  padding-block: var(--assure-drop) clamp(18px, 1.8vw, 26px);
 }
 
 .shop-assure__row {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
   list-style: none;
 }
 
@@ -669,11 +685,13 @@
   text-align: center;
   gap: 6px;
   padding: clamp(20px, 2.2vw, 34px) clamp(10px, 1.2vw, 20px);
-  border-left: 1px solid var(--hairline);
+  background: var(--ivory);
+  box-shadow: inset 0 0 0 1px var(--hairline);
+  transition: box-shadow var(--dur-quick) var(--ease);
 }
 
-.shop-assure__row li:first-child {
-  border-left: 0;
+.shop-assure__row li:hover {
+  box-shadow: inset 0 0 0 1px var(--gerua-300);
 }
 
 .shop-assure__mark {
@@ -683,7 +701,7 @@
   aspect-ratio: 1;
   margin-bottom: 6px;
   border-radius: 50%;
-  background: var(--ivory);
+  background: var(--ivory-2);
   box-shadow: inset 0 0 0 1px var(--hairline);
   color: var(--gerua);
   transition: background var(--dur-quick) var(--ease), color var(--dur-quick) var(--ease);
@@ -4327,7 +4345,7 @@
   margin: 6px 6px 0;
   border-radius: var(--radius);
   overflow: hidden;
-  height: clamp(420px, calc(100vh - 130px), 1200px);
+  height: clamp(420px, calc(100vh - var(--header-h, 130px) - 12px), 1200px);
   color: var(--cream);
 }
 
