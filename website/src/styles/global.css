@@ -2085,6 +2085,15 @@ a.hero-cell:hover .hero-cell__label svg {
   line-height: 1.25;
   color: var(--ink);
   transition: color var(--dur-quick) var(--ease);
+
+  /* Same two-line reservation as .best-card__name — these cards run in a grid,
+     where an uneven name is more obvious still, because the row below has to
+     clear the tallest card in the row. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  min-height: 2.5em;
+  overflow: hidden;
 }
 
 .piece:hover .piece__name {
@@ -2721,6 +2730,16 @@ a.hero-cell:hover .hero-cell__label svg {
   line-height: 1.25;
   color: var(--ink);
   transition: color var(--dur-quick) var(--ease);
+
+  /* Two lines are always reserved, used or not, so a name that wraps cannot
+     push the price, the meter and the swatches out of line with the cards
+     beside it. The longest name in the catalogue is 37 characters and fits
+     in two; the clamp is a guard, not something that trims anything today. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  min-height: 2.5em; /* 2 lines × the 1.25 line-height above */
+  overflow: hidden;
 }
 
 .best-card:hover .best-card__name {
