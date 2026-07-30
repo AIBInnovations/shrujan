@@ -966,8 +966,16 @@ ul {
   background: var(--ivory);
 }
 
+/* The drawer is taller than a phone once a section is expanded, and it lives
+   inside a bar that may be `position: fixed` — so it has to scroll its own
+   overflow rather than relying on the page. `--header-h` is the bar's measured
+   height, published by the component. */
 .mobile-nav.open {
   display: block;
+  max-height: calc(100vh - var(--header-h, 120px));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* the section title and its expander share a row, so the chevron sits on the
@@ -2325,6 +2333,14 @@ a.hero-cell:hover .hero-cell__label svg {
 
   .faq__a {
     margin-left: 0;
+  }
+
+  /* Nothing stranded: a two-column grid with an odd number of items left a
+     hole beside the last one, so it takes the whole row instead. */
+  /* the shop catalogue is excluded — it filters, so a full-width card would
+     appear and vanish as the result count changed parity */
+  .curated__grid:not(.shop-grid) > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 }
 
@@ -4167,6 +4183,18 @@ a.hero-cell:hover .hero-cell__label svg {
   .reels__seal-link {
     order: 3;
   }
+
+  /* Nothing stranded: a two-column grid with an odd number of items left a
+     hole beside the last one, so it takes the whole row instead. */
+  /* !important to match the placement reset just above, which needs it to beat
+     the desktop nth-child positions */
+  .house__grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+  }
+
+  .journal-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
 }
 
 /* ============================================================
@@ -4797,6 +4825,41 @@ a.house-tile:hover .house-tile__arrow {
 }
 
 @media (max-width: 560px) {
+  /* Centred on a phone: with one column there is no rail for the copy to hang
+     off, and left-aligned blocks of different widths read as misaligned. */
+  .footer__inner {
+    text-align: center;
+  }
+
+  .fletters {
+    justify-items: center;
+  }
+
+  .fletters__copy,
+  .fletters__form {
+    margin-inline: auto;
+  }
+
+  .fbrand {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .fmap__group {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .fmap__col ul,
+  .freach {
+    justify-items: center;
+  }
+
+  .footer__bottom,
+  .footer__legal {
+    justify-content: center;
+  }
+
   /* Stacked, the sitemap is twenty-odd links deep and buries the contact
      details and the legal row beneath it. Each group folds instead: the
      heading becomes the tap target and only one section opens at a time. */
@@ -4850,7 +4913,8 @@ a.house-tile:hover .house-tile__arrow {
   }
 
   .footer__bottom {
-    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -5092,8 +5156,9 @@ a.house-tile:hover .house-tile__arrow {
     border-top: 1px solid var(--hairline);
   }
 
+  /* the three recent cards stay two up; only the feature spread unstacks */
   .journal-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 6px;
   }
 
@@ -5115,26 +5180,46 @@ a.house-tile:hover .house-tile__arrow {
     display: none;
   }
 
+  /* Two across, so the bento stays a bento. Stacked one-per-row its seven
+     cells ran to 2,125px on a phone — two and a half screens before the page
+     had said anything. */
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .hero-cell {
-    min-height: 340px;
+    min-height: 190px;
   }
 
+  /* the two cells that carry the page's opening take the full width; the
+     remaining photographs pair off two to a row */
   .hero-cell--model {
-    grid-column: auto;
-    min-height: 68vh;
+    grid-column: 1 / -1;
+    min-height: 46vh;
   }
 
   .hero-cell--message {
+    grid-column: 1 / -1;
     min-height: 0;
-    padding-block: 56px;
+    padding-block: 40px;
   }
 
-  .hero-cell__label {
-    top: 38%;
+  /* an odd cell last would leave a hole beside it */
+  .hero-cell:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  /* Every caption sits on the foot of its card. Half of them were pinned there
+     already and half were vertically centred, so at this size the row read as
+     two different treatments. The model cell is named explicitly because it
+     carries its own `top: 38%`, which outranks the base selector. The message
+     panel is not one of these — no photograph under it, its own layout. */
+  .hero-cell__label,
+  .hero-cell__label--bottom,
+  .hero-cell--model .hero-cell__label {
+    top: auto;
+    bottom: clamp(16px, 4vw, 28px);
+    transform: none;
   }
 
   .curated__grid {
@@ -5165,8 +5250,9 @@ a.house-tile:hover .house-tile__arrow {
 }
 
 @media (max-width: 560px) {
+  /* still two up — a phone holds two product cards across */
   .curated__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   /* a fraction over one, so the next card peeks and reads as scrollable */
@@ -5620,17 +5706,37 @@ a.house-tile:hover .house-tile__arrow {
      mandatory snap + snap-stop means a swipe advances exactly
      one reel; the stagger flattens so the cards track level. */
 
+  /* the seal moves up beside the heading on the right, rather than sitting
+     under the note where it read as a third block */
   .reels__head {
-    gap: 14px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 14px 16px;
     margin-bottom: 20px;
   }
 
+  .reels__titles {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
   .reels__seal-link {
-    width: 92px;
+    grid-column: 2;
+    grid-row: 1;
+    order: 0;
+    width: 84px;
+    justify-self: end;
+  }
+
+  .reels__note {
+    grid-column: 1 / -1;
+    grid-row: 2;
   }
 
   .reels__rail {
     --reel-gap: 10px;
+    /* the gutter as scroll padding on both sides, so a centre-snapped card sits
+       in the middle of the screen with its neighbours peeking either side */
     padding-inline: var(--gutter);
     scroll-padding-inline: var(--gutter);
     padding-bottom: 20px;
@@ -5638,7 +5744,8 @@ a.house-tile:hover .house-tile__arrow {
   }
 
   .reel {
-    flex: 0 0 min(76vw, 300px);
+    /* 72vw leaves ~14vw of the card either side of the centred one */
+    flex: 0 0 min(72vw, 280px);
     scroll-snap-align: center;
     scroll-snap-stop: always;
   }
@@ -5786,73 +5893,120 @@ a.house-tile:hover .house-tile__arrow {
 /* ---- ≤600: every remaining grid unrolls to one column ------- */
 
 @media (max-width: 600px) {
-  /* curated pieces stack full-width */
+  /* Two up, not one. Every grid on this page used to collapse to a single
+     column here, which ran the home page to 19,000px — twenty-two screens of
+     scrolling. A phone holds two cards across perfectly well; what it cannot
+     hold is a paragraph in two columns, so reading blocks still stack. */
   .curated__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .piece__media {
     aspect-ratio: 4 / 5;
   }
 
-  /* promises read as a single stitched list */
+  /* two by two, not a four-deep list */
   .curated__promises {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* centred: at half width the ragged left edges of four different-length
+     titles read as misalignment */
   .promise {
-    border-left: 0;
-    text-align: left;
-    padding: 14px 2px;
+    text-align: center;
+    padding: 14px 10px;
   }
 
-  .promise + .promise {
+  .promise__copy {
+    margin-inline: auto;
+  }
+
+  .promise:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .promise:nth-child(n + 3) {
     border-top: 1px solid var(--hairline);
   }
 
-  /* the four seals stack, still centred */
+  /* the four seals in a 2x2, still centred */
   .manifesto__grid {
-    grid-template-columns: 1fr;
-    gap: 34px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 12px;
   }
 
   .seal__ring {
-    width: clamp(132px, 40vw, 168px);
+    width: clamp(104px, 30vw, 150px);
   }
 
   .seal__copy {
-    max-width: 32ch;
+    max-width: 26ch;
   }
 
-  /* the house bento becomes one tile under another */
   .house__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .house-tile {
-    min-height: 230px;
+    min-height: 168px;
   }
 
-  /* category bands — same selector weight as the hover rules
-     they override */
+  /* The five bag links were a wrapping flex row, which broke into ragged
+     part-rows — two, two, then one, each starting at a different place. A
+     two-column grid instead, label on its own line above them. */
+  .house__strip {
+    display: grid;
+    gap: 14px;
+    padding: clamp(16px, 4vw, 22px);
+  }
+
+  .house__strip-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 14px;
+  }
+
+  .house__strip-links a {
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+  }
+
+  .house__strip-links > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  /* Two to a row rather than five stacked bands. Same selector weight as the
+     hover rules it overrides. The fifth sits alone on the last row and takes
+     the full width, which reads as the band's end. */
+  .catbar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
   .catpanel,
   .catbar:hover .catpanel,
   .catbar .catpanel:hover {
-    height: clamp(168px, 46vw, 220px);
+    height: clamp(150px, 40vw, 190px);
   }
 
-  /* craft story shots stack full-width; the contact-sheet drop
-     only made sense side by side */
-  .craft__gallery {
-    grid-template-columns: 1fr;
+  .catbar .catpanel:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 
+  /* no room for the sentence beside a half-width tile */
+  .catpanel__copy {
+    display: none;
+  }
+
+  /* the two craft shots stay side by side — the contact-sheet drop is what
+     goes, not the pairing */
   .craft__shot-media {
-    height: clamp(240px, 62vw, 360px);
+    height: clamp(150px, 40vw, 240px);
   }
 
   .craft__shot:nth-child(2) .craft__shot-media {
     margin-top: 0;
-    height: clamp(200px, 52vw, 320px);
+    height: clamp(150px, 40vw, 240px);
   }
 }

@@ -35,6 +35,9 @@ export default function Header() {
   // mouseenter again, which reopens the panel on the new page. Ignore hover
   // until the pointer genuinely moves.
   const ignoreHover = useRef(false)
+  // the scroll handler is registered once, so it needs a ref to see the live
+  // drawer state rather than the value captured on mount
+  const menuOpenRef = useRef(false)
   const firstRoute = useRef(true)
   const [fixed, setFixed] = useState(false)   // lifted out of flow, past the hero
   const [shown, setShown] = useState(false)   // slid down into view
@@ -60,6 +63,10 @@ export default function Header() {
     return () => window.removeEventListener('resize', measure)
   }, [])
 
+  useEffect(() => {
+    menuOpenRef.current = menuOpen
+  }, [menuOpen])
+
   // In flow over the hero, so the hero does not slide underneath it. Past the
   // hero it becomes a floating bar: away while reading down, back on scroll up.
   useEffect(() => {
@@ -73,6 +80,17 @@ export default function Header() {
       const past = y > heroEnd()
       const delta = y - lastY.current
       const h = barRef.current?.offsetHeight ?? 120
+
+      // The drawer lives inside this bar, so hiding the bar takes the open menu
+      // with it — which is what made the panel vanish mid-scroll. While it is
+      // open the bar stays put and the drawer scrolls its own overflow.
+      if (menuOpenRef.current) {
+        clearTimeout(unfix.current)
+        setShown(true)
+        lastY.current = y
+        ticking.current = false
+        return
+      }
 
       if (past) {
         // in the floating zone: away while reading down, back on scroll up

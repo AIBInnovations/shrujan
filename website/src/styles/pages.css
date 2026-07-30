@@ -3094,6 +3094,13 @@
   .review-add {
     grid-column: 1 / -1;
   }
+
+  /* Nothing stranded: a two-column grid with an odd number of items left a
+     hole beside the last one, so it takes the whole row instead. */
+  .people > :last-child:nth-child(odd),
+  .stops__grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 900px) {
@@ -3215,6 +3222,14 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  /* Nothing stranded: a two-column grid with an odd number of items left a
+     hole beside the last one, so it takes the whole row instead. */
+  .lldc__mosaic > :last-child:nth-child(odd),
+  .origin__gallery > :last-child:nth-child(odd),
+  .steps > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 720px) {
@@ -3265,10 +3280,11 @@
     margin-top: 0;
   }
 
+  /* two up, not one — a phone holds a pair of these frames across */
   .lldc__mosaic,
   .lldc-show,
   .arch-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .lldc-card--wide {
@@ -3339,6 +3355,13 @@
 
   .reviews {
     grid-template-columns: 1fr;
+  }
+
+  /* Nothing stranded: a two-column grid with an odd number of items left a
+     hole beside the last one, so it takes the whole row instead. */
+  .lldc-show > :last-child:nth-child(odd),
+  .arch-grid > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
   }
 }
 
@@ -3960,6 +3983,12 @@
   .marks {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  /* Nothing stranded: a two-column grid with an odd number of items left a
+     hole beside the last one, so it takes the whole row instead. */
+  .marks > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 900px) {
@@ -3999,7 +4028,7 @@
     grid-template-columns: 1fr;
   }
   .steps {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -4013,7 +4042,7 @@
     grid-template-columns: 1fr;
   }
   .marks {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .step {
     grid-template-columns: 1fr;
@@ -4040,6 +4069,12 @@
   }
   .lightbox__nav--prev { left: 22%; }
   .lightbox__nav--next { right: 22%; }
+
+  /* Nothing stranded: a two-column grid with an odd number of items left a
+     hole beside the last one, so it takes the whole row instead. */
+  .plan__steps > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
 }
 
 /* count beside a collection in the rail — sits right, dimmed, and is only
@@ -4740,7 +4775,7 @@
 @media (max-width: 620px) {
   .stops__grid,
   .plan__steps {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .plan__invite {
@@ -4925,8 +4960,9 @@
 /* ---- ≤600: the last inner-page grids unroll ------------------ */
 
 @media (max-width: 600px) {
+  /* a product grid, so two across even on the narrowest phone */
   .shop-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .shop-grid .piece__media {
@@ -4934,12 +4970,12 @@
   }
 
   .people {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 6px;
   }
 
   .origin__gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .origin__shot {

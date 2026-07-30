@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
@@ -28,8 +28,52 @@ function InstagramGlyph() {
 export default function Reels() {
   const root = useRef(null)
   const railRef = useRef(null)
+  // On a phone the rail loops. Three copies of the reel run end to end and the
+  // scroll position is shifted by one copy whenever it drifts out of the middle
+  // one, so a swipe never reaches a hard stop in either direction. Desktop
+  // keeps the single set — the five cards divide that rail exactly.
+  const [loop, setLoop] = useState(false)
 
-  // Play only what's on screen — five autoplaying videos at once is wasteful.
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 720px)')
+    const apply = () => setLoop(mq.matches)
+    apply()
+    mq.addEventListener('change', apply)
+    return () => mq.removeEventListener('change', apply)
+  }, [])
+
+  const items = loop ? [...REELS, ...REELS, ...REELS] : REELS
+
+  useEffect(() => {
+    if (!loop) return
+    const el = railRef.current
+    if (!el) return
+
+    const copyWidth = () => el.scrollWidth / 3
+    // open in the middle copy, so the first swipe can go either way
+    el.scrollLeft = copyWidth()
+
+    let raf = 0
+    const onScroll = () => {
+      if (raf) return
+      raf = requestAnimationFrame(() => {
+        raf = 0
+        const w = copyWidth()
+        // shifted by exactly one copy, which is a whole number of card pitches,
+        // so the snap lands on the same place and the jump is invisible
+        if (el.scrollLeft < w * 0.5) el.scrollLeft += w
+        else if (el.scrollLeft > w * 1.5) el.scrollLeft -= w
+      })
+    }
+
+    el.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      el.removeEventListener('scroll', onScroll)
+      cancelAnimationFrame(raf)
+    }
+  }, [loop])
+
+  // Play only what's on screen — fifteen autoplaying videos at once is wasteful.
   useEffect(() => {
     const vids = railRef.current?.querySelectorAll('video') ?? []
     if (!('IntersectionObserver' in window)) return
@@ -47,7 +91,8 @@ export default function Reels() {
 
     vids.forEach((v) => io.observe(v))
     return () => io.disconnect()
-  }, [])
+    // re-observes when the rail switches between one copy and three
+  }, [items.length])
 
   useGSAP(
     () => {
@@ -116,13 +161,13 @@ export default function Reels() {
 
       <div className="reels__rail-wrap">
         <div className="reels__rail" data-reveal-child ref={railRef}>
-          {REELS.map((r) => (
+          {items.map((r, i) => (
             <a
               className="reel"
               href={INSTAGRAM}
               target="_blank"
               rel="noopener noreferrer"
-              key={r.src}
+              key={`${r.src}-${i}`}
             >
               <div className="reel__media">
                 <video
