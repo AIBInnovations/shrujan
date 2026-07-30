@@ -1,0 +1,4 @@
+[submodule "shopify-theme"]
+	path = shopify-theme
+	url = https://github.com/AIBInnovations/shrujan-shopify.git
+	branch = main
