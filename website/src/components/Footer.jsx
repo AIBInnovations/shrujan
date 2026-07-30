@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight } from './Icons.jsx'
+import { ArrowRight, ChevronDown } from './Icons.jsx'
 
 /* The footer as the page's closing seal rather than a link dump: the mark set
    inside a mandala medallion, then the letter sign-up, then a real sitemap.
@@ -86,6 +86,8 @@ function Social({ label, children }) {
 
 export default function Footer() {
   const [sent, setSent] = useState(false)
+  // which sitemap column is expanded on a phone; ignored above the breakpoint
+  const [openCol, setOpenCol] = useState(null)
 
   return (
     <footer className="footer">
@@ -170,8 +172,23 @@ export default function Footer() {
              the contact details do not cost a whole extra row ---- */}
         <nav className="fmap" aria-label="Footer">
           {SITEMAP.map((col) => (
-            <div className="fmap__col" key={col.group}>
-              <p className="fmap__group">{col.group}</p>
+            <div
+              className={`fmap__col${openCol === col.group ? ' is-open' : ''}`}
+              key={col.group}
+            >
+              {/* A heading on a wide screen, a disclosure on a phone: stacked
+                  into one column the sitemap is twenty-odd links deep, which
+                  buries the contact details and the legal row under it. The
+                  button is inert above the breakpoint — see the CSS. */}
+              <button
+                className="fmap__group"
+                type="button"
+                aria-expanded={openCol === col.group}
+                onClick={() => setOpenCol((c) => (c === col.group ? null : col.group))}
+              >
+                {col.group}
+                <ChevronDown className="fmap__chev" width="13" height="13" />
+              </button>
               <ul>
                 {col.items.map((item) => (
                   <li key={item.label}>
@@ -182,8 +199,16 @@ export default function Footer() {
             </div>
           ))}
 
-          <div className="fmap__col">
-            <p className="fmap__group">Reach us</p>
+          <div className={`fmap__col${openCol === 'Reach us' ? ' is-open' : ''}`}>
+            <button
+              className="fmap__group"
+              type="button"
+              aria-expanded={openCol === 'Reach us'}
+              onClick={() => setOpenCol((c) => (c === 'Reach us' ? null : 'Reach us'))}
+            >
+              Reach us
+              <ChevronDown className="fmap__chev" width="13" height="13" />
+            </button>
             <ul className="freach">
               {CONTACT.map((c) => (
                 // keyed on the value: the second phone number runs under the

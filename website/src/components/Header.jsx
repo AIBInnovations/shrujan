@@ -355,13 +355,34 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Sections collapse. Expanded, the six groups run to thirty-five links —
+          a wall of small caps that buries Craft, LLDC and Visit below three
+          screens of scrolling. One open at a time. */}
       <nav className={`mobile-nav${menuOpen ? ' open' : ''}`} aria-label="Mobile">
         {NAV.map((item) => (
-          <div className="mobile-nav__group" key={item.label}>
-            <Link to={item.to} onClick={() => setMenuOpen(false)}>
-              {item.full}
-            </Link>
-            {item.panel && (
+          <div
+            className={`mobile-nav__group${openKey === item.label ? ' is-open' : ''}`}
+            key={item.label}
+          >
+            <div className="mobile-nav__row">
+              <Link to={item.to} onClick={() => setMenuOpen(false)}>
+                {item.full}
+              </Link>
+
+              {item.panel && (
+                <button
+                  className="mobile-nav__toggle"
+                  type="button"
+                  aria-expanded={openKey === item.label}
+                  aria-label={`${openKey === item.label ? 'Collapse' : 'Expand'} ${item.full}`}
+                  onClick={() => setOpenKey((k) => (k === item.label ? null : item.label))}
+                >
+                  <ChevronDown width="14" height="14" />
+                </button>
+              )}
+            </div>
+
+            {item.panel && openKey === item.label && (
               /* the phone gets the destinations as one flat list — the
                  four-zone composition has nowhere to go at 390px */
               <ul className="mobile-nav__sub">

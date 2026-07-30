@@ -970,14 +970,40 @@ ul {
   display: block;
 }
 
-.mobile-nav__group > a {
+/* the section title and its expander share a row, so the chevron sits on the
+   same line as the label rather than under it */
+.mobile-nav__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.mobile-nav__row > a {
   font-weight: 500;
+  border-bottom: 0;
+}
+
+.mobile-nav__toggle {
+  display: grid;
+  place-items: center;
+  /* a 44px target, the smallest a thumb should have to hit */
+  width: 44px;
+  align-self: stretch;
+  color: var(--ink-soft);
+  transition: transform var(--dur-quick) var(--ease), color var(--dur-quick) var(--ease);
+}
+
+.mobile-nav__group.is-open .mobile-nav__toggle {
+  transform: rotate(180deg);
+  color: var(--gerua);
 }
 
 .mobile-nav__sub {
   list-style: none;
-  padding: 0 var(--gutter) 14px;
+  padding: 4px var(--gutter) 14px;
   border-bottom: 1px solid var(--hairline);
+  background: var(--ivory-2);
 }
 
 .mobile-nav__sub a {
@@ -4622,13 +4648,28 @@ a.house-tile:hover .house-tile__arrow {
   margin-top: clamp(20px, 2.2vw, 36px);
 }
 
+/* a heading up here, a disclosure button on a phone — see the mobile block */
 .fmap__group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   margin-bottom: clamp(12px, 1.3vw, 20px);
+  font-family: var(--font-sans);
   font-size: clamp(11.8px, 0.694vw, 13.4px);
   font-weight: 500;
   letter-spacing: 0.26em;
   text-transform: uppercase;
+  text-align: left;
   color: var(--tan);
+  cursor: default;
+}
+
+.fmap__chev {
+  display: none;
+  flex-shrink: 0;
+  transition: transform var(--dur-quick) var(--ease);
 }
 
 .fmap ul {
@@ -4756,8 +4797,39 @@ a.house-tile:hover .house-tile__arrow {
 }
 
 @media (max-width: 560px) {
+  /* Stacked, the sitemap is twenty-odd links deep and buries the contact
+     details and the legal row beneath it. Each group folds instead: the
+     heading becomes the tap target and only one section opens at a time. */
   .fmap {
     grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .fmap__col {
+    border-bottom: 1px solid rgba(199, 165, 106, 0.2);
+  }
+
+  .fmap__group {
+    margin-bottom: 0;
+    padding: 15px 0;
+    cursor: pointer;
+  }
+
+  .fmap__chev {
+    display: block;
+  }
+
+  .fmap__col.is-open .fmap__chev {
+    transform: rotate(180deg);
+  }
+
+  .fmap__col ul {
+    display: none;
+    padding-bottom: 16px;
+  }
+
+  .fmap__col.is-open ul {
+    display: grid;
   }
 
   /* the label and the button no longer fit on one line */
@@ -4897,9 +4969,17 @@ a.house-tile:hover .house-tile__arrow {
     grid-column: 1;
   }
 
+  /* Equal side columns, so the brand lands on the middle of the bar. With
+     `auto 1fr auto` the centre column ran from the toggle's right edge to the
+     utilities' left edge — 36px one side against 120px the other — and the
+     logo sat 42px left of centre. */
   .site-header__inner {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto 1fr;
     min-height: 74px;
+  }
+
+  .menu-toggle {
+    justify-self: start;
   }
 
   .brand {
@@ -4912,6 +4992,10 @@ a.house-tile:hover .house-tile__arrow {
     justify-self: center;
     padding: 8px 0 10px;
     background: transparent;
+  }
+
+  .header-utils {
+    justify-self: end;
   }
 
   .utility-link span {
@@ -5023,6 +5107,14 @@ a.house-tile:hover .house-tile__arrow {
 }
 
 @media (max-width: 720px) {
+  /* Four icons need ~120px a side, and equal side columns cannot give that and
+     still leave room for the mark on a 390px screen. Account and wishlist come
+     out — both are reachable from the drawer — leaving search and the bag. */
+  .header-utils .utility-link[aria-label='Account'],
+  .header-utils .utility-link[aria-label='Wishlist'] {
+    display: none;
+  }
+
   .hero {
     grid-template-columns: 1fr;
   }
