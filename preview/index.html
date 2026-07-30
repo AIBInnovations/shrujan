@@ -1,0 +1,2439 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6 L44 32 L32 58 L20 32 Z' fill='%23B05C3B'/%3E%3Cpath d='M32 20 L38 32 L32 44 L26 32 Z' fill='%23F5F1E6'/%3E%3C/svg%3E">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shrujan — Heritage by Hand. Handcrafted Indian clothing rooted in the living embroidery traditions of Kutch.">
+    <title>SHRUJAN — Heritage by Hand</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../shopify-theme/assets/shrujan-global.css">
+    <link rel="stylesheet" href="../shopify-theme/assets/shrujan-pages.css">
+    <script>window.SHRUJAN_ASSET_BASE = "../shopify-theme/assets/";</script>
+    <script src="../shopify-theme/assets/gsap.min.js"></script>
+    <script src="../shopify-theme/assets/ScrollTrigger.min.js"></script>
+    <script src="../shopify-theme/assets/lenis.min.js"></script>
+    <script src="../shopify-theme/assets/shrujan-catalogue.js"></script>
+    <script src="../shopify-theme/assets/shrujan-core.js"></script>
+    
+  <script>
+(function () {
+  function mapHref(raw) {
+    if (!raw || raw[0] !== '/') return null
+    var m = raw.match(/^\/([^?#]*)((?:\?[^#]*)?)((?:#.*)?)$/)
+    if (!m) return null
+    var path = m[1].replace(/\/+$/, '')
+    var query = m[2] || ''
+    var hash = m[3] || ''
+    if (path === '') return 'index.html' + query + hash
+    var pages = path.match(/^pages\/([^\/]+)$/)
+    if (pages) return pages[1] + '.html' + query + hash
+    var product = path.match(/^products\/([^\/]+)$/)
+    if (product) return 'product.html?slug=' + product[1] + hash
+    return 'index.html' /* React's catch-all route rendered the storefront */
+  }
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a')
+    if (!link) return
+    var mapped = mapHref(link.getAttribute('href'))
+    if (!mapped) return
+    e.preventDefault()
+    e.stopPropagation()
+    window.location.href = mapped
+  }, true)
+})()
+</script>
+  </head>
+  <body>
+    <div id="root">
+      <header class="site-header">
+  <div class="topbar">
+    <div class="topbar__inner">
+      <div class="topbar__selects">
+        <button class="topbar__select" type="button" aria-label="Change currency">INR <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9.5 6 6 6-6"></path></svg></button>
+        <span class="topbar__sep" aria-hidden="true"></span>
+        <button class="topbar__select" type="button" aria-label="Change language">EN <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9.5 6 6 6-6"></path></svg></button>
+      </div>
+      <span class="topbar__note">Complimentary shipping on orders above ₹5,000</span>
+    </div>
+  </div>
+
+  <div class="site-header__inner">
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5h16M4 12h16M4 16.5h16"></path></svg></button>
+
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-item has-menu">
+        <a class="nav-item__link" href="/pages/the-shrujan-story" aria-label="The Shrujan Story">Story<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9.5 6 6 6-6"></path></svg></a>
+        <div class="nav-panel">
+          <div class="nav-panel__sheet">
+            <span class="nav-panel__orn" aria-hidden="true"></span>
+            <div class="nav-panel__inner">
+              <a class="navlead" href="/pages/the-shrujan-story">
+                <img src="../shopify-theme/assets/story-chanda.webp" alt="" loading="lazy" style="object-position: center 15%">
+                <span class="navlead__scrim" aria-hidden="true"></span>
+                <span class="navlead__body">
+                  <span class="navlead__eyebrow">Story</span>
+                  <span class="navlead__title">Fifty years, <em>stitched by hand</em></span>
+                  <span class="navlead__copy">From thirty saris in a drought year to four thousand women at the frame. Told in five chapters.</span>
+                  <span class="navlead__cta">Read the story<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </span>
+              </a>
+              <div class="navcol navcol--main">
+                <p class="navcol__group">The five chapters</p>
+                <ul class="navthumbs">
+                  <li>
+                    <a href="/pages/the-shrujan-story#origins">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/story-origin-1.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Origins</span><span class="navthumbs__sub">Where it began</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/the-shrujan-story#values">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/story-dignity.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Philosophy &amp; Values</span><span class="navthumbs__sub">What we hold to</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/the-shrujan-story#people">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/story-ami.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">The People of Shrujan</span><span class="navthumbs__sub">Hands, and names</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navcol navcol--more">
+                <p class="navcol__group">Explore further</p>
+                <ul class="navlinks">
+                  <li><a href="/pages/the-shrujan-story#journal"><span>Photo Journal</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/the-shrujan-story#press"><span>In the Media</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/video"><span>Craft Traditions</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/lldc"><span>The Design Centre</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/visit-experience"><span>Visit the Campus</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                </ul>
+              </div>
+              <div class="navcol navcol--featured">
+                <p class="navcol__group">Featured</p>
+                <a class="navfeat" href="/pages/the-shrujan-story#people">
+                  <span class="navfeat__media"><img src="../shopify-theme/assets/story-continuity.webp" alt="A younger embroiderer learning at the frame" loading="lazy"></span>
+                  <span class="navfeat__title"><em>Continuity</em></span>
+                  <span class="navfeat__sub">The next generation at the frame</span>
+                  <span class="navfeat__cta">Read the story<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item has-menu">
+        <a class="nav-item__link" href="/pages/shop-shrujan" aria-label="Shop Shrujan">Shop<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9.5 6 6 6-6"></path></svg></a>
+        <div class="nav-panel">
+          <div class="nav-panel__sheet">
+            <span class="nav-panel__orn" aria-hidden="true"></span>
+            <div class="nav-panel__inner">
+              <a class="navlead" href="/pages/shop-shrujan">
+                <img src="../shopify-theme/assets/shop-hero.webp" alt="" loading="lazy">
+                <span class="navlead__scrim" aria-hidden="true"></span>
+                <span class="navlead__body">
+                  <span class="navlead__eyebrow">Shop</span>
+                  <span class="navlead__title">Worn slowly, <em>kept for years</em></span>
+                  <span class="navlead__copy">Hand-embroidered cloth from the villages of Kutch, cut and finished in the Bhuj atelier.</span>
+                  <span class="navlead__cta">Shop everything<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </span>
+              </a>
+              <div class="navcol navcol--main">
+                <p class="navcol__group">What to wear</p>
+                <ul class="navthumbs">
+                  <li>
+                    <a href="/pages/shop-shrujan?c=kanchli">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/sj-black-pakko-hand-embroidered-kanchli-1.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Kanchli</span><span class="navthumbs__sub">The Kutchi bodice</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/shop-shrujan?c=kurtas-and-tops">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/sj-green-hand-woven-top-1.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Kurtas &amp; Tops</span><span class="navthumbs__sub">Everyday handloom</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/shop-shrujan?c=dresses">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/sj-hand-block-printed-dress-1.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Dresses</span><span class="navthumbs__sub">Long, easy cuts</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navcol navcol--more">
+                <p class="navcol__group">Bags &amp; home</p>
+                <ul class="navlinks">
+                  <li><a href="/pages/shop-shrujan?c=hand-bags"><span>Hand Bags</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/shop-shrujan?c=crossbody-and-sling"><span>Crossbody &amp; Sling</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/shop-shrujan?c=potlis-and-batwas"><span>Potlis &amp; Batwas</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/shop-shrujan?c=tote-bags"><span>Tote Bags</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/shop-shrujan?c=home-decor"><span>Home Decor</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/shop-shrujan?c=accessories"><span>Accessories</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                </ul>
+              </div>
+              <div class="navcol navcol--featured">
+                <p class="navcol__group">Featured</p>
+                <a class="navfeat" href="/pages/video">
+                  <span class="navfeat__media"><img src="../shopify-theme/assets/craft-hero.webp" alt="Embroiderers of Kutch working together outside their village" loading="lazy"></span>
+                  <span class="navfeat__title"><em>Shop by craft</em></span>
+                  <span class="navfeat__sub">The hands behind every piece</span>
+                  <span class="navfeat__cta">Watch the films<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item has-menu">
+        <a class="nav-item__link" href="/pages/studio-collection" aria-label="Studio Collection">Studio<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9.5 6 6 6-6"></path></svg></a>
+        <div class="nav-panel">
+          <div class="nav-panel__sheet">
+            <span class="nav-panel__orn" aria-hidden="true"></span>
+            <div class="nav-panel__inner">
+              <a class="navlead" href="/pages/studio-collection">
+                <img src="../shopify-theme/assets/story-origin-3.webp" alt="" loading="lazy">
+                <span class="navlead__scrim" aria-hidden="true"></span>
+                <span class="navlead__body">
+                  <span class="navlead__eyebrow">Studio</span>
+                  <span class="navlead__title">Where <em>tradition</em> meets <em>tomorrow</em></span>
+                  <span class="navlead__copy">Three strands. Endless conversations. A few co-creations. Always rooted in craft.</span>
+                  <span class="navlead__cta">Explore studio<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </span>
+              </a>
+              <div class="navcol navcol--main">
+                <p class="navcol__group">All three strands</p>
+                <ul class="navthumbs">
+                  <li>
+                    <a href="/pages/studio-heritage">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/frame-r2t24.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Heritage</span><span class="navthumbs__sub">Living traditions</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/studio-avinya">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/story-origin-3.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Avinya</span><span class="navthumbs__sub">Contemporary expressions</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/studio-gifting">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/sj-jat-garasiya-party-bag-1.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Gifting &amp; Collaborations</span><span class="navthumbs__sub">Craft in dialogue</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navcol navcol--more">
+                <p class="navcol__group">Explore further</p>
+                <ul class="navlinks">
+                  <li><a href="/pages/the-shrujan-story#people"><span>Artisan Stories</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/video"><span>Process &amp; Techniques</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/video#ajrakh"><span>Materials &amp; Motifs</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/the-shrujan-story#journal"><span>Studio Journal</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/lldc"><span>Behind the Scenes</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                </ul>
+              </div>
+              <div class="navcol navcol--featured">
+                <p class="navcol__group">Featured</p>
+                <a class="navfeat" href="/pages/the-shrujan-story#journal">
+                  <span class="navfeat__media"><img src="../shopify-theme/assets/lldc-studio.webp" alt="The design studio at the Living &amp; Learning Design Centre" loading="lazy"></span>
+                  <span class="navfeat__title"><em>In Conversation</em></span>
+                  <span class="navfeat__sub">Craft, people and places</span>
+                  <span class="navfeat__cta">Read our journal<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-item__link" href="/pages/video" aria-label="Craft Traditions of Kutch">Craft</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-item__link" href="/pages/lldc" aria-label="Living &amp; Learning Design Centre">LLDC</a>
+      </div>
+
+      <div class="nav-item has-menu">
+        <a class="nav-item__link" href="/pages/visit-experience" aria-label="Visit &amp; Experience">Visit<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9.5 6 6 6-6"></path></svg></a>
+        <div class="nav-panel">
+          <div class="nav-panel__sheet">
+            <span class="nav-panel__orn" aria-hidden="true"></span>
+            <div class="nav-panel__inner">
+              <a class="navlead" href="/pages/visit-experience">
+                <img src="../shopify-theme/assets/visit-campus.webp" alt="" loading="lazy">
+                <span class="navlead__scrim" aria-hidden="true"></span>
+                <span class="navlead__body">
+                  <span class="navlead__eyebrow">Visit</span>
+                  <span class="navlead__title">Come to <em>Kutch</em></span>
+                  <span class="navlead__copy">The campus, the museum and the villages where the cloth is made. November to February is the season.</span>
+                  <span class="navlead__cta">Plan your visit<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </span>
+              </a>
+              <div class="navcol navcol--main">
+                <p class="navcol__group">Where to go</p>
+                <ul class="navthumbs">
+                  <li>
+                    <a href="/pages/visit-experience#places">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/visit-campus.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Shrujan Campus</span><span class="navthumbs__sub">Bhujodi Road, Bhuj</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/lldc">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/visit-lldc.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">LLDC Museum</span><span class="navthumbs__sub">Four galleries, Ajrakhpur</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/video">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/visit-ajrakhpur.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">The Craft Villages</span><span class="navthumbs__sub">Looms and print tables</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navcol navcol--more">
+                <p class="navcol__group">Plan your trip</p>
+                <ul class="navlinks">
+                  <li><a href="/pages/visit-experience#places"><span>Where to go</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/visit-experience#plan"><span>How long to stay</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/lldc"><span>The Design Centre</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/video"><span>Craft Traditions</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/#support"><span>Frequently Asked</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                </ul>
+              </div>
+              <div class="navcol navcol--featured">
+                <p class="navcol__group">Featured</p>
+                <a class="navfeat" href="/pages/video#embroidery">
+                  <span class="navfeat__media"><img src="../shopify-theme/assets/visit-banni.webp" alt="The Banni grasslands of northern Kutch" loading="lazy"></span>
+                  <span class="navfeat__title"><em>The Banni villages</em></span>
+                  <span class="navfeat__sub">Where Suf, Mutava and Jat come from</span>
+                  <span class="navfeat__cta">Watch the films<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <a class="brand" href="/" aria-label="Shrujan home">
+      <img class="brand__logo" src="../shopify-theme/assets/logo-shrujan.png" alt="Shrujan">
+      <span class="brand__tag">Heritage by Hand</span>
+    </a>
+
+    <div class="header-utils">
+      <a class="utility-link" href="/pages/shop-shrujan#catalogue" aria-label="Search"><span>Search</span> <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="m20 20-4.35-4.35"></path></svg></a>
+      <button class="utility-link" type="button" aria-label="Account" aria-disabled="true"><span>Account</span> <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.75"></circle><path d="M4.75 19.5c1.6-3.1 4.1-4.5 7.25-4.5s5.65 1.4 7.25 4.5"></path></svg></button>
+      <button class="utility-link" type="button" aria-label="Wishlist" aria-disabled="true"><span>Wishlist</span> <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg></button>
+      <a class="utility-link" href="/pages/shop-shrujan#catalogue" aria-label="Shopping bag, 0 items"><span>Bag&nbsp;(0)</span> <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 8h13l-.9 12h-11.2Z"></path><path d="M9 10V6.5a3 3 0 0 1 6 0V10"></path></svg></a>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Mobile">
+    <div class="mobile-nav__group">
+      <a href="/pages/the-shrujan-story">The Shrujan Story</a>
+      <ul class="mobile-nav__sub">
+        <li><a href="/pages/the-shrujan-story#origins">Origins</a></li>
+        <li><a href="/pages/the-shrujan-story#values">Philosophy &amp; Values</a></li>
+        <li><a href="/pages/the-shrujan-story#people">The People of Shrujan</a></li>
+        <li><a href="/pages/the-shrujan-story#journal">Photo Journal</a></li>
+        <li><a href="/pages/the-shrujan-story#press">In the Media</a></li>
+        <li><a href="/pages/video">Craft Traditions</a></li>
+        <li><a href="/pages/lldc">The Design Centre</a></li>
+        <li><a href="/pages/visit-experience">Visit the Campus</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav__group">
+      <a href="/pages/shop-shrujan">Shop Shrujan</a>
+      <ul class="mobile-nav__sub">
+        <li><a href="/pages/shop-shrujan?c=kanchli">Kanchli</a></li>
+        <li><a href="/pages/shop-shrujan?c=kurtas-and-tops">Kurtas &amp; Tops</a></li>
+        <li><a href="/pages/shop-shrujan?c=dresses">Dresses</a></li>
+        <li><a href="/pages/shop-shrujan?c=hand-bags">Hand Bags</a></li>
+        <li><a href="/pages/shop-shrujan?c=crossbody-and-sling">Crossbody &amp; Sling</a></li>
+        <li><a href="/pages/shop-shrujan?c=potlis-and-batwas">Potlis &amp; Batwas</a></li>
+        <li><a href="/pages/shop-shrujan?c=tote-bags">Tote Bags</a></li>
+        <li><a href="/pages/shop-shrujan?c=home-decor">Home Decor</a></li>
+        <li><a href="/pages/shop-shrujan?c=accessories">Accessories</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav__group">
+      <a href="/pages/studio-collection">Studio Collection</a>
+      <ul class="mobile-nav__sub">
+        <li><a href="/pages/studio-heritage">Heritage</a></li>
+        <li><a href="/pages/studio-avinya">Avinya</a></li>
+        <li><a href="/pages/studio-gifting">Gifting &amp; Collaborations</a></li>
+        <li><a href="/pages/the-shrujan-story#people">Artisan Stories</a></li>
+        <li><a href="/pages/video">Process &amp; Techniques</a></li>
+        <li><a href="/pages/video#ajrakh">Materials &amp; Motifs</a></li>
+        <li><a href="/pages/the-shrujan-story#journal">Studio Journal</a></li>
+        <li><a href="/pages/lldc">Behind the Scenes</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav__group">
+      <a href="/pages/video">Craft Traditions of Kutch</a>
+    </div>
+    <div class="mobile-nav__group">
+      <a href="/pages/lldc">Living &amp; Learning Design Centre</a>
+    </div>
+    <div class="mobile-nav__group">
+      <a href="/pages/visit-experience">Visit &amp; Experience</a>
+      <ul class="mobile-nav__sub">
+        <li><a href="/pages/visit-experience#places">Shrujan Campus</a></li>
+        <li><a href="/pages/lldc">LLDC Museum</a></li>
+        <li><a href="/pages/video">The Craft Villages</a></li>
+        <li><a href="/pages/visit-experience#places">Where to go</a></li>
+        <li><a href="/pages/visit-experience#plan">How long to stay</a></li>
+        <li><a href="/pages/lldc">The Design Centre</a></li>
+        <li><a href="/pages/video">Craft Traditions</a></li>
+        <li><a href="/#support">Frequently Asked</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+      <main><section class="hero" aria-label="Tradition, styled forward">
+  <a class="hero-cell hero-cell--model" href="/pages/shop-shrujan" data-hero="cell">
+    <img src="../shopify-theme/assets/hero-left.webp" alt="Model in a rust-red ajrakh kurta with gold jewellery before an arched wall" fetchpriority="high">
+    <span class="hero-cell__label"><i class="hero-cell__dash" aria-hidden="true"></i><em>Shop</em>Shrujan<span class="hero-cell__sub">Saris, kurtas and dupattas, hand-embroidered by the women of Kutch.</span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+  </a>
+
+  <div class="hero-cell hero-cell--message" data-hero="cell">
+    <span class="hero-message__ornament" aria-hidden="true"><svg viewBox="0 0 64 64" width="58" height="58" fill="none" stroke="currentColor" stroke-width="1">
+      <ellipse cx="32" cy="14" rx="5.5" ry="12" transform="rotate(0 32 32)"></ellipse>
+      <ellipse cx="32" cy="14" rx="5.5" ry="12" transform="rotate(30 32 32)"></ellipse>
+      <ellipse cx="32" cy="14" rx="5.5" ry="12" transform="rotate(60 32 32)"></ellipse>
+      <ellipse cx="32" cy="14" rx="5.5" ry="12" transform="rotate(90 32 32)"></ellipse>
+      <ellipse cx="32" cy="14" rx="5.5" ry="12" transform="rotate(120 32 32)"></ellipse>
+      <ellipse cx="32" cy="14" rx="5.5" ry="12" transform="rotate(150 32 32)"></ellipse>
+      <ellipse cx="32" cy="14" rx="5.5" ry="12" transform="rotate(180 32 32)"></ellipse>
+      <ellipse cx="32" cy="14" rx="5.5" ry="12" transform="rotate(210 32 32)"></ellipse>
+      <ellipse cx="32" cy="14" rx="5.5" ry="12" transform="rotate(240 32 32)"></ellipse>
+      <ellipse cx="32" cy="14" rx="5.5" ry="12" transform="rotate(270 32 32)"></ellipse>
+      <ellipse cx="32" cy="14" rx="5.5" ry="12" transform="rotate(300 32 32)"></ellipse>
+      <ellipse cx="32" cy="14" rx="5.5" ry="12" transform="rotate(330 32 32)"></ellipse>
+      <circle cx="32" cy="32" r="5"></circle>
+    </svg></span>
+    <h1 class="hero-message__title"><span class="line"><span class="t-ink">Tradition,</span></span><span class="line"><span class="t-red">Styled</span></span><span class="line"><span class="t-red">Forward</span></span></h1>
+    <span class="hero-message__rule" data-hero="rule" aria-hidden="true"></span>
+    <p class="hero-message__copy" data-hero="copy">Where centuries-old craftsmanship meets contemporary design. Timeless pieces for today&rsquo;s tastemakers.</p>
+    <a class="hero-message__cta" href="#categories" data-hero="cta">Shop the Collection <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a>
+  </div>
+
+  <a class="hero-cell hero-cell--season" href="/pages/studio-collection" data-hero="cell">
+    <img src="../shopify-theme/assets/look-b2.webp" alt="Model in a red hand-embroidered bridal lehenga in a studio setting">
+    <span class="hero-cell__scrim" aria-hidden="true"></span>
+    <span class="hero-cell__label hero-cell__label--bottom"><em>Studio</em>Collection<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+  </a>
+
+  <a class="hero-cell hero-cell--thread" href="/pages/video" data-hero="cell">
+    <img src="../shopify-theme/assets/craft-hero.webp" alt="Embroiderers of Kutch working together outside their village">
+    <span class="hero-cell__scrim" aria-hidden="true"></span>
+    <span class="hero-cell__label hero-cell__label--bottom"><em>Craft Traditions</em>of Kutch<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+  </a>
+
+  <a class="hero-cell hero-cell--story" href="/pages/the-shrujan-story" data-hero="cell">
+    <img src="../shopify-theme/assets/story-origin-2.webp" alt="" aria-hidden="true">
+    <span class="hero-cell__scrim hero-cell__scrim--story" aria-hidden="true"></span>
+    <p class="hero-story__title">Rooted in heritage.<br>Made for tomorrow.</p>
+    <p class="hero-story__copy">Supporting artisans since 1969.</p>
+    <span class="hero-story__link">The Shrujan Story <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+  </a>
+
+  <a class="hero-cell hero-cell--accessories" href="/pages/lldc" data-hero="cell">
+    <img src="../shopify-theme/assets/craft-embroidery-poster.webp" alt="An artisan at work in the Living &amp; Learning Design Centre studio">
+    <span class="hero-cell__scrim" aria-hidden="true"></span>
+    <span class="hero-cell__label hero-cell__label--bottom"><em>LLDC</em>Living &amp; Learning<br>Design Centre<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+  </a>
+
+  <a class="hero-cell hero-cell--india" href="/pages/visit-experience" data-hero="cell">
+    <span class="hero-india__map" aria-hidden="true"></span>
+    <span class="hero-cell__label hero-cell__label--bottom hero-cell__label--ink"><em>Visit &amp;</em>Experience<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+  </a>
+</section>
+
+<script>
+(function () {
+  var root = document.querySelector('.hero');
+  if (!root || root.__shrujanInit) return;
+  root.__shrujanInit = true;
+
+  var mm = gsap.matchMedia(root);
+
+  mm.add('(prefers-reduced-motion: no-preference)', function () {
+    var tl = gsap.timeline({
+      defaults: { ease: 'power3.out', duration: 0.9 },
+    });
+
+    tl.fromTo(
+      '[data-hero="cell"]',
+      { opacity: 0, y: 26 },
+      { opacity: 1, y: 0, duration: 1, stagger: 0.1 },
+      0
+    )
+      .fromTo(
+        '.hero-message__title .line > span',
+        { yPercent: 110 },
+        { yPercent: 0, duration: 1, stagger: 0.12, ease: 'power4.out' },
+        0.35
+      )
+      .fromTo(
+        '[data-hero="rule"]',
+        { scaleX: 0, transformOrigin: 'left center' },
+        { scaleX: 1, duration: 0.6 },
+        0.8
+      )
+      .fromTo('[data-hero="copy"]', { opacity: 0, y: 16 }, { opacity: 1, y: 0 }, 0.9)
+      .fromTo('[data-hero="cta"]', { opacity: 0, y: 14 }, { opacity: 1, y: 0 }, 1.02);
+  });
+
+  mm.add('(prefers-reduced-motion: reduce)', function () {
+    gsap.set('[data-hero], .hero-message__title .line > span', { clearProps: 'all', opacity: 1 });
+  });
+})();
+</script>
+
+<div class="marquee" role="presentation">
+  <div class="marquee__track">
+    <div class="marquee__group">
+      <span class="marquee__item">Suf<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Kharek<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Paako<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Ahir<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Rabari<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Mutava<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Jat Garasia<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Neran<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+    </div>
+    <div class="marquee__group" aria-hidden="true">
+      <span class="marquee__item">Suf<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Kharek<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Paako<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Ahir<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Rabari<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Mutava<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Jat Garasia<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+      <span class="marquee__item">Neran<svg viewBox="0 0 32 32" width="11" height="11" fill="currentColor"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg></span>
+    </div>
+  </div>
+</div>
+
+<section class="section container spotlight" id="heritage">
+  <div class="spotlight__head" data-reveal>
+    <p class="eyebrow">Heritage &amp; Innovation</p>
+
+    <h2 class="spotlight__title">
+      <span class="spotlight__line">Heritage elegance<span class="spotlight__chip"><img src="../shopify-theme/assets/hero-beside-right.webp" alt="" loading="lazy"></span>redefined</span>
+      <span class="spotlight__line"><span class="spotlight__chip"><img src="../shopify-theme/assets/top-right.webp" alt="" loading="lazy"></span>through living craft</span>
+    </h2>
+  </div>
+
+  <div class="spotlight__split" data-reveal>
+    <p class="spotlight__copy">Shrujan merges centuries-old embroidery with contemporary silhouettes, a refined and craft-driven wardrobe that aligns seamlessly with your life.</p>
+  </div>
+
+  <div class="spotlight__stage" data-reveal>
+    <div class="spotlight__figure">
+      <span class="spotlight__circle" aria-hidden="true"></span>
+
+      <svg class="spotlight__arc" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="48.5" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="82 223"></circle>
+      </svg>
+
+      <p class="spotlight__ghost" aria-hidden="true">100%<span>Hand-embroidered</span></p>
+
+      <img class="spotlight__model" src="../shopify-theme/assets/model.webp" alt="Model in a crimson mirror-work jacket draped with a hand-embroidered patola sari" loading="lazy">
+
+      <figure class="spotlight__plate spotlight__plate--tr" aria-hidden="true">
+        <img src="../shopify-theme/assets/cat-c1.webp" alt="" loading="lazy">
+      </figure>
+      <figure class="spotlight__plate spotlight__plate--bl" aria-hidden="true">
+        <img src="../shopify-theme/assets/top-right.webp" alt="" loading="lazy">
+      </figure>
+    </div>
+
+    <div class="spotlight__stat spotlight__stat--women"><strong>4,000+</strong><span>Artisan women behind every piece</span></div>
+
+    <div class="spotlight__stat spotlight__stat--crafts"><strong>12</strong><span>Living craft traditions of Kutch</span></div>
+
+    <p class="spotlight__note">Every piece signed by the hands that made it</p>
+
+    <div class="spotlight__stat spotlight__stat--villages"><strong>40</strong><span>Villages across the Kutch desert</span></div>
+  </div>
+
+  <div class="spotlight__outro" data-reveal>
+    <p>Naturally dyed cloth, hand-embroidered over weeks and finished in our Bhuj atelier, made to be worn today and handed down tomorrow.</p>
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.querySelector('.spotlight');
+  if (!root || root.__shrujanInit) return;
+  root.__shrujanInit = true;
+
+  var mm = gsap.matchMedia(root);
+
+  // The arc orbits the circle as the section scrolls through the viewport.
+  mm.add('(prefers-reduced-motion: no-preference)', function () {
+    gsap.fromTo(
+      '.spotlight__arc circle',
+      { rotation: -250, svgOrigin: '50 50' },
+      {
+        rotation: 110,
+        svgOrigin: '50 50',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.spotlight__stage',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 0.6,
+        },
+      }
+    );
+  });
+
+  mm.add('(prefers-reduced-motion: reduce)', function () {
+    gsap.set('.spotlight__arc circle', { rotation: -118, svgOrigin: '50 50' });
+  });
+})();
+</script>
+
+<section class="section container best" id="bestsellers">
+  <div class="section-head" data-reveal>
+    <div class="section-head__titles">
+      <p class="eyebrow">Most Loved</p>
+      <h2 class="section-title">Bestsellers, ranked by <em>you</em></h2>
+    </div>
+
+    <div class="section-head__aside">
+      <p class="best__legend">Ordered by pieces taken home over the last six months.</p>
+      <div class="carousel-arrows">
+        <button type="button" aria-label="Previous bestsellers">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5.5 8 12l6.5 6.5"></path></svg>
+        </button>
+        <button type="button" aria-label="Next bestsellers">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 5.5 6.5 6.5-6.5 6.5"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="best__rail" data-reveal-child>
+    <a class="best-card" href="/products/kanchli-copy">
+      <span class="best-card__rank"><span class="best-card__num">01</span><span class="best-card__thread" aria-hidden="true"></span></span>
+      <div class="best-card__media">
+        <img src="../shopify-theme/assets/sj-black-pakko-hand-embroidered-kanchli-1.webp" alt="Model wearing the black pakko hand embroidered kanchli" loading="lazy">
+        <button class="best-card__wish" type="button" aria-label="Save Black Pakko Hand Embroidered Kanchli to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="best-card__note">Reordered by 6 in 10 buyers</span>
+      </div>
+      <div class="best-card__info">
+        <p class="best-card__name">Black Pakko Hand Embroidered Kanchli</p>
+        <p class="best-card__craft">Pakko · Kutch</p>
+        <p class="best-card__price">₹ 25,000</p>
+        <span class="best-card__meter" style="--fill: 100%" aria-hidden="true"></span>
+        <p class="best-card__sold"><strong>412</strong> taken home</p>
+        <span class="best-card__swatches" aria-hidden="true"><i style="background: #241f1f"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i></span>
+      </div>
+    </a>
+    <a class="best-card" href="/products/green-hand-woven-top">
+      <span class="best-card__rank"><span class="best-card__num">02</span><span class="best-card__thread" aria-hidden="true"></span></span>
+      <div class="best-card__media">
+        <img src="../shopify-theme/assets/sj-green-hand-woven-top-1.webp" alt="Green Hand woven Top, made in Kutch" loading="lazy">
+        <button class="best-card__wish" type="button" aria-label="Save Green Hand woven Top to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="best-card__note">Handwoven, then cut in the atelier</span>
+      </div>
+      <div class="best-card__info">
+        <p class="best-card__name">Green Hand woven Top</p>
+        <p class="best-card__craft">Handloom · Bhujodi</p>
+        <p class="best-card__price">₹ 7,040<span>₹ 8,800</span></p>
+        <span class="best-card__meter" style="--fill: 89%" aria-hidden="true"></span>
+        <p class="best-card__sold"><strong>368</strong> taken home</p>
+        <span class="best-card__swatches" aria-hidden="true"><i style="background: #2f6b52"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i></span>
+      </div>
+    </a>
+    <a class="best-card" href="/products/pakko-embroidered-divya-bag">
+      <span class="best-card__rank"><span class="best-card__num">03</span><span class="best-card__thread" aria-hidden="true"></span></span>
+      <div class="best-card__media">
+        <img src="../shopify-theme/assets/sj-pakko-embroidered-divya-bag-1.webp" alt="Tote Bag, hand-embroidered in Kutch" loading="lazy">
+        <button class="best-card__wish" type="button" aria-label="Save Tote Bag to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="best-card__note">Our most gifted piece</span>
+      </div>
+      <div class="best-card__info">
+        <p class="best-card__name">Tote Bag</p>
+        <p class="best-card__craft">Kutchi hand-embroidery</p>
+        <p class="best-card__price">₹ 6,800</p>
+        <span class="best-card__meter" style="--fill: 83%" aria-hidden="true"></span>
+        <p class="best-card__sold"><strong>344</strong> taken home</p>
+        <span class="best-card__swatches" aria-hidden="true"><i style="background: #8d2f26"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i></span>
+      </div>
+    </a>
+    <a class="best-card" href="/products/mashroo-pant">
+      <span class="best-card__rank"><span class="best-card__num">04</span><span class="best-card__thread" aria-hidden="true"></span></span>
+      <div class="best-card__media">
+        <img src="../shopify-theme/assets/sj-ijari-mashroo-pant-1.webp" alt="Ijari Mashroo Pant, made in Kutch" loading="lazy">
+        <button class="best-card__wish" type="button" aria-label="Save Ijari Mashroo Pant to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="best-card__note">Mashroo silk, woven in Bhuj</span>
+      </div>
+      <div class="best-card__info">
+        <p class="best-card__name">Ijari Mashroo Pant</p>
+        <p class="best-card__craft">Kutchi hand-embroidery</p>
+        <p class="best-card__price">₹ 8,800<span>₹ 11,000</span></p>
+        <span class="best-card__meter" style="--fill: 71%" aria-hidden="true"></span>
+        <p class="best-card__sold"><strong>291</strong> taken home</p>
+        <span class="best-card__swatches" aria-hidden="true"><i style="background: #8d2f26"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i></span>
+      </div>
+    </a>
+    <a class="best-card" href="/products/shawl-copy-3">
+      <span class="best-card__rank"><span class="best-card__num">05</span><span class="best-card__thread" aria-hidden="true"></span></span>
+      <div class="best-card__media">
+        <img src="../shopify-theme/assets/sj-shawl-copy-3-1.webp" alt="Shawl, hand-embroidered in Kutch" loading="lazy">
+        <button class="best-card__wish" type="button" aria-label="Save Shawl to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="best-card__note">Warm enough for a desert winter</span>
+      </div>
+      <div class="best-card__info">
+        <p class="best-card__name">Shawl</p>
+        <p class="best-card__craft">Kutchi hand-embroidery</p>
+        <p class="best-card__price">₹ 22,000</p>
+        <span class="best-card__meter" style="--fill: 65%" aria-hidden="true"></span>
+        <p class="best-card__sold"><strong>268</strong> taken home</p>
+        <span class="best-card__swatches" aria-hidden="true"><i style="background: #8d2f26"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i></span>
+      </div>
+    </a>
+    <a class="best-card" href="/products/dress-copy-3">
+      <span class="best-card__rank"><span class="best-card__num">06</span><span class="best-card__thread" aria-hidden="true"></span></span>
+      <div class="best-card__media">
+        <img src="../shopify-theme/assets/sj-khadi-hand-woven-dress-1.webp" alt="Khadi Hand woven Dress, made in Kutch" loading="lazy">
+        <button class="best-card__wish" type="button" aria-label="Save Khadi Hand woven Dress to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="best-card__note">Khadi, and it softens with every wash</span>
+      </div>
+      <div class="best-card__info">
+        <p class="best-card__name">Khadi Hand woven Dress</p>
+        <p class="best-card__craft">Khadi handloom · Kutch</p>
+        <p class="best-card__price">₹ 5,950<span>₹ 8,500</span></p>
+        <span class="best-card__meter" style="--fill: 57%" aria-hidden="true"></span>
+        <p class="best-card__sold"><strong>233</strong> taken home</p>
+        <span class="best-card__swatches" aria-hidden="true"><i style="background: #c9b79c"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i></span>
+      </div>
+    </a>
+    <a class="best-card" href="/products/jat-garasiya-kunathiya-bag-1">
+      <span class="best-card__rank"><span class="best-card__num">07</span><span class="best-card__thread" aria-hidden="true"></span></span>
+      <div class="best-card__media">
+        <img src="../shopify-theme/assets/sj-jat-garasiya-kunathiya-bag-1-1.webp" alt="Crossbody Bag, hand-embroidered in Kutch" loading="lazy">
+        <button class="best-card__wish" type="button" aria-label="Save Crossbody Bag to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="best-card__note">Jat Garasiya work, counted thread</span>
+      </div>
+      <div class="best-card__info">
+        <p class="best-card__name">Crossbody Bag</p>
+        <p class="best-card__craft">Kutchi hand-embroidery</p>
+        <p class="best-card__price">₹ 6,000</p>
+        <span class="best-card__meter" style="--fill: 52%" aria-hidden="true"></span>
+        <p class="best-card__sold"><strong>214</strong> taken home</p>
+        <span class="best-card__swatches" aria-hidden="true"><i style="background: #8d2f26"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i></span>
+      </div>
+    </a>
+    <a class="best-card" href="/products/beige-hand-embroidered-kanchli-copy">
+      <span class="best-card__rank"><span class="best-card__num">08</span><span class="best-card__thread" aria-hidden="true"></span></span>
+      <div class="best-card__media">
+        <img src="../shopify-theme/assets/sj-purple-hand-embroidered-kanchli-1.webp" alt="Model wearing the purple hand embroidered kanchli" loading="lazy">
+        <button class="best-card__wish" type="button" aria-label="Save Purple Hand Embroidered Kanchli to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="best-card__note">Three weeks of hand embroidery</span>
+      </div>
+      <div class="best-card__info">
+        <p class="best-card__name">Purple Hand Embroidered Kanchli</p>
+        <p class="best-card__craft">Kutchi hand-embroidery</p>
+        <p class="best-card__price">₹ 28,000</p>
+        <span class="best-card__meter" style="--fill: 48%" aria-hidden="true"></span>
+        <p class="best-card__sold"><strong>196</strong> taken home</p>
+        <span class="best-card__swatches" aria-hidden="true"><i style="background: #5b3f6b"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i></span>
+      </div>
+    </a>
+    <a class="best-card" href="/products/jat-garasiya-hand-embroidered-cushion-cover">
+      <span class="best-card__rank"><span class="best-card__num">09</span><span class="best-card__thread" aria-hidden="true"></span></span>
+      <div class="best-card__media">
+        <img src="../shopify-theme/assets/sj-jat-garasiya-hand-embroidered-cushion-cover-1.webp" alt="Cushion Cover, hand-embroidered in Kutch" loading="lazy">
+        <button class="best-card__wish" type="button" aria-label="Save Cushion Cover to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="best-card__note">The easiest way to start</span>
+      </div>
+      <div class="best-card__info">
+        <p class="best-card__name">Cushion Cover</p>
+        <p class="best-card__craft">Kutchi hand-embroidery</p>
+        <p class="best-card__price">₹ 3,600</p>
+        <span class="best-card__meter" style="--fill: 44%" aria-hidden="true"></span>
+        <p class="best-card__sold"><strong>181</strong> taken home</p>
+        <span class="best-card__swatches" aria-hidden="true"><i style="background: #8d2f26"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i></span>
+      </div>
+    </a>
+    <a class="best-card" href="/products/ahir-batwa">
+      <span class="best-card__rank"><span class="best-card__num">10</span><span class="best-card__thread" aria-hidden="true"></span></span>
+      <div class="best-card__media">
+        <img src="../shopify-theme/assets/sj-ahir-batwa-1.webp" alt="Potli Bag, hand-embroidered in Kutch" loading="lazy">
+        <button class="best-card__wish" type="button" aria-label="Save Potli Bag to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="best-card__note">Ahir stitch, sells out every festive season</span>
+      </div>
+      <div class="best-card__info">
+        <p class="best-card__name">Potli Bag</p>
+        <p class="best-card__craft">Kutchi hand-embroidery</p>
+        <p class="best-card__price">₹ 3,500</p>
+        <span class="best-card__meter" style="--fill: 41%" aria-hidden="true"></span>
+        <p class="best-card__sold"><strong>167</strong> taken home</p>
+        <span class="best-card__swatches" aria-hidden="true"><i style="background: #8d2f26"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i></span>
+      </div>
+    </a>
+    <a class="best-card" href="/products/hand-bag-copy-23">
+      <span class="best-card__rank"><span class="best-card__num">11</span><span class="best-card__thread" aria-hidden="true"></span></span>
+      <div class="best-card__media">
+        <img src="../shopify-theme/assets/sj-hand-bag-copy-23-1.webp" alt="Hand Bag, hand-embroidered in Kutch" loading="lazy">
+        <button class="best-card__wish" type="button" aria-label="Save Hand Bag to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="best-card__note">Carried daily by half the studio</span>
+      </div>
+      <div class="best-card__info">
+        <p class="best-card__name">Hand Bag</p>
+        <p class="best-card__craft">Kutchi hand-embroidery</p>
+        <p class="best-card__price">₹ 3,500</p>
+        <span class="best-card__meter" style="--fill: 37%" aria-hidden="true"></span>
+        <p class="best-card__sold"><strong>152</strong> taken home</p>
+        <span class="best-card__swatches" aria-hidden="true"><i style="background: #8d2f26"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i></span>
+      </div>
+    </a>
+    <a class="best-card" href="/products/jat-garasiya-mobile-pouch-1">
+      <span class="best-card__rank"><span class="best-card__num">12</span><span class="best-card__thread" aria-hidden="true"></span></span>
+      <div class="best-card__media">
+        <img src="../shopify-theme/assets/sj-jat-garasiya-mobile-pouch-1-1.webp" alt="Mobile Pouch, hand-embroidered in Kutch" loading="lazy">
+        <button class="best-card__wish" type="button" aria-label="Save Mobile Pouch to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="best-card__note">The one people buy in threes</span>
+      </div>
+      <div class="best-card__info">
+        <p class="best-card__name">Mobile Pouch</p>
+        <p class="best-card__craft">Kutchi hand-embroidery</p>
+        <p class="best-card__price">₹ 1,200</p>
+        <span class="best-card__meter" style="--fill: 33%" aria-hidden="true"></span>
+        <p class="best-card__sold"><strong>138</strong> taken home</p>
+        <span class="best-card__swatches" aria-hidden="true"><i style="background: #8d2f26"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i></span>
+      </div>
+    </a>
+  </div>
+
+  <div class="best__more" data-reveal>
+    <a class="arrow-link" href="/pages/shop-shrujan#catalogue">See the full ranking <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a>
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.querySelector('.best');
+  if (!root || root.__shrujanInit) return;
+  root.__shrujanInit = true;
+
+  var rail = root.querySelector('.best__rail');
+
+  // Scroll one full page — however many cards currently fit.
+  function page(dir) {
+    if (!rail) return;
+    rail.scrollBy({ left: dir * rail.clientWidth, behavior: 'smooth' });
+  }
+
+  var arrows = root.querySelectorAll('.carousel-arrows button');
+  if (arrows[0]) arrows[0].addEventListener('click', function () { page(-1); });
+  if (arrows[1]) arrows[1].addEventListener('click', function () { page(1); });
+
+  // The wish button sits inside the card link; keep a tap on it from navigating.
+  root.querySelectorAll('.best-card__wish').forEach(function (btn) {
+    btn.addEventListener('click', function (e) { e.preventDefault(); });
+  });
+})();
+</script>
+
+<section class="section container" id="categories">
+  <div class="section-head section-head--center" data-reveal>
+    <p class="eyebrow">Explore the House</p>
+    <h2 class="section-title">What to wear</h2>
+    <a class="arrow-link" href="/pages/shop-shrujan">View All <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a>
+  </div>
+
+  <div class="catbar" data-reveal-child>
+    <a class="catpanel" href="/pages/shop-shrujan?c=kanchli">
+      <img src="../shopify-theme/assets/cat-c3.webp" alt="Model in a maroon embroidered lehenga with a fitted bodice" loading="lazy">
+      <span class="catpanel__scrim" aria-hidden="true"></span>
+      <span class="catpanel__index" aria-hidden="true">01</span>
+      <span class="catpanel__spine" aria-hidden="true">Kanchli</span>
+      <span class="catpanel__open"><span class="catpanel__name">Kanchli</span><span class="catpanel__copy">The Kutchi bodice, cut and stitched the traditional way</span><span class="catpanel__foot"><span class="catpanel__cta">Explore <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span></span></span>
+    </a>
+    <a class="catpanel" href="/pages/shop-shrujan?c=kurtas-and-tops">
+      <img src="../shopify-theme/assets/cat-c4.webp" alt="Model in a maroon embroidered kurta with palazzo and dupatta" loading="lazy">
+      <span class="catpanel__scrim" aria-hidden="true"></span>
+      <span class="catpanel__index" aria-hidden="true">02</span>
+      <span class="catpanel__spine" aria-hidden="true">Kurtas &amp; Tops</span>
+      <span class="catpanel__open"><span class="catpanel__name">Kurtas &amp; Tops</span><span class="catpanel__copy">Everyday silhouettes in naturally dyed handloom cloth</span><span class="catpanel__foot"><span class="catpanel__cta">Explore <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span></span></span>
+    </a>
+    <a class="catpanel" href="/pages/shop-shrujan?c=dresses">
+      <img src="../shopify-theme/assets/cat-c1.webp" alt="Model in a maroon silk drape with gold zari borders" loading="lazy">
+      <span class="catpanel__scrim" aria-hidden="true"></span>
+      <span class="catpanel__index" aria-hidden="true">03</span>
+      <span class="catpanel__spine" aria-hidden="true">Dresses</span>
+      <span class="catpanel__open"><span class="catpanel__name">Dresses</span><span class="catpanel__copy">Long, easy cuts in mulmul and handwoven cotton</span><span class="catpanel__foot"><span class="catpanel__cta">Explore <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span></span></span>
+    </a>
+    <a class="catpanel" href="/pages/shop-shrujan?c=pants-and-palazzos">
+      <img src="../shopify-theme/assets/cat-c2.webp" alt="Model in a handwoven maroon drape with a gold border" loading="lazy">
+      <span class="catpanel__scrim" aria-hidden="true"></span>
+      <span class="catpanel__index" aria-hidden="true">04</span>
+      <span class="catpanel__spine" aria-hidden="true">Pants &amp; Palazzos</span>
+      <span class="catpanel__open"><span class="catpanel__name">Pants &amp; Palazzos</span><span class="catpanel__copy">Wide, soft legs in cotton and khadi</span><span class="catpanel__foot"><span class="catpanel__cta">Explore <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span></span></span>
+    </a>
+    <a class="catpanel" href="/pages/shop-shrujan?c=accessories">
+      <img src="../shopify-theme/assets/cat-c5.webp" alt="Model in an ivory kurta holding out a maroon embroidered dupatta" loading="lazy">
+      <span class="catpanel__scrim" aria-hidden="true"></span>
+      <span class="catpanel__index" aria-hidden="true">05</span>
+      <span class="catpanel__spine" aria-hidden="true">Accessories</span>
+      <span class="catpanel__open"><span class="catpanel__name">Accessories</span><span class="catpanel__copy">Dupattas, stoles and shawls finished with hand borders</span><span class="catpanel__foot"><span class="catpanel__cta">Explore <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span></span></span>
+    </a>
+  </div>
+</section>
+
+<section class="section container manifesto" id="promise">
+  <div class="section-intro" data-reveal>
+    <p class="eyebrow">The future of heritage is here</p>
+    <h2 class="section-title">
+      Craft that cares: <em>four promises</em> in every piece
+    </h2>
+    <p class="section-intro__copy">
+      Living embroidery, natural cloth and honest making, held to the same four standards since 1969.
+    </p>
+  </div>
+
+  <ol class="manifesto__grid" data-reveal-child>
+    <li class="seal">
+      <span class="seal__no">01</span>
+
+      <span class="seal__ring">
+        <img src="../shopify-theme/assets/top-right.webp" alt="Close crop of mirror-work embroidery in crimson and gold threads" loading="lazy">
+      </span>
+
+      <h3 class="seal__title">Hand Embroidery</h3>
+      <p class="seal__copy">Every motif counted and stitched by hand. No machine ever touches the cloth.</p>
+    </li>
+    <li class="seal">
+      <span class="seal__no">02</span>
+
+      <span class="seal__ring">
+        <img src="../shopify-theme/assets/frame-r5t15.webp" alt="Close crop of turquoise Kutchi mirror-work embroidery" loading="lazy">
+      </span>
+
+      <h3 class="seal__title">Natural Dyes</h3>
+      <p class="seal__copy">Madder, indigo and pomegranate on handloom cotton and mulberry silk.</p>
+    </li>
+    <li class="seal">
+      <span class="seal__no">03</span>
+
+      <span class="seal__ring">
+        <img src="../shopify-theme/assets/bottom-left.webp" alt="Master weaver working threads at his handloom" loading="lazy">
+      </span>
+
+      <h3 class="seal__title">Fair Wages</h3>
+      <p class="seal__copy">Paid per piece, on time, directly to the woman whose hands made it.</p>
+    </li>
+    <li class="seal">
+      <span class="seal__no">04</span>
+
+      <span class="seal__ring">
+        <img src="../shopify-theme/assets/bottom-right.webp" alt="Model in a mehendi-green hand-embroidered kurta set" loading="lazy">
+      </span>
+
+      <h3 class="seal__title">Made to Last</h3>
+      <p class="seal__copy">Finished to be worn today, repaired for free, and handed down tomorrow.</p>
+    </li>
+  </ol>
+
+  <div class="manifesto__more" data-reveal>
+    <a class="arrow-link" href="#craft">
+      How we make it <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+    </a>
+  </div>
+</section>
+
+<section class="section reels" id="reels" aria-label="Shrujan in motion">
+  <div class="container">
+    <div class="reels__head">
+      <div class="reels__titles" data-reveal>
+        <p class="eyebrow">Shrujan in Motion</p>
+        <h2 class="section-title">
+          Watch the craft
+          <br>
+          <em>come alive</em>
+        </h2>
+      </div>
+
+      <a
+        class="reels__seal-link"
+        href="https://www.instagram.com/shrujanindia/reels/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Watch Shrujan reels on Instagram"
+      >
+        <span class="reels__seal" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <defs>
+              <path id="reel-arc" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"></path>
+            </defs>
+            <text>
+              <textPath href="#reel-arc" startOffset="0">WATCH THE CRAFT · SHRUJAN IN MOTION ·</textPath>
+            </text>
+          </svg>
+        </span>
+        <span class="reels__seal-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+            <circle cx="12" cy="12" r="3.9"></circle>
+            <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </span>
+      </a>
+
+      <div class="reels__note" data-reveal>
+        <p>
+          Forty seconds inside the workshop: a needle counting threads, madder boiling, a sari taking its first drape.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="reels__rail-wrap">
+    <div class="reels__rail" data-reveal-child>
+      <a class="reel" href="https://www.instagram.com/shrujanindia/reels/" target="_blank" rel="noopener noreferrer">
+        <div class="reel__media">
+          <video src="../shopify-theme/assets/reel-1.mp4" poster="../shopify-theme/assets/reel-1-poster.jpg" muted loop playsinline preload="none" aria-label="Indigo mirror-work jacket"></video>
+          <span class="reel__scrim" aria-hidden="true"></span>
+          <span class="reel__meta">0:27</span>
+        </div>
+        <p class="reel__title">Indigo mirror-work jacket</p>
+      </a>
+      <a class="reel" href="https://www.instagram.com/shrujanindia/reels/" target="_blank" rel="noopener noreferrer">
+        <div class="reel__media">
+          <video src="../shopify-theme/assets/reel-2.mp4" poster="../shopify-theme/assets/reel-2-poster.jpg" muted loop playsinline preload="none" aria-label="Coral Kutchi embroidered sari"></video>
+          <span class="reel__scrim" aria-hidden="true"></span>
+          <span class="reel__meta">0:33</span>
+        </div>
+        <p class="reel__title">Coral Kutchi embroidered sari</p>
+      </a>
+      <a class="reel" href="https://www.instagram.com/shrujanindia/reels/" target="_blank" rel="noopener noreferrer">
+        <div class="reel__media">
+          <video src="../shopify-theme/assets/reel-3.mp4" poster="../shopify-theme/assets/reel-3-poster.jpg" muted loop playsinline preload="none" aria-label="Sheer embroidered kurta"></video>
+          <span class="reel__scrim" aria-hidden="true"></span>
+          <span class="reel__meta">0:32</span>
+        </div>
+        <p class="reel__title">Sheer embroidered kurta</p>
+      </a>
+      <a class="reel" href="https://www.instagram.com/shrujanindia/reels/" target="_blank" rel="noopener noreferrer">
+        <div class="reel__media">
+          <video src="../shopify-theme/assets/reel-4.mp4" poster="../shopify-theme/assets/reel-4-poster.jpg" muted loop playsinline preload="none" aria-label="Shrujan, since 1969"></video>
+          <span class="reel__scrim" aria-hidden="true"></span>
+          <span class="reel__meta">0:11</span>
+        </div>
+        <p class="reel__title">Shrujan, since 1969</p>
+      </a>
+      <a class="reel" href="https://www.instagram.com/shrujanindia/reels/" target="_blank" rel="noopener noreferrer">
+        <div class="reel__media">
+          <video src="../shopify-theme/assets/reel-5.mp4" poster="../shopify-theme/assets/reel-5-poster.jpg" muted loop playsinline preload="none" aria-label="Turquoise Kutchi sari"></video>
+          <span class="reel__scrim" aria-hidden="true"></span>
+          <span class="reel__meta">0:30</span>
+        </div>
+        <p class="reel__title">Turquoise Kutchi sari</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.querySelector('.reels');
+  if (!root || root.__shrujanInit) return;
+  root.__shrujanInit = true;
+
+  /* Play only what's on screen — five autoplaying videos at once is wasteful. */
+  var rail = root.querySelector('.reels__rail');
+  if (rail && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          var v = entry.target;
+          if (entry.isIntersecting) v.play().catch(function () {});
+          else v.pause();
+        });
+      },
+      { threshold: 0.35 }
+    );
+    rail.querySelectorAll('video').forEach(function (v) { io.observe(v); });
+  }
+
+  var mm = gsap.matchMedia();
+
+  mm.add('(prefers-reduced-motion: no-preference)', function () {
+    gsap.fromTo(
+      root.querySelector('.reels__seal'),
+      { rotation: -60 },
+      {
+        rotation: 120,
+        ease: 'none',
+        scrollTrigger: { trigger: root, start: 'top bottom', end: 'bottom top', scrub: 0.6 }
+      }
+    );
+  });
+})();
+</script>
+
+<section class="section container house" id="house">
+  <div class="section-intro" data-reveal>
+    <p class="eyebrow">Everything Shrujan makes</p>
+    <h2 class="section-title">
+      What Shrujan has <em>mastered</em>
+    </h2>
+    <p class="section-intro__copy">
+      The same counted stitches, worked into what you wear, what you carry and the cloth that dresses the house.
+    </p>
+  </div>
+
+  <div class="house__grid">
+    <a class="house-tile" href="/pages/shop-shrujan?c=kanchli">
+      <img src="../shopify-theme/assets/sj-black-pakko-hand-embroidered-kanchli-1.webp" alt="Model wearing the black pakko hand embroidered kanchli" loading="lazy">
+      <span class="house-tile__scrim" aria-hidden="true"></span>
+      <span class="house-tile__body">
+        <span class="house-tile__name">Kanchli</span>
+        <span class="house-tile__note">The Kutchi bodice, cut and stitched the traditional way</span>
+      </span>
+      <span class="house-tile__arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+      </span>
+    </a>
+    <a class="house-tile" href="/pages/shop-shrujan?c=accessories">
+      <img src="../shopify-theme/assets/sj-dupatta-copy-1.webp" alt="Dupatta, hand-embroidered in Kutch" loading="lazy">
+      <span class="house-tile__scrim" aria-hidden="true"></span>
+      <span class="house-tile__body">
+        <span class="house-tile__name">Accessories</span>
+        <span class="house-tile__note">Dupattas, stoles and shawls finished with hand borders</span>
+      </span>
+      <span class="house-tile__arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+      </span>
+    </a>
+    <a class="house-tile" href="/pages/shop-shrujan?c=crossbody-and-sling">
+      <img src="../shopify-theme/assets/sj-ahir-batwa-copy-4-1.webp" alt="Crossbody Bag, hand-embroidered in Kutch" loading="lazy">
+      <span class="house-tile__scrim" aria-hidden="true"></span>
+      <span class="house-tile__body">
+        <span class="house-tile__name">Crossbody &amp; Sling</span>
+        <span class="house-tile__note">Small bags for a long day, worn across the body</span>
+      </span>
+      <span class="house-tile__arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+      </span>
+    </a>
+    <a class="house-tile" href="/pages/shop-shrujan?c=hand-bags">
+      <img src="../shopify-theme/assets/sj-hand-bag-copy-23-1.webp" alt="Hand Bag, hand-embroidered in Kutch" loading="lazy">
+      <span class="house-tile__scrim" aria-hidden="true"></span>
+      <span class="house-tile__body">
+        <span class="house-tile__name">Hand Bags</span>
+        <span class="house-tile__note">Structured bags, embroidered panel by panel</span>
+      </span>
+      <span class="house-tile__arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+      </span>
+    </a>
+    <a class="house-tile" href="/pages/shop-shrujan?c=tote-bags">
+      <img src="../shopify-theme/assets/sj-pakko-embroidered-divya-bag-1.webp" alt="Tote Bag, hand-embroidered in Kutch" loading="lazy">
+      <span class="house-tile__scrim" aria-hidden="true"></span>
+      <span class="house-tile__body">
+        <span class="house-tile__name">Tote Bags</span>
+        <span class="house-tile__note">Roomy totes in handwoven cotton</span>
+      </span>
+      <span class="house-tile__arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+      </span>
+    </a>
+    <a class="house-tile" href="/pages/shop-shrujan?c=potlis-and-batwas">
+      <img src="../shopify-theme/assets/sj-ahir-batwa-1.webp" alt="Potli Bag, hand-embroidered in Kutch" loading="lazy">
+      <span class="house-tile__scrim" aria-hidden="true"></span>
+      <span class="house-tile__body">
+        <span class="house-tile__name">Potlis &amp; Batwas</span>
+        <span class="house-tile__note">Drawstring potlis in silk, for the festive months</span>
+      </span>
+      <span class="house-tile__arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+      </span>
+    </a>
+    <a class="house-tile" href="/pages/shop-shrujan?c=pouches">
+      <img src="../shopify-theme/assets/sj-jat-garasiya-mobile-pouch-1-1.webp" alt="Mobile Pouch, hand-embroidered in Kutch" loading="lazy">
+      <span class="house-tile__scrim" aria-hidden="true"></span>
+      <span class="house-tile__body">
+        <span class="house-tile__name">Pouches</span>
+        <span class="house-tile__note">Pouches and purses in offcuts too good to waste</span>
+      </span>
+      <span class="house-tile__arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+      </span>
+    </a>
+  </div>
+
+  <div class="house__strip" data-reveal>
+    <span class="house__strip-label">All bags</span>
+    <ul class="house__strip-links">
+      <li>
+        <a href="/pages/shop-shrujan?c=potlis-and-batwas">
+          Potlis &amp; Batwas <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/pages/shop-shrujan?c=tote-bags">
+          Tote Bags <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/pages/shop-shrujan?c=crossbody-and-sling">
+          Crossbody &amp; Sling <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/pages/shop-shrujan?c=hand-bags">
+          Hand Bags <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+        </a>
+      </li>
+      <li>
+        <a href="/pages/shop-shrujan?c=pouches">
+          Pouches <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section container" id="craft">
+  <div class="craft">
+    <div class="craft__body">
+      <p class="eyebrow" data-reveal>
+        Our Craft
+      </p>
+      <h2 class="section-title" data-reveal>
+        Every stitch carries
+        <br>
+        <em>a signature</em>
+      </h2>
+      <div class="craft__copy" data-reveal>
+        <p>
+          Shrujan began in 1969 with Chanda Shroff, known as Kaki, who went to Kutch after a famine and found women whose embroidery was extraordinary and whose earnings were not. She turned that skill into a livelihood.
+        </p>
+        <p>
+          From her vision to the hands of thousands of women across Kutch, Shrujan has quietly safeguarded the region&rsquo;s living craft traditions for over five decades, preserving the knowledge and the dignity behind it.
+        </p>
+      </div>
+
+      <a class="arrow-link craft__link" href="/pages/video" data-reveal>
+        Explore the Craft <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+      </a>
+    </div>
+
+    <div class="craft__gallery" data-reveal>
+      <figure class="craft__shot">
+        <div class="craft__shot-media" data-parallax>
+          <img src="../shopify-theme/assets/bottom-left.webp" alt="Master weaver working threads at his handloom" loading="lazy">
+        </div>
+        <figcaption>At the loom, Bhujodi</figcaption>
+      </figure>
+      <figure class="craft__shot">
+        <div class="craft__shot-media">
+          <img src="../shopify-theme/assets/top-right.webp" alt="Artisan hand embroidering mirror-work flowers with a fine needle" loading="lazy">
+        </div>
+        <figcaption>Suf, stitched from the reverse</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="craft__stats" data-reveal-child>
+    <div class="stat">
+      <p class="stat__value">1969</p>
+      <p class="stat__label">Founded by Chanda Shroff</p>
+    </div>
+    <div class="stat">
+      <p class="stat__value">5</p>
+      <p class="stat__label">Decades of craft revival</p>
+    </div>
+    <div class="stat">
+      <p class="stat__value">12</p>
+      <p class="stat__label">Living craft traditions</p>
+    </div>
+    <div class="stat">
+      <p class="stat__value">4,000+</p>
+      <p class="stat__label">Artisan women at work</p>
+    </div>
+  </div>
+</section>
+
+<section class="section container" id="curated">
+  <div class="section-intro" data-reveal>
+    <p class="eyebrow">Handpicked for you</p>
+    <h2 class="section-title">Curated pieces, chosen with care</h2>
+    <p class="section-intro__copy">
+      Timeless silhouettes, handcrafted details, edited by our Bhuj studio for the moments that matter.
+    </p>
+  </div>
+
+  <div class="curated__filters" data-reveal role="tablist" aria-label="Filter by occasion">
+    <button type="button" role="tab" aria-selected="true" class="curated__filter is-active">All</button>
+    <button type="button" role="tab" aria-selected="false" class="curated__filter">Bridal</button>
+    <button type="button" role="tab" aria-selected="false" class="curated__filter">Festive</button>
+    <button type="button" role="tab" aria-selected="false" class="curated__filter">Everyday</button>
+    <button type="button" role="tab" aria-selected="false" class="curated__filter">Gifting</button>
+  </div>
+
+  <div class="curated__grid" data-reveal-child>
+    <a class="piece" href="/pages/shop-shrujan#catalogue">
+      <div class="piece__media">
+        <img src="../shopify-theme/assets/sj-black-pakko-hand-embroidered-kanchli-1.webp" alt="Model wearing the black pakko hand embroidered kanchli" loading="lazy">
+        <button class="piece__wish" type="button" aria-label="Save Black Pakko Hand Embroidered Kanchli to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="piece__quick">Add to bag</span>
+      </div>
+
+      <div class="piece__info">
+        <p class="piece__name">Black Pakko Hand Embroidered Kanchli</p>
+        <p class="piece__craft">Pakko · Kutch</p>
+        <p class="piece__price">₹ 25,000</p>
+        <span class="piece__swatches" aria-hidden="true">
+          <i style="background: #241f1f"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i>
+        </span>
+      </div>
+    </a>
+    <a class="piece" href="/pages/shop-shrujan#catalogue">
+      <div class="piece__media">
+        <img src="../shopify-theme/assets/sj-coffe-brown-hand-embroidered-kanchli-1.webp" alt="Model wearing the coffe brown hand embroidered kanchli" loading="lazy">
+        <button class="piece__wish" type="button" aria-label="Save Coffe Brown Hand Embroidered Kanchli to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="piece__quick">Add to bag</span>
+      </div>
+
+      <div class="piece__info">
+        <p class="piece__name">Coffe Brown Hand Embroidered Kanchli</p>
+        <p class="piece__craft">Kutchi hand-embroidery</p>
+        <p class="piece__price">₹ 28,000</p>
+        <span class="piece__swatches" aria-hidden="true">
+          <i style="background: #5b4033"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i>
+        </span>
+      </div>
+    </a>
+    <a class="piece" href="/pages/shop-shrujan#catalogue">
+      <div class="piece__media">
+        <img src="../shopify-theme/assets/sj-turquoise-hand-embroidered-kanchli-1.webp" alt="Model wearing the turquoise hand embroidered kanchli" loading="lazy">
+        <button class="piece__wish" type="button" aria-label="Save Turquoise Hand Embroidered Kanchli to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="piece__quick">Add to bag</span>
+      </div>
+
+      <div class="piece__info">
+        <p class="piece__name">Turquoise Hand Embroidered Kanchli</p>
+        <p class="piece__craft">Kutchi hand-embroidery</p>
+        <p class="piece__price">₹ 25,000</p>
+        <span class="piece__swatches" aria-hidden="true">
+          <i style="background: #1f7a8c"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i>
+        </span>
+      </div>
+    </a>
+    <a class="piece" href="/pages/shop-shrujan#catalogue">
+      <div class="piece__media">
+        <img src="../shopify-theme/assets/sj-megenta-pink-hand-embroidered-kanchli-1.webp" alt="Model wearing the megenta pink hand embroidered kanchli" loading="lazy">
+        <span class="piece__badge">Sold out</span>
+        <button class="piece__wish" type="button" aria-label="Save Megenta Pink Hand Embroidered Kanchli to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="piece__quick">Add to bag</span>
+      </div>
+
+      <div class="piece__info">
+        <p class="piece__name">Megenta Pink Hand Embroidered Kanchli</p>
+        <p class="piece__craft">Kutchi hand-embroidery</p>
+        <p class="piece__price">₹ 25,000</p>
+        <span class="piece__swatches" aria-hidden="true">
+          <i style="background: #a8306a"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i>
+        </span>
+      </div>
+    </a>
+    <a class="piece" href="/pages/shop-shrujan#catalogue">
+      <div class="piece__media">
+        <img src="../shopify-theme/assets/sj-beige-hand-embroidered-kanchli-1.webp" alt="Model wearing the beige hand embroidered kanchli" loading="lazy">
+        <button class="piece__wish" type="button" aria-label="Save Beige Hand Embroidered Kanchli to wishlist">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>
+        </button>
+        <span class="piece__quick">Add to bag</span>
+      </div>
+
+      <div class="piece__info">
+        <p class="piece__name">Beige Hand Embroidered Kanchli</p>
+        <p class="piece__craft">Kutchi hand-embroidery</p>
+        <p class="piece__price">₹ 28,000</p>
+        <span class="piece__swatches" aria-hidden="true">
+          <i style="background: #c9b79c"></i><i style="background: #c7a56a"></i><i style="background: #f2ede0"></i>
+        </span>
+      </div>
+    </a>
+  </div>
+
+  <div class="curated__more" data-reveal>
+    <a class="btn btn--ghost" href="/pages/shop-shrujan#catalogue">
+      View the full edit <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+    </a>
+  </div>
+
+  <div class="curated__promises" data-reveal-child>
+    <div class="promise">
+      <p class="promise__title">Complimentary shipping</p>
+      <p class="promise__copy">On every order above ₹5,000</p>
+    </div>
+    <div class="promise">
+      <p class="promise__title">14-day easy returns</p>
+      <p class="promise__copy">Unworn pieces, tags intact</p>
+    </div>
+    <div class="promise">
+      <p class="promise__title">Signed by the artisan</p>
+      <p class="promise__copy">Every piece carries her name</p>
+    </div>
+    <div class="promise">
+      <p class="promise__title">Made to measure</p>
+      <p class="promise__copy">Free alterations on request</p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.getElementById('curated');
+  if (!root || root.__shrujanInit) return;
+  root.__shrujanInit = true;
+
+  var FILTERS = ['All', 'Bridal', 'Festive', 'Everyday', 'Gifting'];
+  var grid = root.querySelector('.curated__grid');
+  var buttons = root.querySelectorAll('.curated__filter');
+  var filter = 'All';
+
+  var HEART =
+    '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+    '<path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg>';
+
+  function pieceHTML(p) {
+    var badge = p.badge ? '<span class="piece__badge">' + p.badge + '</span>' : '';
+    var was = p.was ? '<span>' + p.was + '</span>' : '';
+    var swatches = p.swatches
+      .map(function (c) { return '<i style="background: ' + c + '"></i>'; })
+      .join('');
+    return (
+      '<a class="piece" href="/pages/shop-shrujan#catalogue">' +
+        '<div class="piece__media">' +
+          '<img src="' + window.SHRUJAN.asset(p.img) + '" alt="' + p.alt + '" loading="lazy">' +
+          badge +
+          '<button class="piece__wish" type="button" aria-label="Save ' + p.name + ' to wishlist">' + HEART + '</button>' +
+          '<span class="piece__quick">Add to bag</span>' +
+        '</div>' +
+        '<div class="piece__info">' +
+          '<p class="piece__name">' + p.name + '</p>' +
+          '<p class="piece__craft">' + p.craft + '</p>' +
+          '<p class="piece__price">' + p.price + was + '</p>' +
+          '<span class="piece__swatches" aria-hidden="true">' + swatches + '</span>' +
+        '</div>' +
+      '</a>'
+    );
+  }
+
+  function renderGrid() {
+    var pieces = window.SHRUJAN.PIECES;
+    var shown = (filter === 'All'
+      ? pieces
+      : pieces.filter(function (p) { return p.tag === filter; })
+    ).slice(0, 5);
+    grid.innerHTML = shown.map(pieceHTML).join('');
+  }
+
+  function setFilter(f) {
+    if (f === filter) return;
+    filter = f;
+    buttons.forEach(function (btn, i) {
+      var active = FILTERS[i] === filter;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    renderGrid();
+  }
+
+  buttons.forEach(function (btn, i) {
+    btn.addEventListener('click', function () { setFilter(FILTERS[i]); });
+  });
+
+  /* the wishlist heart sits inside the card link — keep its click from navigating */
+  root.addEventListener('click', function (e) {
+    if (e.target.closest && e.target.closest('.piece__wish')) e.preventDefault();
+  });
+})();
+</script>
+
+<section class="section container" aria-label="What our customers say">
+  <div class="tw__intro" data-reveal>
+    <p class="eyebrow">Loved &amp; Worn</p>
+    <h2 class="section-title">What our customers say</h2>
+    <p class="tw__intro-copy">
+      Four thousand women, forty villages and one promise: cloth that is made
+      slowly and kept for a lifetime.
+    </p>
+  </div>
+
+  <div class="tw" data-reveal>
+    <header class="tw__head">
+      <p class="tw__title">
+        Kind <em>Words.</em>
+      </p>
+
+      <div class="tw__meta">
+        <div class="tw-rating">
+          <span class="tw-rating__stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 6 6.6.9-4.8 4.6 1.2 6.6L12 17.6 6.1 20.7l1.2-6.6L2.5 9.5l6.6-.9Z"></path></svg>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 6 6.6.9-4.8 4.6 1.2 6.6L12 17.6 6.1 20.7l1.2-6.6L2.5 9.5l6.6-.9Z"></path></svg>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 6 6.6.9-4.8 4.6 1.2 6.6L12 17.6 6.1 20.7l1.2-6.6L2.5 9.5l6.6-.9Z"></path></svg>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 6 6.6.9-4.8 4.6 1.2 6.6L12 17.6 6.1 20.7l1.2-6.6L2.5 9.5l6.6-.9Z"></path></svg>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 6 6.6.9-4.8 4.6 1.2 6.6L12 17.6 6.1 20.7l1.2-6.6L2.5 9.5l6.6-.9Z"></path></svg>
+          </span>
+          <span class="tw-rating__count">1,240 Reviews</span>
+        </div>
+
+        <div class="tw-loved">
+          <span class="tw-loved__stack" aria-hidden="true">
+            <img src="../shopify-theme/assets/cat-c1.webp" alt="" loading="lazy">
+            <img src="../shopify-theme/assets/cat-c5.webp" alt="" loading="lazy">
+            <img src="../shopify-theme/assets/frame-r5t25.webp" alt="" loading="lazy">
+          </span>
+          <span class="tw-loved__label">
+            Loved by 4,000+
+            <br>
+            women across India
+          </span>
+        </div>
+
+        <div class="carousel-arrows">
+          <button type="button" aria-label="Previous testimonials">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5.5 8 12l6.5 6.5"></path></svg>
+          </button>
+          <button type="button" aria-label="Next testimonials">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9.5 5.5 6.5 6.5-6.5 6.5"></path></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="tw__grid">
+      <article class="tw-cell">
+        <div class="tw-cell__inner">
+          <div class="tw-cell__face tw-cell__face--front">
+            <div class="tw-cell__person">
+              <img src="../shopify-theme/assets/cat-c1.webp" alt="" loading="lazy">
+              <div>
+                <p class="tw-cell__name">Meera Shah</p>
+                <p class="tw-cell__role">Mumbai</p>
+              </div>
+            </div>
+
+            <p class="tw-cell__label">Kora Silk Sari</p>
+
+            <blockquote class="tw-cell__quote">“What stood out most was the attention to detail: the fall, the finish, the way the border sits. Five years on it has not lost a single stitch.”</blockquote>
+          </div>
+
+          <div class="tw-cell__face tw-cell__face--back">
+            <p class="tw-buys__eyebrow">Meera took home</p>
+
+            <ul class="tw-buys">
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/cat-c1.webp" alt="Kora Silk Sari" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Kora Silk Sari</span>
+              </li>
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/frame-r1t4.webp" alt="Ivory Zari Blouse" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Ivory Zari Blouse</span>
+              </li>
+            </ul>
+
+            <a class="tw-buys__link" href="/pages/shop-shrujan#catalogue">
+              Shop her picks
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="tw-cell tw-cell--flip">
+        <div class="tw-cell__inner">
+          <div class="tw-cell__face tw-cell__face--front">
+            <div class="tw-cell__person">
+              <img src="../shopify-theme/assets/cat-c5.webp" alt="" loading="lazy">
+              <div>
+                <p class="tw-cell__name">Ananya Iyer</p>
+                <p class="tw-cell__role">Bengaluru</p>
+              </div>
+            </div>
+
+            <p class="tw-cell__label">Chikankari Set</p>
+
+            <blockquote class="tw-cell__quote">“I wore mine to my sister’s mehendi and three people asked where it was from before dinner. It photographs even better than it looks.”</blockquote>
+          </div>
+
+          <div class="tw-cell__face tw-cell__face--back">
+            <p class="tw-buys__eyebrow">Ananya took home</p>
+
+            <ul class="tw-buys">
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/look-b1.webp" alt="Chikankari Kurta Set" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Chikankari Kurta Set</span>
+              </li>
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/frame-r1t12.webp" alt="Chanderi Dupatta" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Chanderi Dupatta</span>
+              </li>
+            </ul>
+
+            <a class="tw-buys__link" href="/pages/shop-shrujan#catalogue">
+              Shop her picks
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="tw-cell">
+        <div class="tw-cell__inner">
+          <div class="tw-cell__face tw-cell__face--front">
+            <div class="tw-cell__person">
+              <img src="../shopify-theme/assets/frame-r5t25.webp" alt="" loading="lazy">
+              <div>
+                <p class="tw-cell__name">Radhika Menon</p>
+                <p class="tw-cell__role">Kochi</p>
+              </div>
+            </div>
+
+            <p class="tw-cell__label">Zardozi Lehenga</p>
+
+            <blockquote class="tw-cell__quote">“Knowing the name of the woman who embroidered it changes how you wear it. You carry it with respect, not just with pride.”</blockquote>
+          </div>
+
+          <div class="tw-cell__face tw-cell__face--back">
+            <p class="tw-buys__eyebrow">Radhika took home</p>
+
+            <ul class="tw-buys">
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/cta-sarree.webp" alt="Zardozi Lehenga" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Zardozi Lehenga</span>
+              </li>
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/frame-r5t25.webp" alt="Crimson Silk Odhani" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Crimson Silk Odhani</span>
+              </li>
+            </ul>
+
+            <a class="tw-buys__link" href="/pages/shop-shrujan#catalogue">
+              Shop her picks
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="tw-cell tw-cell--flip">
+        <div class="tw-cell__inner">
+          <div class="tw-cell__face tw-cell__face--front">
+            <div class="tw-cell__person">
+              <img src="../shopify-theme/assets/frame-r2t5.webp" alt="" loading="lazy">
+              <div>
+                <p class="tw-cell__name">Sana Qureshi</p>
+                <p class="tw-cell__role">Hyderabad</p>
+              </div>
+            </div>
+
+            <p class="tw-cell__label">Phulkari Kurta</p>
+
+            <blockquote class="tw-cell__quote">“It arrived wrapped in mulmul with a handwritten note about the artisan. It felt like receiving heritage, not a parcel.”</blockquote>
+          </div>
+
+          <div class="tw-cell__face tw-cell__face--back">
+            <p class="tw-buys__eyebrow">Sana took home</p>
+
+            <ul class="tw-buys">
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/cat-c2.webp" alt="Phulkari Kurta" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Phulkari Kurta</span>
+              </li>
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/frame-r2t5.webp" alt="Bagh Phulkari Stole" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Bagh Phulkari Stole</span>
+              </li>
+            </ul>
+
+            <a class="tw-buys__link" href="/pages/shop-shrujan#catalogue">
+              Shop her picks
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="tw-cell">
+        <div class="tw-cell__inner">
+          <div class="tw-cell__face tw-cell__face--front">
+            <div class="tw-cell__person">
+              <img src="../shopify-theme/assets/cat-c2.webp" alt="" loading="lazy">
+              <div>
+                <p class="tw-cell__name">Kavya Nair</p>
+                <p class="tw-cell__role">Chennai</p>
+              </div>
+            </div>
+
+            <p class="tw-cell__label">Indigo Mulmul Sari</p>
+
+            <blockquote class="tw-cell__quote">“The indigo has softened beautifully with every wash instead of fading. It drapes better in year three than it did on day one.”</blockquote>
+          </div>
+
+          <div class="tw-cell__face tw-cell__face--back">
+            <p class="tw-buys__eyebrow">Kavya took home</p>
+
+            <ul class="tw-buys">
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/look-b2.webp" alt="Indigo Mulmul Sari" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Indigo Mulmul Sari</span>
+              </li>
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/frame-r2t14.webp" alt="Ajrakh Print Blouse" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Ajrakh Print Blouse</span>
+              </li>
+            </ul>
+
+            <a class="tw-buys__link" href="/pages/shop-shrujan#catalogue">
+              Shop her picks
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="tw-cell tw-cell--flip">
+        <div class="tw-cell__inner">
+          <div class="tw-cell__face tw-cell__face--front">
+            <div class="tw-cell__person">
+              <img src="../shopify-theme/assets/frame-r3t16.webp" alt="" loading="lazy">
+              <div>
+                <p class="tw-cell__name">Nisha Bhatia</p>
+                <p class="tw-cell__role">Chandigarh</p>
+              </div>
+            </div>
+
+            <p class="tw-cell__label">Zari Jacket Set</p>
+
+            <blockquote class="tw-cell__quote">“I ordered for my engagement with three weeks to spare. It came early, altered exactly to measure, and fit like it was drafted on me.”</blockquote>
+          </div>
+
+          <div class="tw-cell__face tw-cell__face--back">
+            <p class="tw-buys__eyebrow">Nisha took home</p>
+
+            <ul class="tw-buys">
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/frame-r3t16.webp" alt="Zari Jacket Set" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Zari Jacket Set</span>
+              </li>
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/cat-c4.webp" alt="Tissue Silk Sharara" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Tissue Silk Sharara</span>
+              </li>
+            </ul>
+
+            <a class="tw-buys__link" href="/pages/shop-shrujan#catalogue">
+              Shop her picks
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="tw-cell">
+        <div class="tw-cell__inner">
+          <div class="tw-cell__face tw-cell__face--front">
+            <div class="tw-cell__person">
+              <img src="../shopify-theme/assets/cat-c4.webp" alt="" loading="lazy">
+              <div>
+                <p class="tw-cell__name">Divya Reddy</p>
+                <p class="tw-cell__role">Hyderabad</p>
+              </div>
+            </div>
+
+            <p class="tw-cell__label">Organza Dupatta</p>
+
+            <blockquote class="tw-cell__quote">“Weightless, but the embroidery still has body. I have worn it over three different outfits and it lifts every one of them.”</blockquote>
+          </div>
+
+          <div class="tw-cell__face tw-cell__face--back">
+            <p class="tw-buys__eyebrow">Divya took home</p>
+
+            <ul class="tw-buys">
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/frame-r3t26.webp" alt="Organza Suf Dupatta" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Organza Suf Dupatta</span>
+              </li>
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/look-b3.webp" alt="Chanderi Anarkali" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Chanderi Anarkali</span>
+              </li>
+            </ul>
+
+            <a class="tw-buys__link" href="/pages/shop-shrujan#catalogue">
+              Shop her picks
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="tw-cell tw-cell--flip">
+        <div class="tw-cell__inner">
+          <div class="tw-cell__face tw-cell__face--front">
+            <div class="tw-cell__person">
+              <img src="../shopify-theme/assets/cta-band.webp" alt="" loading="lazy">
+              <div>
+                <p class="tw-cell__name">Farah Sheikh</p>
+                <p class="tw-cell__role">Lucknow</p>
+              </div>
+            </div>
+
+            <p class="tw-cell__label">Bridal Trousseau</p>
+
+            <blockquote class="tw-cell__quote">“Two years in the making and worth every month. My mother cried when she saw the mirror work on the dupatta.”</blockquote>
+          </div>
+
+          <div class="tw-cell__face tw-cell__face--back">
+            <p class="tw-buys__eyebrow">Farah took home</p>
+
+            <ul class="tw-buys">
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/hero-right.webp" alt="Mirror-Work Bridal Set" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Mirror-Work Bridal Set</span>
+              </li>
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/frame-r5t15.webp" alt="Gota Patti Dupatta" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Gota Patti Dupatta</span>
+              </li>
+            </ul>
+
+            <a class="tw-buys__link" href="/pages/shop-shrujan#catalogue">
+              Shop her picks
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="tw-cell">
+        <div class="tw-cell__inner">
+          <div class="tw-cell__face tw-cell__face--front">
+            <div class="tw-cell__person">
+              <img src="../shopify-theme/assets/frame-r1t20.webp" alt="" loading="lazy">
+              <div>
+                <p class="tw-cell__name">Tara Deshpande</p>
+                <p class="tw-cell__role">Pune</p>
+              </div>
+            </div>
+
+            <p class="tw-cell__label">Banarasi Silk Sari</p>
+
+            <blockquote class="tw-cell__quote">“I have bought silk at four times this price that did not come close. The zari is real and it shows in the light.”</blockquote>
+          </div>
+
+          <div class="tw-cell__face tw-cell__face--back">
+            <p class="tw-buys__eyebrow">Tara took home</p>
+
+            <ul class="tw-buys">
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/frame-r1t20.webp" alt="Banarasi Silk Sari" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Banarasi Silk Sari</span>
+              </li>
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/hero-bottom-2.webp" alt="Katan Silk Blouse" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Katan Silk Blouse</span>
+              </li>
+            </ul>
+
+            <a class="tw-buys__link" href="/pages/shop-shrujan#catalogue">
+              Shop her picks
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="tw-cell tw-cell--flip">
+        <div class="tw-cell__inner">
+          <div class="tw-cell__face tw-cell__face--front">
+            <div class="tw-cell__person">
+              <img src="../shopify-theme/assets/cat-c3.webp" alt="" loading="lazy">
+              <div>
+                <p class="tw-cell__name">Ishita Ghosh</p>
+                <p class="tw-cell__role">Kolkata</p>
+              </div>
+            </div>
+
+            <p class="tw-cell__label">Kantha Stole</p>
+
+            <blockquote class="tw-cell__quote">“Every running stitch is slightly different, which is exactly the point. Nothing about it looks machine-made.”</blockquote>
+          </div>
+
+          <div class="tw-cell__face tw-cell__face--back">
+            <p class="tw-buys__eyebrow">Ishita took home</p>
+
+            <ul class="tw-buys">
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/cat-c3.webp" alt="Kantha Silk Stole" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Kantha Silk Stole</span>
+              </li>
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/frame-r3t6.webp" alt="Tussar Kantha Sari" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Tussar Kantha Sari</span>
+              </li>
+            </ul>
+
+            <a class="tw-buys__link" href="/pages/shop-shrujan#catalogue">
+              Shop her picks
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="tw-cell">
+        <div class="tw-cell__inner">
+          <div class="tw-cell__face tw-cell__face--front">
+            <div class="tw-cell__person">
+              <img src="../shopify-theme/assets/frame-r3t26.webp" alt="" loading="lazy">
+              <div>
+                <p class="tw-cell__name">Aditi Rao</p>
+                <p class="tw-cell__role">Bengaluru</p>
+              </div>
+            </div>
+
+            <p class="tw-cell__label">Suf Embroidered Kurta</p>
+
+            <blockquote class="tw-cell__quote">“The customer care team sent me photographs from the workshop while it was being stitched. That is not something you forget.”</blockquote>
+          </div>
+
+          <div class="tw-cell__face tw-cell__face--back">
+            <p class="tw-buys__eyebrow">Aditi took home</p>
+
+            <ul class="tw-buys">
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/frame-r2t24.webp" alt="Suf Embroidered Kurta" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Suf Embroidered Kurta</span>
+              </li>
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/top-right.webp" alt="Kutchi Cotton Palazzo" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Kutchi Cotton Palazzo</span>
+              </li>
+            </ul>
+
+            <a class="tw-buys__link" href="/pages/shop-shrujan#catalogue">
+              Shop her picks
+            </a>
+          </div>
+        </div>
+      </article>
+      <article class="tw-cell tw-cell--flip">
+        <div class="tw-cell__inner">
+          <div class="tw-cell__face tw-cell__face--front">
+            <div class="tw-cell__person">
+              <img src="../shopify-theme/assets/frame-r5t5.webp" alt="" loading="lazy">
+              <div>
+                <p class="tw-cell__name">Rhea Kapoor</p>
+                <p class="tw-cell__role">Delhi</p>
+              </div>
+            </div>
+
+            <p class="tw-cell__label">Ajrakh Kurta Set</p>
+
+            <blockquote class="tw-cell__quote">“It has become my default for every festive lunch. Comfortable enough to sit through a long meal, sharp enough for photographs.”</blockquote>
+          </div>
+
+          <div class="tw-cell__face tw-cell__face--back">
+            <p class="tw-buys__eyebrow">Rhea took home</p>
+
+            <ul class="tw-buys">
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/frame-r5t5.webp" alt="Ajrakh Kurta Set" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Ajrakh Kurta Set</span>
+              </li>
+              <li class="tw-buys__item">
+                <span class="tw-buys__frame">
+                  <img src="../shopify-theme/assets/cat-c5.webp" alt="Indigo Cotton Stole" loading="lazy">
+                </span>
+                <span class="tw-buys__name">Indigo Cotton Stole</span>
+              </li>
+            </ul>
+
+            <a class="tw-buys__link" href="/pages/shop-shrujan#catalogue">
+              Shop her picks
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.querySelector('.tw');
+  if (!root || root.__shrujanInit) return;
+  root.__shrujanInit = true;
+
+  var track = root.querySelector('.tw__grid');
+
+  // Scroll one full page (whatever number of cells currently fit).
+  function page(dir) {
+    if (!track) return;
+    track.scrollBy({ left: dir * track.clientWidth, behavior: 'smooth' });
+  }
+
+  var arrows = root.querySelectorAll('.carousel-arrows button');
+  if (arrows[0]) arrows[0].addEventListener('click', function () { page(-1); });
+  if (arrows[1]) arrows[1].addEventListener('click', function () { page(1); });
+})();
+</script>
+
+<section class="section container journal" id="journal">
+  <div class="journal__head" data-reveal>
+    <p class="eyebrow">The Journal</p>
+    <h2 class="section-title">
+      Stories from the loom,
+      <br>
+      straight from the villages
+    </h2>
+  </div>
+
+  <a class="journal-feature" href="/pages/the-shrujan-story#journal" data-reveal>
+    <div class="journal-feature__media">
+      <img src="../shopify-theme/assets/top-right.webp" alt="Close crop of mirror-work embroidery in crimson and gold threads" loading="lazy">
+    </div>
+
+    <div class="journal-feature__body">
+      <span class="journal-pill journal-pill--dark journal-feature__tag">Craft Notes</span>
+      <h3 class="journal-feature__title">5 Kutch embroidery styles and how to tell them apart</h3>
+      <p class="journal-feature__excerpt">Suf, Kharek, Paako, Rabari, Mutava. Each village stitches its own signature. A field guide to reading the motifs, mirrors and thread counts that set them apart.</p>
+
+      <span class="arrow-link journal-feature__link">
+        Read the story <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+      </span>
+
+      <div class="journal-feature__foot">
+        <div class="journal-author">
+          <img src="../shopify-theme/assets/cat-c4.webp" alt="" loading="lazy">
+          <div>
+            <p class="journal-author__name">Kanta Ben Rabari</p>
+            <p class="journal-author__role">Master Artisan · Bhuj</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <div class="journal-grid" data-reveal-child>
+    <a class="journal-card" href="/pages/the-shrujan-story#journal">
+      <div class="journal-card__media">
+        <img src="../shopify-theme/assets/hero-bottom-2.webp" alt="Block-printing tools resting on embroidered plum cloth" loading="lazy">
+        <span class="journal-pill">Care Guide</span>
+        <span class="journal-card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+        </span>
+      </div>
+      <h3 class="journal-card__title">How to care for handwoven cloth</h3>
+    </a>
+    <a class="journal-card" href="/pages/the-shrujan-story#journal">
+      <div class="journal-card__media">
+        <img src="../shopify-theme/assets/look-b2.webp" alt="Model in a red bridal lehenga with a net dupatta" loading="lazy">
+        <span class="journal-pill">Trousseau</span>
+        <span class="journal-card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+        </span>
+      </div>
+      <h3 class="journal-card__title">A wedding in Kutch, stitched over two years</h3>
+    </a>
+    <a class="journal-card" href="/pages/the-shrujan-story#journal">
+      <div class="journal-card__media">
+        <img src="../shopify-theme/assets/look-b1.webp" alt="Model in a maroon silk sari with gold zari embroidery beside brass urns" loading="lazy">
+        <span class="journal-pill">Lookbook</span>
+        <span class="journal-card__arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+        </span>
+      </div>
+      <h3 class="journal-card__title">The Autumn Edit: colours of the salt desert</h3>
+    </a>
+  </div>
+</section>
+
+<section class="section container faq-section" id="support">
+  <div class="section-intro" data-reveal>
+    <p class="eyebrow">Help &amp; Support</p>
+    <h2 class="section-title">Everything you need to know</h2>
+    <p class="section-intro__copy">
+      Thoughtful answers for a seamless shopping experience.
+    </p>
+  </div>
+
+  <div class="faq" data-reveal>
+    <div class="faq__item is-open">
+      <button class="faq__summary" type="button" aria-expanded="true" aria-controls="faq-panel-0">
+        <span class="faq__no">01</span>
+        <span class="faq__q">Are your pieces handcrafted?</span>
+        <span class="faq__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+        </span>
+      </button>
+
+      <div class="faq__panel" id="faq-panel-0" role="region">
+        <div class="faq__panel-inner">
+          <p class="faq__a">Yes. Every garment is embroidered by artisan women across forty villages of Kutch. No machine embroidery, ever. Each piece carries the name of the hands that made it.</p>
+        </div>
+      </div>
+    </div>
+    <div class="faq__item">
+      <button class="faq__summary" type="button" aria-expanded="false" aria-controls="faq-panel-1">
+        <span class="faq__no">02</span>
+        <span class="faq__q">What size options are available?</span>
+        <span class="faq__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+        </span>
+      </button>
+
+      <div class="faq__panel" id="faq-panel-1" role="region">
+        <div class="faq__panel-inner">
+          <p class="faq__a">Our pieces come in XS to XXL, and every silhouette is cut to drape generously. Made-to-measure is available on request for saris, lehengas and bridal commissions.</p>
+        </div>
+      </div>
+    </div>
+    <div class="faq__item">
+      <button class="faq__summary" type="button" aria-expanded="false" aria-controls="faq-panel-2">
+        <span class="faq__no">03</span>
+        <span class="faq__q">How long will my order take to reach me?</span>
+        <span class="faq__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+        </span>
+      </button>
+
+      <div class="faq__panel" id="faq-panel-2" role="region">
+        <div class="faq__panel-inner">
+          <p class="faq__a">Ready pieces ship from Bhuj within 48 hours and arrive in 3–6 days across India. Made-to-order embroidery takes 2–3 weeks. Good things, stitched slowly.</p>
+        </div>
+      </div>
+    </div>
+    <div class="faq__item">
+      <button class="faq__summary" type="button" aria-expanded="false" aria-controls="faq-panel-3">
+        <span class="faq__no">04</span>
+        <span class="faq__q">Do you offer international shipping?</span>
+        <span class="faq__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+        </span>
+      </button>
+
+      <div class="faq__panel" id="faq-panel-3" role="region">
+        <div class="faq__panel-inner">
+          <p class="faq__a">We ship worldwide. International orders arrive in 8–14 days, fully tracked, with duties settled at checkout so there are no surprises.</p>
+        </div>
+      </div>
+    </div>
+    <div class="faq__item">
+      <button class="faq__summary" type="button" aria-expanded="false" aria-controls="faq-panel-4">
+        <span class="faq__no">05</span>
+        <span class="faq__q">What is your return &amp; exchange policy?</span>
+        <span class="faq__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+        </span>
+      </button>
+
+      <div class="faq__panel" id="faq-panel-4" role="region">
+        <div class="faq__panel-inner">
+          <p class="faq__a">Easy returns and exchanges within 14 days for unworn pieces with tags intact. Hand-embroidered commissions and altered garments are made to order and non-returnable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script>
+(function () {
+  var root = document.querySelector('.faq-section');
+  if (!root || root.__shrujanInit) return;
+  root.__shrujanInit = true;
+
+  var items = Array.prototype.slice.call(root.querySelectorAll('.faq__item'));
+
+  items.forEach(function (item) {
+    var button = item.querySelector('.faq__summary');
+    if (!button) return;
+    button.addEventListener('click', function () {
+      // setOpen(isOpen ? -1 : i) — one panel open at a time; clicking the
+      // open one closes everything.
+      var wasOpen = item.classList.contains('is-open');
+      items.forEach(function (other) {
+        var isOpen = !wasOpen && other === item;
+        other.classList.toggle('is-open', isOpen);
+        var btn = other.querySelector('.faq__summary');
+        if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+  });
+})();
+</script>
+
+<section class="shopcta" aria-label="Shop the collection">
+  <div class="shopcta__grid" data-reveal>
+    <div class="shopcta__media">
+      <img src="../shopify-theme/assets/cta-band.webp" alt="Model in a maroon silk sari with a gold zari border" loading="lazy">
+    </div>
+
+    <div class="shopcta__panel">
+      <p class="shopcta__eyebrow">The Festive Edit</p>
+
+      <h2 class="shopcta__title">
+        Wear your
+        <br>
+        <em>heritage</em> forward
+      </h2>
+
+      <p class="shopcta__copy">
+        Twenty new pieces from forty villages, hand-embroidered, naturally dyed,
+        and signed by the women who made them.
+      </p>
+
+      <div class="shopcta__actions">
+        <a class="btn" href="#categories">
+          Shop the collection
+        </a>
+        <a class="arrow-link shopcta__link" href="#support">
+          Book a styling call <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+        </a>
+      </div>
+
+      <ul class="shopcta__micro">
+        <li>Shipping over ₹5,000</li>
+        <li>14-day returns</li>
+        <li>Free alterations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+      <footer class="footer">
+  <span class="footer__weave" aria-hidden="true">
+    <span class="footer__mandala footer__mandala--left"></span>
+    <span class="footer__mandala footer__mandala--right"></span>
+  </span>
+
+  <div class="footer__inner">
+    <div class="ftop">
+      <div class="fletters" id="letters">
+        <p class="fletters__eyebrow">Letters from the Loom</p>
+        <h2 class="fletters__title">Stay close to the craft</h2>
+        <p class="fletters__copy">
+          New collections, artisan stories and early access to festive edits — once a
+          month, written slowly.
+        </p>
+
+        <form class="fletters__form">
+          <input type="email" required placeholder="Your email address" aria-label="Email address">
+          <button type="submit">
+            Subscribe <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="fbrand">
+        <span class="fbrand__mark" role="img" aria-label="Shrujan"></span>
+        <p class="fbrand__tag">
+          Heritage by Hand
+          <span>Kutch, since 1969</span>
+        </p>
+
+        <div class="footer__socials">
+          <a class="footer__social" href="https://www.instagram.com/shrujanindia/" aria-label="Instagram" target="_blank" rel="noreferrer noopener">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+              <circle cx="12" cy="12" r="3.9"></circle>
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle>
+            </svg>
+          </a>
+          <a class="footer__social" href="https://www.facebook.com/shrujanindia" aria-label="Facebook" target="_blank" rel="noreferrer noopener">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+              <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.3 0-1.3-.1-2.45-.1-2.4 0-4.05 1.5-4.05 4.2v2.2H7.5V13h2.7v8Z"></path>
+            </svg>
+          </a>
+          <a class="footer__social" href="https://www.pinterest.com/shrujancreations/" aria-label="Pinterest" target="_blank" rel="noreferrer noopener">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+              <path d="M12 3a9 9 0 0 0-3.3 17.36c-.08-.72-.15-1.83.03-2.62.16-.7 1.06-4.5 1.06-4.5s-.27-.54-.27-1.34c0-1.26.73-2.2 1.63-2.2.77 0 1.14.58 1.14 1.27 0 .78-.49 1.94-.75 3.02-.21.9.46 1.64 1.35 1.64 1.62 0 2.87-1.71 2.87-4.18 0-2.19-1.57-3.72-3.82-3.72-2.6 0-4.13 1.95-4.13 3.97 0 .79.3 1.63.68 2.09.08.09.09.17.06.26l-.25 1.02c-.4.17-.13.2-.3.12-1.11-.52-1.8-2.14-1.8-3.44 0-2.8 2.03-5.37 5.87-5.37 3.08 0 5.47 2.2 5.47 5.13 0 3.06-1.93 5.52-4.6 5.52-.9 0-1.75-.47-2.04-1.02l-.55 2.12c-.2.77-.74 1.73-1.1 2.32A9 9 0 1 0 12 3Z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="fmap" aria-label="Footer">
+      <div class="fmap__col">
+        <p class="fmap__group">Explore</p>
+        <ul>
+          <li><a href="/pages/the-shrujan-story">The Shrujan Story</a></li>
+          <li><a href="/pages/the-shrujan-story#origins">Origins</a></li>
+          <li><a href="/pages/the-shrujan-story#values">Philosophy &amp; Values</a></li>
+          <li><a href="/pages/the-shrujan-story#people">The People of Shrujan</a></li>
+          <li><a href="/pages/the-shrujan-story#press">In the Media</a></li>
+        </ul>
+      </div>
+      <div class="fmap__col">
+        <p class="fmap__group">Shop</p>
+        <ul>
+          <li><a href="/pages/shop-shrujan">All of Shrujan</a></li>
+          <li><a href="/pages/shop-shrujan?c=hand-bags">Bags</a></li>
+          <li><a href="/pages/shop-shrujan?c=kanchli">Kanchli</a></li>
+          <li><a href="/pages/shop-shrujan?c=kurtas-and-tops">Kurtas &amp; Tops</a></li>
+          <li><a href="/pages/shop-shrujan?c=home-decor">Home Decor</a></li>
+          <li><a href="/pages/shop-shrujan?c=accessories">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="fmap__col">
+        <p class="fmap__group">Studio</p>
+        <ul>
+          <li><a href="/pages/studio-collection">Studio Collection</a></li>
+          <li><a href="/pages/studio-heritage">Heritage</a></li>
+          <li><a href="/pages/studio-avinya">Avinya</a></li>
+          <li><a href="/pages/studio-gifting">Gifting &amp; Collaborations</a></li>
+        </ul>
+      </div>
+      <div class="fmap__col">
+        <p class="fmap__group">Visit &amp; Help</p>
+        <ul>
+          <li><a href="/pages/video">Craft Traditions of Kutch</a></li>
+          <li><a href="/pages/lldc">Living &amp; Learning Design Centre</a></li>
+          <li><a href="/pages/visit-experience">Visit &amp; Experience</a></li>
+          <li><a href="/#support">Frequently Asked</a></li>
+        </ul>
+      </div>
+
+      <div class="fmap__col">
+        <p class="fmap__group">Reach us</p>
+        <ul class="freach">
+          <li>
+            <span class="freach__label">Write to us</span>
+            <a href="mailto:marketing@shrujan.com">marketing@shrujan.com</a>
+          </li>
+          <li>
+            <span class="freach__label">Call the studio</span>
+            <a href="tel:+919099974319">+91 9099 974319</a>
+          </li>
+          <li>
+            <span class="freach__label"></span>
+            <a href="tel:+919081899882">+91 90818 99882</a>
+          </li>
+          <li>
+            <span class="freach__label">Visit</span>
+            <a href="/pages/visit-experience">Bhujodi Road, Bhuj · Kutch</a>
+          </li>
+          <li>
+            <span class="freach__label">Studio hours</span>
+            <span class="freach__value">10 AM to 7 PM</span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="footer__bottom">
+      <span>© 2026 Shrujan. All rights reserved.</span>
+
+      <div class="footer__legal">
+        <a href="https://shrujan.com/policies/privacy-policy" target="_blank" rel="noreferrer noopener">Privacy Policy</a>
+        <a href="https://shrujan.com/policies/terms-of-service" target="_blank" rel="noreferrer noopener">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+  </body>
+</html>

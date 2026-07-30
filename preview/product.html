@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6 L44 32 L32 58 L20 32 Z' fill='%23B05C3B'/%3E%3Cpath d='M32 20 L38 32 L32 44 L26 32 Z' fill='%23F5F1E6'/%3E%3C/svg%3E">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shrujan — Heritage by Hand. Handcrafted Indian clothing rooted in the living embroidery traditions of Kutch.">
+    <title>SHRUJAN — Heritage by Hand</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../shopify-theme/assets/shrujan-global.css">
+    <link rel="stylesheet" href="../shopify-theme/assets/shrujan-pages.css">
+    <script>window.SHRUJAN_ASSET_BASE = "../shopify-theme/assets/";</script>
+    <script src="../shopify-theme/assets/gsap.min.js"></script>
+    <script src="../shopify-theme/assets/ScrollTrigger.min.js"></script>
+    <script src="../shopify-theme/assets/lenis.min.js"></script>
+    <script src="../shopify-theme/assets/shrujan-catalogue.js"></script>
+    <script src="../shopify-theme/assets/shrujan-core.js"></script>
+    
+  <script>
+(function () {
+  function mapHref(raw) {
+    if (!raw || raw[0] !== '/') return null
+    var m = raw.match(/^\/([^?#]*)((?:\?[^#]*)?)((?:#.*)?)$/)
+    if (!m) return null
+    var path = m[1].replace(/\/+$/, '')
+    var query = m[2] || ''
+    var hash = m[3] || ''
+    if (path === '') return 'index.html' + query + hash
+    var pages = path.match(/^pages\/([^\/]+)$/)
+    if (pages) return pages[1] + '.html' + query + hash
+    var product = path.match(/^products\/([^\/]+)$/)
+    if (product) return 'product.html?slug=' + product[1] + hash
+    return 'index.html' /* React's catch-all route rendered the storefront */
+  }
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest && e.target.closest('a')
+    if (!link) return
+    var mapped = mapHref(link.getAttribute('href'))
+    if (!mapped) return
+    e.preventDefault()
+    e.stopPropagation()
+    window.location.href = mapped
+  }, true)
+})()
+</script>
+  </head>
+  <body>
+    <div id="root">
+      <header class="site-header">
+  <div class="topbar">
+    <div class="topbar__inner">
+      <div class="topbar__selects">
+        <button class="topbar__select" type="button" aria-label="Change currency">INR <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9.5 6 6 6-6"></path></svg></button>
+        <span class="topbar__sep" aria-hidden="true"></span>
+        <button class="topbar__select" type="button" aria-label="Change language">EN <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9.5 6 6 6-6"></path></svg></button>
+      </div>
+      <span class="topbar__note">Complimentary shipping on orders above ₹5,000</span>
+    </div>
+  </div>
+
+  <div class="site-header__inner">
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5h16M4 12h16M4 16.5h16"></path></svg></button>
+
+    <nav class="site-nav" aria-label="Primary">
+      <div class="nav-item has-menu">
+        <a class="nav-item__link" href="/pages/the-shrujan-story" aria-label="The Shrujan Story">Story<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9.5 6 6 6-6"></path></svg></a>
+        <div class="nav-panel">
+          <div class="nav-panel__sheet">
+            <span class="nav-panel__orn" aria-hidden="true"></span>
+            <div class="nav-panel__inner">
+              <a class="navlead" href="/pages/the-shrujan-story">
+                <img src="../shopify-theme/assets/story-chanda.webp" alt="" loading="lazy" style="object-position: center 15%">
+                <span class="navlead__scrim" aria-hidden="true"></span>
+                <span class="navlead__body">
+                  <span class="navlead__eyebrow">Story</span>
+                  <span class="navlead__title">Fifty years, <em>stitched by hand</em></span>
+                  <span class="navlead__copy">From thirty saris in a drought year to four thousand women at the frame. Told in five chapters.</span>
+                  <span class="navlead__cta">Read the story<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </span>
+              </a>
+              <div class="navcol navcol--main">
+                <p class="navcol__group">The five chapters</p>
+                <ul class="navthumbs">
+                  <li>
+                    <a href="/pages/the-shrujan-story#origins">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/story-origin-1.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Origins</span><span class="navthumbs__sub">Where it began</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/the-shrujan-story#values">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/story-dignity.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Philosophy &amp; Values</span><span class="navthumbs__sub">What we hold to</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/the-shrujan-story#people">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/story-ami.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">The People of Shrujan</span><span class="navthumbs__sub">Hands, and names</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navcol navcol--more">
+                <p class="navcol__group">Explore further</p>
+                <ul class="navlinks">
+                  <li><a href="/pages/the-shrujan-story#journal"><span>Photo Journal</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/the-shrujan-story#press"><span>In the Media</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/video"><span>Craft Traditions</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/lldc"><span>The Design Centre</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/visit-experience"><span>Visit the Campus</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                </ul>
+              </div>
+              <div class="navcol navcol--featured">
+                <p class="navcol__group">Featured</p>
+                <a class="navfeat" href="/pages/the-shrujan-story#people">
+                  <span class="navfeat__media"><img src="../shopify-theme/assets/story-continuity.webp" alt="A younger embroiderer learning at the frame" loading="lazy"></span>
+                  <span class="navfeat__title"><em>Continuity</em></span>
+                  <span class="navfeat__sub">The next generation at the frame</span>
+                  <span class="navfeat__cta">Read the story<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item has-menu">
+        <a class="nav-item__link" href="/pages/shop-shrujan" aria-label="Shop Shrujan">Shop<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9.5 6 6 6-6"></path></svg></a>
+        <div class="nav-panel">
+          <div class="nav-panel__sheet">
+            <span class="nav-panel__orn" aria-hidden="true"></span>
+            <div class="nav-panel__inner">
+              <a class="navlead" href="/pages/shop-shrujan">
+                <img src="../shopify-theme/assets/shop-hero.webp" alt="" loading="lazy">
+                <span class="navlead__scrim" aria-hidden="true"></span>
+                <span class="navlead__body">
+                  <span class="navlead__eyebrow">Shop</span>
+                  <span class="navlead__title">Worn slowly, <em>kept for years</em></span>
+                  <span class="navlead__copy">Hand-embroidered cloth from the villages of Kutch, cut and finished in the Bhuj atelier.</span>
+                  <span class="navlead__cta">Shop everything<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </span>
+              </a>
+              <div class="navcol navcol--main">
+                <p class="navcol__group">What to wear</p>
+                <ul class="navthumbs">
+                  <li>
+                    <a href="/pages/shop-shrujan?c=kanchli">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/sj-black-pakko-hand-embroidered-kanchli-1.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Kanchli</span><span class="navthumbs__sub">The Kutchi bodice</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/shop-shrujan?c=kurtas-and-tops">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/sj-green-hand-woven-top-1.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Kurtas &amp; Tops</span><span class="navthumbs__sub">Everyday handloom</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/shop-shrujan?c=dresses">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/sj-hand-block-printed-dress-1.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Dresses</span><span class="navthumbs__sub">Long, easy cuts</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navcol navcol--more">
+                <p class="navcol__group">Bags &amp; home</p>
+                <ul class="navlinks">
+                  <li><a href="/pages/shop-shrujan?c=hand-bags"><span>Hand Bags</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/shop-shrujan?c=crossbody-and-sling"><span>Crossbody &amp; Sling</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/shop-shrujan?c=potlis-and-batwas"><span>Potlis &amp; Batwas</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/shop-shrujan?c=tote-bags"><span>Tote Bags</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/shop-shrujan?c=home-decor"><span>Home Decor</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/shop-shrujan?c=accessories"><span>Accessories</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                </ul>
+              </div>
+              <div class="navcol navcol--featured">
+                <p class="navcol__group">Featured</p>
+                <a class="navfeat" href="/pages/video">
+                  <span class="navfeat__media"><img src="../shopify-theme/assets/craft-hero.webp" alt="Embroiderers of Kutch working together outside their village" loading="lazy"></span>
+                  <span class="navfeat__title"><em>Shop by craft</em></span>
+                  <span class="navfeat__sub">The hands behind every piece</span>
+                  <span class="navfeat__cta">Watch the films<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item has-menu">
+        <a class="nav-item__link" href="/pages/studio-collection" aria-label="Studio Collection">Studio<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9.5 6 6 6-6"></path></svg></a>
+        <div class="nav-panel">
+          <div class="nav-panel__sheet">
+            <span class="nav-panel__orn" aria-hidden="true"></span>
+            <div class="nav-panel__inner">
+              <a class="navlead" href="/pages/studio-collection">
+                <img src="../shopify-theme/assets/story-origin-3.webp" alt="" loading="lazy">
+                <span class="navlead__scrim" aria-hidden="true"></span>
+                <span class="navlead__body">
+                  <span class="navlead__eyebrow">Studio</span>
+                  <span class="navlead__title">Where <em>tradition</em> meets <em>tomorrow</em></span>
+                  <span class="navlead__copy">Three strands. Endless conversations. A few co-creations. Always rooted in craft.</span>
+                  <span class="navlead__cta">Explore studio<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </span>
+              </a>
+              <div class="navcol navcol--main">
+                <p class="navcol__group">All three strands</p>
+                <ul class="navthumbs">
+                  <li>
+                    <a href="/pages/studio-heritage">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/frame-r2t24.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Heritage</span><span class="navthumbs__sub">Living traditions</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/studio-avinya">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/story-origin-3.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Avinya</span><span class="navthumbs__sub">Contemporary expressions</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/studio-gifting">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/sj-jat-garasiya-party-bag-1.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Gifting &amp; Collaborations</span><span class="navthumbs__sub">Craft in dialogue</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navcol navcol--more">
+                <p class="navcol__group">Explore further</p>
+                <ul class="navlinks">
+                  <li><a href="/pages/the-shrujan-story#people"><span>Artisan Stories</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/video"><span>Process &amp; Techniques</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/video#ajrakh"><span>Materials &amp; Motifs</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/the-shrujan-story#journal"><span>Studio Journal</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/lldc"><span>Behind the Scenes</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                </ul>
+              </div>
+              <div class="navcol navcol--featured">
+                <p class="navcol__group">Featured</p>
+                <a class="navfeat" href="/pages/the-shrujan-story#journal">
+                  <span class="navfeat__media"><img src="../shopify-theme/assets/lldc-studio.webp" alt="The design studio at the Living &amp; Learning Design Centre" loading="lazy"></span>
+                  <span class="navfeat__title"><em>In Conversation</em></span>
+                  <span class="navfeat__sub">Craft, people and places</span>
+                  <span class="navfeat__cta">Read our journal<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-item__link" href="/pages/video" aria-label="Craft Traditions of Kutch">Craft</a>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-item__link" href="/pages/lldc" aria-label="Living &amp; Learning Design Centre">LLDC</a>
+      </div>
+
+      <div class="nav-item has-menu">
+        <a class="nav-item__link" href="/pages/visit-experience" aria-label="Visit &amp; Experience">Visit<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9.5 6 6 6-6"></path></svg></a>
+        <div class="nav-panel">
+          <div class="nav-panel__sheet">
+            <span class="nav-panel__orn" aria-hidden="true"></span>
+            <div class="nav-panel__inner">
+              <a class="navlead" href="/pages/visit-experience">
+                <img src="../shopify-theme/assets/visit-campus.webp" alt="" loading="lazy">
+                <span class="navlead__scrim" aria-hidden="true"></span>
+                <span class="navlead__body">
+                  <span class="navlead__eyebrow">Visit</span>
+                  <span class="navlead__title">Come to <em>Kutch</em></span>
+                  <span class="navlead__copy">The campus, the museum and the villages where the cloth is made. November to February is the season.</span>
+                  <span class="navlead__cta">Plan your visit<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </span>
+              </a>
+              <div class="navcol navcol--main">
+                <p class="navcol__group">Where to go</p>
+                <ul class="navthumbs">
+                  <li>
+                    <a href="/pages/visit-experience#places">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/visit-campus.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">Shrujan Campus</span><span class="navthumbs__sub">Bhujodi Road, Bhuj</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/lldc">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/visit-lldc.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">LLDC Museum</span><span class="navthumbs__sub">Four galleries, Ajrakhpur</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/pages/video">
+                      <span class="navthumbs__media"><img src="../shopify-theme/assets/visit-ajrakhpur.webp" alt="" loading="lazy"></span>
+                      <span class="navthumbs__text"><span class="navthumbs__label">The Craft Villages</span><span class="navthumbs__sub">Looms and print tables</span></span>
+                      <svg class="navthumbs__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navcol navcol--more">
+                <p class="navcol__group">Plan your trip</p>
+                <ul class="navlinks">
+                  <li><a href="/pages/visit-experience#places"><span>Where to go</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/visit-experience#plan"><span>How long to stay</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/lldc"><span>The Design Centre</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/pages/video"><span>Craft Traditions</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                  <li><a href="/#support"><span>Frequently Asked</span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></a></li>
+                </ul>
+              </div>
+              <div class="navcol navcol--featured">
+                <p class="navcol__group">Featured</p>
+                <a class="navfeat" href="/pages/video#embroidery">
+                  <span class="navfeat__media"><img src="../shopify-theme/assets/visit-banni.webp" alt="The Banni grasslands of northern Kutch" loading="lazy"></span>
+                  <span class="navfeat__title"><em>The Banni villages</em></span>
+                  <span class="navfeat__sub">Where Suf, Mutava and Jat come from</span>
+                  <span class="navfeat__cta">Watch the films<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <a class="brand" href="/" aria-label="Shrujan home">
+      <img class="brand__logo" src="../shopify-theme/assets/logo-shrujan.png" alt="Shrujan">
+      <span class="brand__tag">Heritage by Hand</span>
+    </a>
+
+    <div class="header-utils">
+      <a class="utility-link" href="/pages/shop-shrujan#catalogue" aria-label="Search"><span>Search</span> <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"></circle><path d="m20 20-4.35-4.35"></path></svg></a>
+      <button class="utility-link" type="button" aria-label="Account" aria-disabled="true"><span>Account</span> <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.75"></circle><path d="M4.75 19.5c1.6-3.1 4.1-4.5 7.25-4.5s5.65 1.4 7.25 4.5"></path></svg></button>
+      <button class="utility-link" type="button" aria-label="Wishlist" aria-disabled="true"><span>Wishlist</span> <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path></svg></button>
+      <a class="utility-link" href="/pages/shop-shrujan#catalogue" aria-label="Shopping bag, 0 items"><span>Bag&nbsp;(0)</span> <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 8h13l-.9 12h-11.2Z"></path><path d="M9 10V6.5a3 3 0 0 1 6 0V10"></path></svg></a>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Mobile">
+    <div class="mobile-nav__group">
+      <a href="/pages/the-shrujan-story">The Shrujan Story</a>
+      <ul class="mobile-nav__sub">
+        <li><a href="/pages/the-shrujan-story#origins">Origins</a></li>
+        <li><a href="/pages/the-shrujan-story#values">Philosophy &amp; Values</a></li>
+        <li><a href="/pages/the-shrujan-story#people">The People of Shrujan</a></li>
+        <li><a href="/pages/the-shrujan-story#journal">Photo Journal</a></li>
+        <li><a href="/pages/the-shrujan-story#press">In the Media</a></li>
+        <li><a href="/pages/video">Craft Traditions</a></li>
+        <li><a href="/pages/lldc">The Design Centre</a></li>
+        <li><a href="/pages/visit-experience">Visit the Campus</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav__group">
+      <a href="/pages/shop-shrujan">Shop Shrujan</a>
+      <ul class="mobile-nav__sub">
+        <li><a href="/pages/shop-shrujan?c=kanchli">Kanchli</a></li>
+        <li><a href="/pages/shop-shrujan?c=kurtas-and-tops">Kurtas &amp; Tops</a></li>
+        <li><a href="/pages/shop-shrujan?c=dresses">Dresses</a></li>
+        <li><a href="/pages/shop-shrujan?c=hand-bags">Hand Bags</a></li>
+        <li><a href="/pages/shop-shrujan?c=crossbody-and-sling">Crossbody &amp; Sling</a></li>
+        <li><a href="/pages/shop-shrujan?c=potlis-and-batwas">Potlis &amp; Batwas</a></li>
+        <li><a href="/pages/shop-shrujan?c=tote-bags">Tote Bags</a></li>
+        <li><a href="/pages/shop-shrujan?c=home-decor">Home Decor</a></li>
+        <li><a href="/pages/shop-shrujan?c=accessories">Accessories</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav__group">
+      <a href="/pages/studio-collection">Studio Collection</a>
+      <ul class="mobile-nav__sub">
+        <li><a href="/pages/studio-heritage">Heritage</a></li>
+        <li><a href="/pages/studio-avinya">Avinya</a></li>
+        <li><a href="/pages/studio-gifting">Gifting &amp; Collaborations</a></li>
+        <li><a href="/pages/the-shrujan-story#people">Artisan Stories</a></li>
+        <li><a href="/pages/video">Process &amp; Techniques</a></li>
+        <li><a href="/pages/video#ajrakh">Materials &amp; Motifs</a></li>
+        <li><a href="/pages/the-shrujan-story#journal">Studio Journal</a></li>
+        <li><a href="/pages/lldc">Behind the Scenes</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav__group">
+      <a href="/pages/video">Craft Traditions of Kutch</a>
+    </div>
+    <div class="mobile-nav__group">
+      <a href="/pages/lldc">Living &amp; Learning Design Centre</a>
+    </div>
+    <div class="mobile-nav__group">
+      <a href="/pages/visit-experience">Visit &amp; Experience</a>
+      <ul class="mobile-nav__sub">
+        <li><a href="/pages/visit-experience#places">Shrujan Campus</a></li>
+        <li><a href="/pages/lldc">LLDC Museum</a></li>
+        <li><a href="/pages/video">The Craft Villages</a></li>
+        <li><a href="/pages/visit-experience#places">Where to go</a></li>
+        <li><a href="/pages/visit-experience#plan">How long to stay</a></li>
+        <li><a href="/pages/lldc">The Design Centre</a></li>
+        <li><a href="/pages/video">Craft Traditions</a></li>
+        <li><a href="/#support">Frequently Asked</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+      <main><!-- Product detail — three columns. Resolved from the URL at runtime, so the
+     whole page is client-rendered from window.SHRUJAN into the shell below. -->
+<div class="page pdp-page"></div>
+
+<script>
+(function () {
+  var root = document.querySelector('.pdp-page');
+  if (!root || root.__shrujanInit) return;
+  root.__shrujanInit = true;
+
+  var S = window.SHRUJAN;
+
+  /* ---- resolve the piece: /products/<slug> from the path, ?slug= fallback ---- */
+  var m = location.pathname.match(/\/products\/([^\/?#]+)/);
+  var slug = m ? m[1] : new URLSearchParams(location.search).get('slug');
+
+  var piece = null;
+  for (var pi = 0; pi < S.PIECES.length; pi++) {
+    if (S.productSlug(S.PIECES[pi]) === slug) { piece = S.PIECES[pi]; break; }
+  }
+  if (!piece) piece = S.PIECES[0]; // no match falls back to the first piece, as the SPA does
+
+  var shots = S.galleryFor(piece.img, piece.gallery);
+
+  // same craft first, topped up with the rest of the catalogue
+  var pieceSlug = S.productSlug(piece);
+  var family = piece.craft.split('·')[0].trim().toLowerCase();
+  var rest = S.PIECES.filter(function (p) { return S.productSlug(p) !== pieceSlug; });
+  var sameCraft = rest.filter(function (p) { return p.craft.toLowerCase().includes(family); });
+  var alsoLike = sameCraft
+    .concat(rest.filter(function (p) { return !sameCraft.includes(p); }))
+    .slice(0, 5);
+
+  // the lower row must not repeat what the recommendation row already showed
+  var shown = new Set([pieceSlug].concat(alsoLike.map(S.productSlug)));
+  var others = S.PIECES.filter(function (p) { return !shown.has(S.productSlug(p)); }).slice(0, 5);
+
+  /* ---- icons ---- */
+  function lineIcon(size, paths) {
+    return '<svg viewBox="0 0 24 24" width="' + size + '" height="' + size + '" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' + paths + '</svg>';
+  }
+  function heartIcon(size) {
+    return lineIcon(size, '<path d="M12 19.8S4.5 15.3 4.5 9.9c0-2.6 2-4.4 4.2-4.4 1.5 0 2.7.8 3.3 2 .6-1.2 1.8-2 3.3-2 2.2 0 4.2 1.8 4.2 4.4 0 5.4-7.5 9.9-7.5 9.9Z"></path>');
+  }
+  function arrowIcon(size) {
+    return lineIcon(size, '<path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path>');
+  }
+  var plusIcon = lineIcon(16, '<path d="M12 5v14M5 12h14"></path>');
+  var phoolIcon = '<svg viewBox="0 0 32 32" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M16 2c1.3 4.6 3 7.4 5.2 8.8C23.4 12.2 26 13 30 13.4v.2c-4 .4-6.6 1.2-8.8 2.6C19 17.6 17.3 20.4 16 25c-1.3-4.6-3-7.4-5.2-8.8C8.6 14.8 6 14 2 13.6v-.2c4-.4 6.6-1.2 8.8-2.6C13 9.4 14.7 6.6 16 2Z"></path><circle cx="16" cy="28.5" r="1.6"></circle></svg>';
+
+  function stars(n) {
+    var star = '<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="m12 2.6 2.9 6 6.6.9-4.8 4.6 1.2 6.6L12 17.6 6.1 20.7l1.2-6.6L2.5 9.5l6.6-.9Z"></path></svg>';
+    var out = '';
+    for (var i = 0; i < n; i++) out += star;
+    return '<span class="pdp__stars" aria-label="' + n + ' out of 5 stars">' + out + '</span>';
+  }
+
+  /* ---- the home page's product card, verbatim — same grid, same card ---- */
+  function cardHtml(p) {
+    var h = '<a class="piece" href="/products/' + S.productSlug(p) + '">';
+    h += '<div class="piece__media">';
+    h += '<img src="' + S.asset(p.img) + '" alt="' + p.alt + '" loading="lazy">';
+    if (p.badge) h += '<span class="piece__badge">' + p.badge + '</span>';
+    h += '<button class="piece__wish" type="button" aria-label="Save ' + p.name + ' to wishlist">' + heartIcon(16) + '</button>';
+    h += '<span class="piece__quick">Add to bag</span>';
+    h += '</div>';
+    h += '<div class="piece__info">';
+    h += '<p class="piece__name">' + p.name + '</p>';
+    h += '<p class="piece__craft">' + p.craft + '</p>';
+    h += '<p class="piece__price">' + p.price + (p.was ? '<span>' + p.was + '</span>' : '') + '</p>';
+    h += '<span class="piece__swatches" aria-hidden="true">';
+    for (var i = 0; i < p.swatches.length; i++) h += '<i style="background: ' + p.swatches[i] + '"></i>';
+    h += '</span>';
+    h += '</div>';
+    h += '</a>';
+    return h;
+  }
+
+  /* ---- left: thumbnail rail ---- */
+  var railHtml = '';
+  shots.forEach(function (src, i) {
+    railHtml += '<button type="button" class="pdp__thumb' + (i === 0 ? ' is-active' : '') + '" aria-label="View image ' + (i + 1) + ' of ' + shots.length + '"' + (i === 0 ? ' aria-current="true"' : '') + '>';
+    railHtml += '<img src="' + S.asset(src) + '" alt="" loading="lazy">';
+    railHtml += '</button>';
+  });
+
+  /* ---- middle: the pinned shot ---- */
+  var stageHtml = '';
+  shots.forEach(function (src, i) {
+    stageHtml += '<figure class="pdp__shot' + (i === 0 ? ' is-active' : '') + '" aria-hidden="' + (i !== 0 ? 'true' : 'false') + '">';
+    stageHtml += '<img src="' + S.asset(src) + '"' + (i === 0 ? ' alt="' + piece.alt + '" loading="eager" fetchpriority="high"' : ' alt="" loading="lazy"') + '>';
+    stageHtml += '</figure>';
+  });
+  if (piece.badge) stageHtml += '<span class="pdp__badge">' + piece.badge + '</span>';
+
+  /* ---- right: the buying column ---- */
+  var buyHtml = '<div class="pdp__rating">' + stars(5) + '<span>5.0</span><a href="#reviews">126 reviews</a></div>';
+  buyHtml += '<h1 class="pdp__name">' + piece.name + '</h1>';
+  buyHtml += '<p class="pdp__craft">' + piece.craft + '</p>';
+  buyHtml += '<p class="pdp__copy">Counted and stitched by hand on naturally dyed handloom cloth, then cut and finished in our Bhuj atelier. Made to be worn often and kept for a long time.</p>';
+
+  buyHtml += '<div class="pdp__block"><p class="pdp__label">Made with</p><ul class="pdp__specs">';
+  S.SPECS.forEach(function (sp) { buyHtml += '<li>' + sp + '</li>'; });
+  buyHtml += '</ul></div>';
+
+  buyHtml += '<div class="pdp__block"><div class="pdp__label-row"><p class="pdp__label">Size</p><button type="button" class="pdp__size-guide">Size guide</button></div>';
+  buyHtml += '<div class="pdp__sizes" role="group" aria-label="Size">';
+  S.SIZES.forEach(function (sz) {
+    buyHtml += '<button type="button" class="pdp__size' + (sz === 'M' ? ' is-active' : '') + '" aria-pressed="' + (sz === 'M' ? 'true' : 'false') + '">' + sz + '</button>';
+  });
+  buyHtml += '</div></div>';
+
+  buyHtml += '<div class="pdp__options" role="radiogroup" aria-label="How it is made">';
+  buyHtml += '<label class="pdp__option is-active"><input type="radio" name="pdp-mode" checked><span class="pdp__option-body"><span class="pdp__option-title">Ready to ship</span><span class="pdp__option-note">Leaves Bhuj in 48 hours</span></span><span class="pdp__option-price">' + piece.price + '</span></label>';
+  buyHtml += '<label class="pdp__option"><input type="radio" name="pdp-mode"><span class="pdp__option-body"><span class="pdp__option-title">Made to your measure</span><span class="pdp__option-note">Cut for you · 2–3 weeks</span></span><span class="pdp__option-price">+ ₹ 1,200</span></label>';
+  buyHtml += '</div>';
+
+  buyHtml += '<div class="pdp__cta"><button type="button" class="btn pdp__add">Add to bag — ' + piece.price + '</button><button type="button" class="pdp__wish" aria-label="Save to wishlist">' + heartIcon(17) + '</button></div>';
+  buyHtml += '<p class="pdp__reassure">' + phoolIcon + ' Free alterations for as long as you own it</p>';
+
+  buyHtml += '<div class="pdp__details">';
+  S.DETAILS.forEach(function (d, i) {
+    buyHtml += '<div class="pdp__detail' + (i === 0 ? ' is-open' : '') + '">';
+    buyHtml += '<button type="button" class="pdp__detail-summary" aria-expanded="' + (i === 0 ? 'true' : 'false') + '" aria-controls="pdp-detail-' + i + '">';
+    buyHtml += '<span>' + d.q + '</span>';
+    buyHtml += '<span class="pdp__detail-icon" aria-hidden="true">' + plusIcon + '</span>';
+    buyHtml += '</button>';
+    buyHtml += '<div class="pdp__detail-panel" id="pdp-detail-' + i + '" role="region"><div class="pdp__detail-inner"><p>' + d.a + '</p></div></div>';
+    buyHtml += '</div>';
+  });
+  buyHtml += '</div>';
+
+  buyHtml += '<div class="pdp__worn"><div class="pdp__label-row"><p class="pdp__label">Worn by</p><a href="#reviews">All 126 reviews</a></div><div class="pdp__faces">';
+  S.REVIEW_FACES.forEach(function (f) { buyHtml += '<img src="' + S.asset(f) + '" alt="" loading="lazy">'; });
+  buyHtml += '</div><blockquote class="pdp__quote">“Five years on it has not lost a single stitch.”<cite>Meera S. · Mumbai</cite></blockquote></div>';
+
+  buyHtml += '<a class="arrow-link pdp__back" href="/pages/shop-shrujan">Back to the catalogue ' + arrowIcon(15) + '</a>';
+
+  /* ---- reviews ---- */
+  var reviewsHtml = '<section class="section container pdp-reviews" id="reviews">';
+  reviewsHtml += '<div class="section-head" data-reveal><div class="section-head__titles"><p class="eyebrow">126 reviews</p><h2 class="section-title">What buyers <em>say</em></h2></div><a class="arrow-link" href="#write-review">Write a review ' + arrowIcon(16) + '</a></div>';
+  reviewsHtml += '<div class="reviews" data-reveal-child>';
+  reviewsHtml += '<aside class="review-add" id="write-review"><p class="review-add__score">5.0</p>' + stars(5) + '<p class="review-add__count">Based on 126 reviews</p><button type="button" class="btn">Write a review</button><p class="review-add__note">Bought this piece? Tell us how it wears — we send every review back to the woman who made it.</p></aside>';
+  S.REVIEWS.forEach(function (r, i) {
+    reviewsHtml += '<article class="review">' + stars(r.stars);
+    reviewsHtml += '<p class="review__body">' + r.body + '</p>';
+    reviewsHtml += '<div class="review__who"><img src="' + S.asset(S.REVIEW_FACES[i % S.REVIEW_FACES.length]) + '" alt="" loading="lazy"><span><span class="review__name">' + r.name + '</span><span class="review__place">' + r.place + '</span></span></div>';
+    reviewsHtml += '</article>';
+  });
+  reviewsHtml += '</div></section>';
+
+  /* ---- recommendation ---- */
+  var recHtml = '<section class="section container pdp-rec" aria-label="Recommended">';
+  recHtml += '<div class="section-head" data-reveal><div class="section-head__titles"><p class="eyebrow">You may also like</p><h2 class="section-title">More from the <em>same hands</em></h2></div></div>';
+  recHtml += '<div class="curated__grid" data-reveal-child>';
+  alsoLike.forEach(function (p) { recHtml += cardHtml(p); });
+  recHtml += '</div></section>';
+
+  /* ---- the rest of the catalogue ---- */
+  var otherHtml = '<section class="section container pdp-other" aria-label="Other products">';
+  otherHtml += '<div class="section-head" data-reveal><div class="section-head__titles"><p class="eyebrow">Elsewhere in the catalogue</p><h2 class="section-title">Other <em>pieces</em></h2></div><a class="arrow-link" href="/pages/shop-shrujan">Shop everything ' + arrowIcon(16) + '</a></div>';
+  otherHtml += '<div class="curated__grid" data-reveal-child>';
+  others.forEach(function (p) { otherHtml += cardHtml(p); });
+  otherHtml += '</div></section>';
+
+  root.innerHTML =
+    '<div class="container pdp"><div class="pdp__media"><div class="pdp__rail" aria-label="Product images">' + railHtml + '</div><div class="pdp__stage">' + stageHtml + '</div></div><div class="pdp__buy">' + buyHtml + '</div></div>' +
+    reviewsHtml + recHtml + otherHtml;
+
+  /* ---- behavior ---- */
+  var pdpEl = root.querySelector('.pdp');
+  var detailsEl = root.querySelector('.pdp__details');
+  var thumbEls = Array.prototype.slice.call(root.querySelectorAll('.pdp__thumb'));
+  var shotEls = Array.prototype.slice.call(root.querySelectorAll('.pdp__shot'));
+  var sizeEls = Array.prototype.slice.call(root.querySelectorAll('.pdp__size'));
+  var optionEls = Array.prototype.slice.call(root.querySelectorAll('.pdp__option'));
+  var modeInputs = Array.prototype.slice.call(root.querySelectorAll('.pdp__option input'));
+  var detailEls = Array.prototype.slice.call(root.querySelectorAll('.pdp__detail'));
+
+  var active = 0;
+  var size = 'M';
+  var mode = 'ready';
+  var open = 0;
+
+  function setActive(i) {
+    if (i === active) return;
+    active = i;
+    thumbEls.forEach(function (t, j) {
+      t.classList.toggle('is-active', j === i);
+      if (j === i) t.setAttribute('aria-current', 'true');
+      else t.removeAttribute('aria-current');
+    });
+    shotEls.forEach(function (s, j) {
+      s.classList.toggle('is-active', j === i);
+      s.setAttribute('aria-hidden', j !== i ? 'true' : 'false');
+    });
+  }
+
+  function applyOpen() {
+    detailEls.forEach(function (d, j) {
+      var isOpen = open === j;
+      d.classList.toggle('is-open', isOpen);
+      d.querySelector('.pdp__detail-summary').setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+
+  // Thumbnails scroll to that shot's band rather than setting state directly,
+  // so scroll position stays the single source of truth for what is showing.
+  function jumpTo(i) {
+    var el = pdpEl;
+    if (!el) return;
+    var travel = el.offsetHeight - window.innerHeight;
+    if (travel <= 0) return;
+    var top = el.offsetTop + (travel * (i + 0.5)) / shots.length;
+    window.Shrujan.scrollToY(top); // through Lenis, or it fights the smooth scroller
+  }
+
+  thumbEls.forEach(function (t, i) {
+    t.addEventListener('click', function () { jumpTo(i); });
+  });
+
+  sizeEls.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      size = btn.textContent;
+      sizeEls.forEach(function (b) {
+        var on = b.textContent === size;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    });
+  });
+
+  modeInputs.forEach(function (input, idx) {
+    input.addEventListener('change', function () {
+      mode = idx === 0 ? 'ready' : 'measure';
+      optionEls.forEach(function (l, j) { l.classList.toggle('is-active', j === idx); });
+    });
+  });
+
+  // "Size guide" opens the fit panel rather than pointing at a page that does
+  // not exist. Found by label, so reordering DETAILS cannot silently open the
+  // wrong one.
+  root.querySelector('.pdp__size-guide').addEventListener('click', function () {
+    var i = S.DETAILS.findIndex(function (d) { return d.q === 'Fabric & fit'; });
+    if (i < 0) return;
+    open = i;
+    applyOpen();
+    var el = detailsEl;
+    if (el) window.Shrujan.scrollToY(el.getBoundingClientRect().top + window.scrollY - 120);
+  });
+
+  detailEls.forEach(function (d, i) {
+    d.querySelector('.pdp__detail-summary').addEventListener('click', function () {
+      open = open === i ? -1 : i;
+      applyOpen();
+    });
+  });
+
+  Array.prototype.forEach.call(root.querySelectorAll('.piece__wish'), function (b) {
+    b.addEventListener('click', function (e) { e.preventDefault(); });
+  });
+
+  // Scroll drives the gallery. The section is divided into as many bands as
+  // there are shots, and progress through it picks the one on screen — so the
+  // image changes only when you move, never on its own.
+  if (shots.length >= 2) {
+    var queued = false;
+
+    var read = function () {
+      queued = false;
+      var el = pdpEl;
+      if (!el) return;
+      var r = el.getBoundingClientRect();
+      var travel = r.height - window.innerHeight;
+      if (travel <= 0) return;
+      var progress = Math.min(1, Math.max(0, -r.top / travel));
+      setActive(Math.min(shots.length - 1, Math.floor(progress * shots.length)));
+    };
+
+    var onScroll = function () {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(read);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    read();
+  }
+
+  /* The central reveal system runs at DOMContentLoaded and never sees this
+     runtime-built DOM, so register the same reveals for the nodes above. */
+  var mm = gsap.matchMedia();
+
+  mm.add('(prefers-reduced-motion: no-preference)', function () {
+    gsap.utils.toArray(root.querySelectorAll('[data-reveal]')).forEach(function (el) {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 28 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.85,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+        }
+      );
+    });
+
+    gsap.utils.toArray(root.querySelectorAll('[data-reveal-child]')).forEach(function (group) {
+      gsap.fromTo(
+        group.children,
+        { opacity: 0, y: 32 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          stagger: 0.09,
+          scrollTrigger: { trigger: group, start: 'top 86%', once: true }
+        }
+      );
+    });
+  });
+
+  mm.add('(prefers-reduced-motion: reduce)', function () {
+    gsap.set(root.querySelectorAll('[data-reveal], [data-reveal-child] > *'), { clearProps: 'all', opacity: 1 });
+  });
+})();
+</script>
+
+</main>
+      <footer class="footer">
+  <span class="footer__weave" aria-hidden="true">
+    <span class="footer__mandala footer__mandala--left"></span>
+    <span class="footer__mandala footer__mandala--right"></span>
+  </span>
+
+  <div class="footer__inner">
+    <div class="ftop">
+      <div class="fletters" id="letters">
+        <p class="fletters__eyebrow">Letters from the Loom</p>
+        <h2 class="fletters__title">Stay close to the craft</h2>
+        <p class="fletters__copy">
+          New collections, artisan stories and early access to festive edits — once a
+          month, written slowly.
+        </p>
+
+        <form class="fletters__form">
+          <input type="email" required placeholder="Your email address" aria-label="Email address">
+          <button type="submit">
+            Subscribe <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"></path><path d="m13.5 6.5 5.5 5.5-5.5 5.5"></path></svg>
+          </button>
+        </form>
+      </div>
+
+      <div class="fbrand">
+        <span class="fbrand__mark" role="img" aria-label="Shrujan"></span>
+        <p class="fbrand__tag">
+          Heritage by Hand
+          <span>Kutch, since 1969</span>
+        </p>
+
+        <div class="footer__socials">
+          <a class="footer__social" href="https://www.instagram.com/shrujanindia/" aria-label="Instagram" target="_blank" rel="noreferrer noopener">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+              <circle cx="12" cy="12" r="3.9"></circle>
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle>
+            </svg>
+          </a>
+          <a class="footer__social" href="https://www.facebook.com/shrujanindia" aria-label="Facebook" target="_blank" rel="noreferrer noopener">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+              <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6c-.3 0-1.3-.1-2.45-.1-2.4 0-4.05 1.5-4.05 4.2v2.2H7.5V13h2.7v8Z"></path>
+            </svg>
+          </a>
+          <a class="footer__social" href="https://www.pinterest.com/shrujancreations/" aria-label="Pinterest" target="_blank" rel="noreferrer noopener">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor">
+              <path d="M12 3a9 9 0 0 0-3.3 17.36c-.08-.72-.15-1.83.03-2.62.16-.7 1.06-4.5 1.06-4.5s-.27-.54-.27-1.34c0-1.26.73-2.2 1.63-2.2.77 0 1.14.58 1.14 1.27 0 .78-.49 1.94-.75 3.02-.21.9.46 1.64 1.35 1.64 1.62 0 2.87-1.71 2.87-4.18 0-2.19-1.57-3.72-3.82-3.72-2.6 0-4.13 1.95-4.13 3.97 0 .79.3 1.63.68 2.09.08.09.09.17.06.26l-.25 1.02c-.4.17-.13.2-.3.12-1.11-.52-1.8-2.14-1.8-3.44 0-2.8 2.03-5.37 5.87-5.37 3.08 0 5.47 2.2 5.47 5.13 0 3.06-1.93 5.52-4.6 5.52-.9 0-1.75-.47-2.04-1.02l-.55 2.12c-.2.77-.74 1.73-1.1 2.32A9 9 0 1 0 12 3Z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="fmap" aria-label="Footer">
+      <div class="fmap__col">
+        <p class="fmap__group">Explore</p>
+        <ul>
+          <li><a href="/pages/the-shrujan-story">The Shrujan Story</a></li>
+          <li><a href="/pages/the-shrujan-story#origins">Origins</a></li>
+          <li><a href="/pages/the-shrujan-story#values">Philosophy &amp; Values</a></li>
+          <li><a href="/pages/the-shrujan-story#people">The People of Shrujan</a></li>
+          <li><a href="/pages/the-shrujan-story#press">In the Media</a></li>
+        </ul>
+      </div>
+      <div class="fmap__col">
+        <p class="fmap__group">Shop</p>
+        <ul>
+          <li><a href="/pages/shop-shrujan">All of Shrujan</a></li>
+          <li><a href="/pages/shop-shrujan?c=hand-bags">Bags</a></li>
+          <li><a href="/pages/shop-shrujan?c=kanchli">Kanchli</a></li>
+          <li><a href="/pages/shop-shrujan?c=kurtas-and-tops">Kurtas &amp; Tops</a></li>
+          <li><a href="/pages/shop-shrujan?c=home-decor">Home Decor</a></li>
+          <li><a href="/pages/shop-shrujan?c=accessories">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="fmap__col">
+        <p class="fmap__group">Studio</p>
+        <ul>
+          <li><a href="/pages/studio-collection">Studio Collection</a></li>
+          <li><a href="/pages/studio-heritage">Heritage</a></li>
+          <li><a href="/pages/studio-avinya">Avinya</a></li>
+          <li><a href="/pages/studio-gifting">Gifting &amp; Collaborations</a></li>
+        </ul>
+      </div>
+      <div class="fmap__col">
+        <p class="fmap__group">Visit &amp; Help</p>
+        <ul>
+          <li><a href="/pages/video">Craft Traditions of Kutch</a></li>
+          <li><a href="/pages/lldc">Living &amp; Learning Design Centre</a></li>
+          <li><a href="/pages/visit-experience">Visit &amp; Experience</a></li>
+          <li><a href="/#support">Frequently Asked</a></li>
+        </ul>
+      </div>
+
+      <div class="fmap__col">
+        <p class="fmap__group">Reach us</p>
+        <ul class="freach">
+          <li>
+            <span class="freach__label">Write to us</span>
+            <a href="mailto:marketing@shrujan.com">marketing@shrujan.com</a>
+          </li>
+          <li>
+            <span class="freach__label">Call the studio</span>
+            <a href="tel:+919099974319">+91 9099 974319</a>
+          </li>
+          <li>
+            <span class="freach__label"></span>
+            <a href="tel:+919081899882">+91 90818 99882</a>
+          </li>
+          <li>
+            <span class="freach__label">Visit</span>
+            <a href="/pages/visit-experience">Bhujodi Road, Bhuj · Kutch</a>
+          </li>
+          <li>
+            <span class="freach__label">Studio hours</span>
+            <span class="freach__value">10 AM to 7 PM</span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="footer__bottom">
+      <span>© 2026 Shrujan. All rights reserved.</span>
+
+      <div class="footer__legal">
+        <a href="https://shrujan.com/policies/privacy-policy" target="_blank" rel="noreferrer noopener">Privacy Policy</a>
+        <a href="https://shrujan.com/policies/terms-of-service" target="_blank" rel="noreferrer noopener">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+  </body>
+</html>

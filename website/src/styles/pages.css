@@ -4748,3 +4748,210 @@
     align-items: flex-start;
   }
 }
+
+/* ============================================================
+   MOBILE — inner pages
+   The same phone layer global.css closes with: a stepped-down
+   type scale, full-width stacks, and swipe-snap rails. Appended
+   last so these declarations win at equal specificity.
+   ============================================================ */
+
+/* the catalogue drops to two across as soon as the rail stacks —
+   the base .shop-grid rule otherwise outranks global's curated
+   overrides in the cascade and held three columns on phones */
+@media (max-width: 900px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  /* ---- mastheads ------------------------------------------- */
+
+  .page-hero__title {
+    font-size: clamp(29px, 8.2vw, 36px);
+  }
+
+  .page-hero__lede {
+    font-size: 14.5px;
+  }
+
+  .page-hero--frame {
+    min-height: clamp(380px, 68vh, 620px);
+  }
+
+  .page-meta {
+    gap: 16px 22px;
+  }
+
+  .page-meta__value {
+    font-size: 25px;
+  }
+
+  .page-meta__label {
+    font-size: 11.5px;
+  }
+
+  /* ---- shop banner: the overlay was capped at 33vw ---------- */
+
+  .shop-banner__overlay > * {
+    max-width: min(86vw, 480px);
+  }
+
+  .shop-banner__title,
+  .visit-hero__title {
+    font-size: clamp(30px, 8.6vw, 38px);
+  }
+
+  .shop-banner__copy,
+  .visit-hero__lede {
+    font-size: 14.5px;
+  }
+
+  .visit-hero {
+    height: clamp(380px, 64vh, 560px);
+  }
+
+  /* ---- assurance strip: the copy comes back ----------------- */
+
+  .shop-assure__copy {
+    display: block;
+    font-size: 12px;
+  }
+
+  .shop-assure__title {
+    font-size: 16.5px;
+  }
+
+  /* ---- medallions swipe one at a time ----------------------- */
+
+  .medallion {
+    scroll-snap-stop: always;
+  }
+
+  .medallion__name {
+    font-size: 17.5px;
+  }
+
+  /* ---- shared display type steps down ----------------------- */
+
+  .studio-row__name,
+  .spotlight-col__name,
+  .tl__title,
+  .way__name,
+  .craft-entry__title,
+  .enquiry__done-title {
+    font-size: clamp(24px, 6.8vw, 29px);
+  }
+
+  .craft-open__lead {
+    font-size: clamp(22px, 6.2vw, 27px);
+  }
+
+  .founder__quote {
+    font-size: clamp(19px, 5.4vw, 24px);
+  }
+
+  .page-cta p,
+  .plate__head {
+    font-size: clamp(20px, 5.6vw, 26px);
+  }
+
+  .gloss__word {
+    font-size: 25px;
+  }
+
+  .gloss__meaning {
+    font-size: 18px;
+  }
+
+  .tl__year,
+  .studio-row__no,
+  .spotlight-col__facts strong,
+  .mark__no,
+  .step__no,
+  .visit-row__no,
+  .why-card__no,
+  .review-add__score {
+    font-size: 25px;
+  }
+
+  .why-card__title,
+  .strand-card__name,
+  .mark__title,
+  .step__title,
+  .lldc-card__name,
+  .visit-row__name,
+  .stay__len,
+  .stop__name,
+  .hero-plaque__title,
+  .pdp__detail-summary {
+    font-size: 17.5px;
+  }
+
+  .review__body,
+  .pdp__quote {
+    font-size: 17px;
+  }
+
+  /* ---- product page ---------------------------------------- */
+
+  .pdp__name {
+    font-size: clamp(24px, 6.8vw, 30px);
+  }
+
+  .pdp__option-price {
+    font-size: 17.5px;
+  }
+
+  /* ---- studio spreads breathe less -------------------------- */
+
+  .studio-row {
+    padding-block: 26px;
+  }
+
+  .way__body {
+    padding: 20px 18px;
+  }
+
+  /* ---- story timeline --------------------------------------- */
+
+  .tl {
+    padding-left: 22px;
+    padding-bottom: 30px;
+  }
+}
+
+/* ---- ≤600: the last inner-page grids unroll ------------------ */
+
+@media (max-width: 600px) {
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-grid .piece__media {
+    aspect-ratio: 4 / 5;
+  }
+
+  .people {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .origin__gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .origin__shot {
+    aspect-ratio: 16 / 10;
+  }
+
+  .pdp__cta {
+    grid-template-columns: 1fr;
+  }
+
+  .pdp__wish {
+    width: 100%;
+    padding: 13px;
+  }
+}

@@ -73,23 +73,37 @@ export default function Spotlight() {
 
       {/* ---- model over circle with floating stats ---- */}
       <div className="spotlight__stage" data-reveal>
-        <span className="spotlight__circle" aria-hidden="true" />
+        {/* The figure wrapper is unpositioned on desktop, so every absolute
+            child inside still resolves against the stage and the composed
+            layout is untouched. On phones it becomes the positioned frame the
+            artwork centres in, while the stats drop into normal flow below. */}
+        <div className="spotlight__figure">
+          <span className="spotlight__circle" aria-hidden="true" />
 
-        <svg className="spotlight__arc" viewBox="0 0 100 100" aria-hidden="true">
-          <circle cx="50" cy="50" r="48.5" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeDasharray="82 223" />
-        </svg>
+          <svg className="spotlight__arc" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="48.5" fill="none" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeDasharray="82 223" />
+          </svg>
 
-        <p className="spotlight__ghost" aria-hidden="true">
-          100%
-          <span>Hand-embroidered</span>
-        </p>
+          <p className="spotlight__ghost" aria-hidden="true">
+            100%
+            <span>Hand-embroidered</span>
+          </p>
 
-        <img
-          className="spotlight__model"
-          src="/model.webp"
-          alt="Model in a crimson mirror-work jacket draped with a hand-embroidered patola sari"
-          loading="lazy"
-        />
+          <img
+            className="spotlight__model"
+            src="/model.webp"
+            alt="Model in a crimson mirror-work jacket draped with a hand-embroidered patola sari"
+            loading="lazy"
+          />
+
+          {/* two small plates balancing the circle */}
+          <figure className="spotlight__plate spotlight__plate--tr" aria-hidden="true">
+            <img src="/cat-c1.webp" alt="" loading="lazy" />
+          </figure>
+          <figure className="spotlight__plate spotlight__plate--bl" aria-hidden="true">
+            <img src="/top right.webp" alt="" loading="lazy" />
+          </figure>
+        </div>
 
         <div className="spotlight__stat spotlight__stat--women">
           <strong>4,000+</strong>
@@ -102,14 +116,6 @@ export default function Spotlight() {
         </div>
 
         <p className="spotlight__note">Every piece signed by the hands that made it</p>
-
-        {/* two small plates balancing the circle */}
-        <figure className="spotlight__plate spotlight__plate--tr" aria-hidden="true">
-          <img src="/cat-c1.webp" alt="" loading="lazy" />
-        </figure>
-        <figure className="spotlight__plate spotlight__plate--bl" aria-hidden="true">
-          <img src="/top right.webp" alt="" loading="lazy" />
-        </figure>
 
         <div className="spotlight__stat spotlight__stat--villages">
           <strong>40</strong>
