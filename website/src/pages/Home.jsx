@@ -1,7 +1,6 @@
 import Hero from '../components/Hero.jsx'
 import Marquee from '../components/Marquee.jsx'
 import Showcase from '../components/Showcase.jsx'
-import Categories from '../components/Categories.jsx'
 import Reels from '../components/Reels.jsx'
 import House from '../components/House.jsx'
 import Testimonials from '../components/Testimonials.jsx'
@@ -20,10 +19,9 @@ export default function Home() {
       <Marquee />
       <Spotlight />
       <Bestsellers />
-      <Categories />
+      <House />
       <Showcase />
       <Reels />
-      <House />
       <CraftStory />
       <Trousseau />
       <Testimonials />
