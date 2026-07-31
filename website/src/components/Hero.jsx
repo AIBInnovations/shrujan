@@ -1,19 +1,89 @@
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { Link } from 'react-router-dom'
 import { ArrowRight } from './Icons.jsx'
 
-/* Each cell shows what its own page opens with, so the bento reads as six
-   doors rather than six pretty pictures. Previously the craft cell was a
-   generic zari crop and the LLDC cell was a pair of earrings — neither said
-   anything about where it led. */
 const IMG = {
-  model: '/hero-left.webp',              // Shop — a piece being worn
-  season: '/look-b2.webp',               // Studio — that page's own cover
-  thread: '/craft-hero.webp',            // Craft Traditions — its masthead
-  accessories: '/craft-embroidery-poster.webp', // LLDC — inside the centre
-  story: '/story-origin-2.webp',         // The Shrujan Story — the archive
+  season: '/look-b2.webp',
+  thread: '/craft-hero.webp',
+  accessories: '/craft-embroidery-poster.webp',
+  story: '/story-origin-2.webp',
+}
+
+const CRAFT_VIDEOS = [
+  '/craft-embroidery.mp4',
+  '/craft-ajrakh.mp4',
+  '/craft-weaving.mp4',
+  '/craft-tiedye.mp4',
+  '/craft-discharge.mp4',
+  '/craft-pottery.mp4',
+]
+
+const CRAFT_POSTERS = [
+  '/craft-embroidery-poster.webp',
+  '/craft-ajrakh-poster.webp',
+  '/craft-weaving-poster.webp',
+  '/craft-tiedye-poster.webp',
+  '/craft-discharge-poster.webp',
+  '/craft-pottery-poster.webp',
+]
+
+const CLIP_DURATION = 4000 // ms of each craft shown
+const CLIP_SEEK = 6      // seconds into each video to start (middle section)
+
+function CraftMontage() {
+  const [idx, setIdx] = useState(0)
+  const videoRef = useRef(null)
+  const timerRef = useRef(null)
+
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return
+    v.muted = true
+
+    const advance = () => {
+      clearTimeout(timerRef.current)
+      timerRef.current = setTimeout(() => {
+        setIdx((i) => (i + 1) % CRAFT_VIDEOS.length)
+      }, CLIP_DURATION)
+    }
+
+    const onSeeked = () => {
+      v.play().catch(() => {})
+      advance()
+    }
+
+    const onLoaded = () => {
+      // seek to middle section; seeked fires when ready
+      const target = Math.min(CLIP_SEEK, Math.max(0, v.duration / 2 - 2))
+      v.currentTime = target
+    }
+
+    v.addEventListener('loadedmetadata', onLoaded)
+    v.addEventListener('seeked', onSeeked)
+    v.load()
+
+    return () => {
+      clearTimeout(timerRef.current)
+      v.removeEventListener('loadedmetadata', onLoaded)
+      v.removeEventListener('seeked', onSeeked)
+    }
+  }, [idx])
+
+  return (
+    <video
+      ref={videoRef}
+      key={idx}
+      className="hero-montage__video"
+      poster={CRAFT_POSTERS[idx]}
+      playsInline
+      muted
+      preload="auto"
+    >
+      <source src={CRAFT_VIDEOS[idx]} type="video/mp4" />
+    </video>
+  )
 }
 
 /* Line-art mandala for the ivory message panel */
@@ -72,21 +142,18 @@ export default function Hero() {
 
   return (
     <section className="hero" ref={root} aria-label="Tradition, styled forward">
-      {/* ---- 1 · Shop Shrujan ---- */}
+      {/* ---- 1 · Shop Shrujan — craft montage ---- */}
       <Link className="hero-cell hero-cell--model" to="/pages/shop-shrujan" data-hero="cell">
-        <img
-          src={IMG.model}
-          alt="Model in a rust-red ajrakh kurta with gold jewellery before an arched wall"
-          fetchPriority="high"
-        />
-        <span className="hero-cell__label">
+        <CraftMontage />
+        <span className="hero-cell__scrim hero-cell__scrim--montage" aria-hidden="true" />
+        <span className="hero-cell__label hero-cell__label--montage">
           <i className="hero-cell__dash" aria-hidden="true" />
-          <em>Shop</em>
-          Shrujan
+          Woven in Kutch,
+          <br />Worn by the World
           <span className="hero-cell__sub">
-            Saris, kurtas and dupattas, hand-embroidered by the women of Kutch.
+            Six living crafts, one desert. Hand-embroidered by the women of Kutch since 1969.
           </span>
-          <ArrowRight width="16" height="16" />
+          <em>Heritage by Hand</em>
         </span>
       </Link>
 

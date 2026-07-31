@@ -1199,15 +1199,56 @@ a.hero-cell:hover .hero-cell__label svg {
   transform: translateX(6px);
 }
 
-/* ---- 1 · model ----------------------------------------------- */
+/* ---- 1 · model / montage ------------------------------------- */
 
-.hero-cell--model img {
-  object-position: 50% 12%;
+.hero-montage__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
-.hero-cell--model .hero-cell__label {
-  top: 38%;
+.hero-cell__scrim--montage {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 5, 3, 0.18) 0%,
+    rgba(10, 5, 3, 0.28) 40%,
+    rgba(10, 5, 3, 0.72) 100%
+  );
 }
+
+.hero-cell__label--montage {
+  top: auto;
+  bottom: clamp(28px, 3vw, 52px);
+  transform: none;
+  font-size: clamp(15px, 1.05vw, 19px);
+}
+
+.hero-cell__label--montage em {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-size: clamp(20px, 1.6vw, 30px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tan);
+}
+
+@media (max-width: 720px) {
+  .hero-cell__label--montage {
+    bottom: 20px;
+    font-size: 13px;
+  }
+
+  .hero-cell__label--montage em {
+    font-size: 17px;
+  }
+}
+
 
 /* ---- 2 · ivory message panel --------------------------------- */
 
