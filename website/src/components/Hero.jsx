@@ -142,8 +142,9 @@ export default function Hero() {
 
   return (
     <section className="hero" ref={root} aria-label="Tradition, styled forward">
-      {/* ---- 1 · Shop Shrujan — craft montage ---- */}
-      <Link className="hero-cell hero-cell--model" to="/pages/shop-shrujan" data-hero="cell">
+      {/* ---- 1 · craft montage — opens Craft Traditions, the page the
+           films come from ---- */}
+      <Link className="hero-cell hero-cell--model" to="/pages/video" data-hero="cell">
         <CraftMontage />
         <span className="hero-cell__scrim hero-cell__scrim--montage" aria-hidden="true" />
         <span className="hero-cell__label hero-cell__label--montage">
