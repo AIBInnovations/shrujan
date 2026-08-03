@@ -91,11 +91,10 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      {/* the mandala stencil the promises band runs on, clipped to its own
-          layer so it can bleed off every edge */}
+      {/* the ornament layer, clipped so it can bleed off every edge: just
+          the village panorama now, resting faintly along the footer's floor */}
       <span className="footer__weave" aria-hidden="true">
-        <span className="footer__mandala footer__mandala--left" />
-        <span className="footer__mandala footer__mandala--right" />
+        <img className="footer__village" src="/heritage-village-v2.webp" alt="" loading="lazy" />
       </span>
 
       <div className="footer__inner">

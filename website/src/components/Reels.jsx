@@ -7,6 +7,8 @@ gsap.registerPlugin(ScrollTrigger)
 
 const INSTAGRAM = 'https://www.instagram.com/shrujanindia/reels/'
 
+const KUTCH = ['k', 'u', 't', 'c', 'h']
+
 const REELS = [
   { src: '/reel-1.mp4', poster: '/reel-1-poster.jpg', title: 'Indigo mirror-work jacket', meta: '0:27' },
   { src: '/reel-2.mp4', poster: '/reel-2-poster.jpg', title: 'Coral Kutchi embroidered sari', meta: '0:33' },
@@ -181,8 +183,22 @@ export default function Reels() {
                 />
                 <span className="reel__scrim" aria-hidden="true" />
                 <span className="reel__meta">{r.meta}</span>
+                {/* the caption sits on the footage rather than under the card:
+                    the titles ran to different lengths and pushed the cards to
+                    different heights, which is what made the rail look ragged */}
+                <p className="reel__title">{r.title}</p>
               </div>
-              <p className="reel__title">{r.title}</p>
+
+              {/* K · U · T · C · H — one embroidered pennant per card, hanging
+                  under it like a toran. Purely decorative, and `i % 5` so the
+                  word keeps spelling itself across the phone's looped copies. */}
+              <img
+                className="reel__letter"
+                src={`/kutch-${KUTCH[i % KUTCH.length]}.webp`}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
             </a>
           ))}
         </div>

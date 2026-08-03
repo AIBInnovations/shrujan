@@ -4180,14 +4180,25 @@ a.hero-cell:hover .hero-cell__label svg {
 .reel__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(18, 10, 8, 0.62) 0%, rgba(18, 10, 8, 0.08) 44%, rgba(18, 10, 8, 0) 70%);
+  /* deeper than before: it is holding the title now, not just a duration */
+  background: linear-gradient(
+    0deg,
+    rgba(18, 10, 8, 0.82) 0%,
+    rgba(18, 10, 8, 0.5) 22%,
+    rgba(18, 10, 8, 0.12) 48%,
+    rgba(18, 10, 8, 0.28) 100%
+  );
 }
 
 .reel__meta {
   position: absolute;
   left: 14px;
-  bottom: 14px;
+  top: 14px;
   z-index: 2;
+  padding: 4px 9px;
+  border-radius: var(--radius-pill);
+  background: rgba(18, 10, 8, 0.42);
+  backdrop-filter: blur(5px);
   font-size: clamp(11.8px, 0.694vw, 13.4px);
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -4195,18 +4206,42 @@ a.hero-cell:hover .hero-cell__label svg {
   color: var(--cream);
 }
 
+/* inside the frame now, over the scrim — see the note in Reels.jsx */
 .reel__title {
-  margin-top: 14px;
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  z-index: 2;
   font-family: var(--font-serif);
   font-weight: 600;
   font-size: clamp(16.8px, calc(16.4px + 0.101vw), 19px);
-  line-height: 1.3;
-  color: var(--ink);
-  transition: color var(--dur-quick) var(--ease);
+  line-height: 1.25;
+  color: var(--cream);
+  text-shadow: 0 1px 14px rgba(18, 10, 8, 0.5);
 }
 
-.reel:hover .reel__title {
-  color: var(--gerua-600);
+/* ---- K · U · T · C · H — one pennant hanging off each reel card ---- */
+
+.reel__letter {
+  display: block;
+  width: auto;
+  height: clamp(104px, 10vw, 180px);
+  /* flush to the card's bottom edge, so the pennant reads as hanging from it
+     rather than floating below it. The art's own top edge is the hanging bar,
+     which is what meets the card. */
+  margin: 0 auto;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.reel:hover .reel__letter {
+  transform: translateY(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel__letter {
+    transition: none;
+  }
 }
 
 @media (max-width: 900px) {
@@ -4579,7 +4614,8 @@ a.house-tile:hover .house-tile__arrow {
   align-items: start;
   gap: clamp(22px, 3vw, 60px);
   padding-bottom: clamp(20px, 2.2vw, 36px);
-  border-bottom: 1px solid rgba(199, 165, 106, 0.24);
+  /* the stitch above the sitemap draws this seam now */
+  border-bottom: 0;
 }
 
 .fbrand {
@@ -4802,7 +4838,7 @@ a.house-tile:hover .house-tile__arrow {
   gap: 16px;
   margin-top: clamp(20px, 2.2vw, 36px);
   padding-top: clamp(12px, 1.2vw, 18px);
-  border-top: 1px solid rgba(199, 165, 106, 0.24);
+  border-top: 1px dashed rgba(199, 165, 106, 0.34);
   font-size: clamp(12.9px, 0.762vw, 14.6px);
   color: rgba(242, 237, 224, 0.5);
 }
@@ -6118,12 +6154,16 @@ a.house-tile:hover .house-tile__arrow {
 
 .craft-wall__row:nth-child(1) .craft-wall__tile:nth-child(1) { --fx: 1.15; height: 92%; align-self: flex-end; }
 .craft-wall__row:nth-child(1) .craft-wall__tile:nth-child(2) { --fx: 0.8;  height: 100%; }
-.craft-wall__row:nth-child(1) .craft-wall__tile:nth-child(3) { --fx: 1.3;  height: 86%; align-self: flex-start; }
+/* flex-end, not flex-start: paired with the tile below it in the second row
+   both frames were pulling away from the seam and their two recessions added
+   up to a 100px hole through the middle of the wall. Each keeps its own
+   height — the scatter now shows on the wall's outer edges instead. */
+.craft-wall__row:nth-child(1) .craft-wall__tile:nth-child(3) { --fx: 1.3;  height: 86%; align-self: flex-end; }
 .craft-wall__row:nth-child(1) .craft-wall__tile:nth-child(4) { --fx: 0.95; height: 94%; align-self: flex-end; }
 
 .craft-wall__row:nth-child(2) .craft-wall__tile:nth-child(1) { --fx: 0.9;  height: 94%; align-self: flex-start; }
 .craft-wall__row:nth-child(2) .craft-wall__tile:nth-child(2) { --fx: 1.25; height: 100%; }
-.craft-wall__row:nth-child(2) .craft-wall__tile:nth-child(3) { --fx: 0.85; height: 84%; align-self: flex-end; }
+.craft-wall__row:nth-child(2) .craft-wall__tile:nth-child(3) { --fx: 0.85; height: 84%; align-self: flex-start; }
 .craft-wall__row:nth-child(2) .craft-wall__tile:nth-child(4) { --fx: 1.1;  height: 92%; align-self: flex-start; }
 
 /* ---- horizontal axis: row-mates give way, the open frame takes
@@ -6448,3 +6488,156 @@ a.house-tile:hover .house-tile__arrow {
     transform: rotate(-10deg);
   }
 }
+
+
+/* ============================================================
+   HERITAGE CHROME — the Kutchi vocabulary, applied sparingly
+   Measured interventions, never wallpaper: a woven selvedge
+   line at the very top of the page, phool marks flanking the
+   centred eyebrows, a kantha running-stitch rule under every
+   section intro, stitched edges on the marquee band, and a
+   kungri (temple-tooth) border where the page meets the footer.
+   Everything is CSS — no images, no new weight.
+   ============================================================ */
+
+/* ---- selvedge line, the woven edge of the page ---- */
+
+.topbar {
+  position: relative;
+}
+
+.topbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--gerua) 0 26px,
+    var(--gold) 26px 34px,
+    var(--maroon) 34px 60px
+  );
+}
+
+/* ---- phool marks flanking the centred eyebrows ---- */
+
+.section-intro .eyebrow::before,
+.section-intro .eyebrow::after {
+  content: '✦';
+  color: var(--gold);
+  font-size: 0.85em;
+  vertical-align: 1px;
+}
+
+.section-intro .eyebrow::before {
+  margin-right: 12px;
+}
+
+.section-intro .eyebrow::after {
+  margin-left: 12px;
+}
+
+/* ---- kantha running stitch closing every section intro ---- */
+
+.section-intro::after {
+  content: '';
+  width: 120px;
+  height: 10px;
+  margin-top: clamp(4px, 0.8vw, 10px);
+  background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10'><path d='M0 5h44' stroke='%23b23127' stroke-width='1.2' stroke-dasharray='6 5' opacity='0.75'/><path d='M76 5h44' stroke='%23b23127' stroke-width='1.2' stroke-dasharray='6 5' opacity='0.75'/><rect x='56' y='1' width='8' height='8' fill='%23b23127' transform='rotate(45 60 5)'/></svg>")
+    no-repeat center / contain;
+}
+
+/* ---- the marquee, stitched on like a textile band ---- */
+
+.marquee {
+  border: 1px dashed rgba(199, 165, 106, 0.45);
+}
+
+/* ---- stitch above the sitemap; phool opening the letters ---- */
+
+.fmap {
+  border-top: 1px dashed rgba(199, 165, 106, 0.28);
+  padding-top: clamp(20px, 2.2vw, 36px);
+}
+
+.fletters__eyebrow::before {
+  content: '✦';
+  margin-right: 10px;
+  color: var(--gold);
+  font-size: 0.85em;
+}
+
+
+/* ============================================================
+   HERITAGE ARTWORK — the three archive illustrations
+   ============================================================ */
+
+/* ---- jharokha tilework flanking the promises section.
+        Pinned to the section's own corners (left/top of the box,
+        not its padding), mirrored on the left. Behind the seals. */
+
+.manifesto {
+  position: relative;
+}
+
+.manifesto__arch {
+  position: absolute;
+  bottom: clamp(28px, 4vw, 60px);
+  width: clamp(180px, 15vw, 280px);
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+  /* Fade the cut edges so the tilework surfaces out of the page ground
+     instead of ending on a straight line: top and bottom, plus the inner
+     edge where the seal copy runs. The element's own left edge is the
+     inner one on both sides — the left arch is mirrored, so its mask
+     mirrors with it. */
+  -webkit-mask-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 16%, #000 84%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 34%, #000 72%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 16%, #000 84%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 34%, #000 72%);
+  mask-composite: intersect;
+}
+
+/* pinned to the viewport's own edges, not the container's —
+   html/body carry overflow-x: clip, so the 50vw reach is safe */
+.manifesto__arch--right {
+  right: calc(50% - 50vw);
+}
+
+.manifesto__arch--left {
+  left: calc(50% - 50vw);
+  transform: scaleX(-1);
+}
+
+.manifesto .section-intro,
+.manifesto .manifesto__grid,
+.manifesto .manifesto__more {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1180px) {
+  .manifesto__arch {
+    display: none;
+  }
+}
+
+/* ---- the village along the footer's floor, a faint etching in
+        the weave layer behind everything ---- */
+
+.footer__village {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: max(100%, 1100px);
+  opacity: 0.16;
+}
+

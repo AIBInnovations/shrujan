@@ -36,6 +36,23 @@ const PRINCIPLES = [
 export default function Showcase() {
   return (
     <section className="section container manifesto" id="promise">
+      {/* jharokha tilework flanking the section, pinned to its edges —
+          the right corner as shot, the left one mirrored */}
+      <img
+        className="manifesto__arch manifesto__arch--left"
+        src="/heritage-arch.webp"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+      />
+      <img
+        className="manifesto__arch manifesto__arch--right"
+        src="/heritage-arch.webp"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+      />
+
       <div className="section-intro" data-reveal>
         <p className="eyebrow">The future of heritage is here</p>
         <h2 className="section-title">
