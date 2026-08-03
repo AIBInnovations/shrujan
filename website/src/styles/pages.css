@@ -3397,6 +3397,20 @@
   gap: 6px;
 }
 
+/* The first frame sits in a wider column while all three are locked to 4/3, so
+   the two narrower ones resolve ~80px shorter and leave a band of page showing
+   under them. A grid item carrying an aspect-ratio is treated like a replaced
+   element, so `normal` alignment will not stretch it — ask for it explicitly and
+   the row height wins. The images already cover, so they crop rather than
+   distort, and the wide first frame the design intends is untouched. */
+.origin__gallery > * {
+  align-self: stretch;
+}
+
+.origin__gallery .origin__shot {
+  height: 100%;
+}
+
 .origin__shot {
   aspect-ratio: 4 / 3;
   overflow: hidden;
