@@ -7,7 +7,6 @@ import House from '../components/House.jsx'
 import Testimonials from '../components/Testimonials.jsx'
 import Trousseau from '../components/Trousseau.jsx'
 import Faq from '../components/Faq.jsx'
-import Bestsellers from '../components/Bestsellers.jsx'
 import CraftStory from '../components/CraftStory.jsx'
 import Journal from '../components/Journal.jsx'
 import ShopCta from '../components/ShopCta.jsx'
@@ -18,7 +17,6 @@ export default function Home() {
       <Hero />
       <Marquee />
       <CraftPoster />
-      <Bestsellers />
       <House />
       <Showcase />
       <Reels />

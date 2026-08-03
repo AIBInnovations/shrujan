@@ -26,8 +26,8 @@ const PRINCIPLES = [
     no: '04',
     title: 'Made to Last',
     copy: 'Finished to be worn today, repaired for free, and handed down tomorrow.',
-    /* not the crimson bridal sari: that frame already carries Bestsellers and
-       two of the testimonial cells on this same page */
+    /* not the crimson bridal sari: two of the testimonial cells on this same
+       page already carry that frame */
     img: '/bottom right.webp',
     alt: 'Model in a mehendi-green hand-embroidered kurta set',
   },
