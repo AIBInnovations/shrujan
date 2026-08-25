@@ -5,3 +5,4 @@ dist/
 
 # design references stay out of the published repo
 design/
+config.bat
